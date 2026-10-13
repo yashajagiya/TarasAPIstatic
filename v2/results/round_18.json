@@ -1,0 +1,28 @@
+{
+  "round": 18,
+  "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026",
+  "country": "United States",
+  "circuit_id": "austin",
+  "circuit_name": "Circuit of The Americas, Austin",
+  "date_range": "23 - 25 Oct 2026",
+  "status": "upcoming",
+  "weekend_format": "conventional",
+  "has_sprint": false,
+  "completed_sessions": [],
+  "upcoming_sessions": [
+    "practice_1",
+    "practice_2",
+    "practice_3",
+    "qualifying",
+    "race"
+  ],
+  "sessions": {
+    "practice_1": [],
+    "practice_2": null,
+    "practice_3": null,
+    "qualifying": null,
+    "sprint_qualifying": null,
+    "sprint_race": null,
+    "race": null
+  }
+}

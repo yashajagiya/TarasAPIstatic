@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taras F1 API v2 — The Free, Zero-Latency Formula 1 REST API</title>
+  <meta name="description" content="A world-class, 100% free, production-ready static REST API delivering Formula 1 2026 championship standings, driver profiles, team specs, weekend telemetry, and race results. Hosted on GitHub Pages CDN.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0d14;
+      --bg-card: rgba(18, 24, 38, 0.7);
+      --bg-card-hover: rgba(26, 34, 52, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(225, 6, 0, 0.3);
+      --f1-red: #e10600;
+      --f1-red-glow: rgba(225, 6, 0, 0.35);
+      --cyan-accent: #00d2be;
+      --orange-accent: #ff8000;
+      --text-main: #f0f4f8;
+      --text-muted: #8fa0b5;
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-display);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(225, 6, 0, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(0, 210, 190, 0.08) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header & Navigation */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 13, 20, 0.85);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .f1-strip {
+      width: 5px;
+      height: 28px;
+      background: var(--f1-red);
+      border-radius: 4px;
+      box-shadow: 0 0 12px var(--f1-red);
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text span {
+      color: var(--f1-red);
+    }
+
+    .badge-pill {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(225, 6, 0, 0.15);
+      color: #ff4d4d;
+      border: 1px solid rgba(225, 6, 0, 0.3);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .btn-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s;
+    }
+
+    .btn-github:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 50px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--cyan-accent);
+      background: rgba(0, 210, 190, 0.1);
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 210, 190, 0.25);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #ffffff 40%, #ff6b6b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 20px;
+    }
+
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 16px 28px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-number {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    /* Explorer Section */
+    .explorer-section {
+      padding: 50px 0 80px;
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-top: 6px;
+    }
+
+    .explorer-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Endpoint Selector Bar */
+    .endpoint-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px;
+      background: rgba(0, 0, 0, 0.35);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .http-method {
+      background: #10b981;
+      color: #064e3b;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .endpoint-select {
+      flex: 1;
+      min-width: 260px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .endpoint-select:focus {
+      border-color: var(--f1-red);
+    }
+
+    .btn-send {
+      background: var(--f1-red);
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px var(--f1-red-glow);
+    }
+
+    .btn-send:hover {
+      background: #ff1a14;
+      transform: translateY(-1px);
+    }
+
+    .btn-send:active {
+      transform: translateY(0);
+    }
+
+    /* Explorer Content Grid */
+    .explorer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+
+    @media (max-width: 900px) {
+      .explorer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left: Code Snippet Deck */
+    .snippet-deck {
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .deck-tabs {
+      display: flex;
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0 16px;
+    }
+
+    .deck-tab {
+      padding: 14px 18px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .deck-tab.active {
+      color: var(--text-main);
+      border-bottom-color: var(--f1-red);
+    }
+
+    .deck-content {
+      flex: 1;
+      padding: 20px;
+      position: relative;
+    }
+
+    .code-preview {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.6;
+      color: #9cdcfe;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-y: auto;
+      max-height: 400px;
+    }
+
+    .btn-copy {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--text-main);
+    }
+
+    /* Right: JSON Response Viewer */
+    .response-deck {
+      display: flex;
+      flex-direction: column;
+      background: rgba(5, 8, 14, 0.6);
+    }
+
+    .response-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .response-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .status-badge {
+      color: #10b981;
+      font-weight: 700;
+    }
+
+    .json-box {
+      flex: 1;
+      padding: 20px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #e2e8f0;
+      white-space: pre;
+      overflow: auto;
+      max-height: 430px;
+    }
+
+    /* Endpoints Catalog Grid */
+    .catalog-section {
+      padding: 40px 0 80px;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .catalog-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 24px;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .catalog-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(225, 6, 0, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .card-endpoint-path {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .card-size {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--f1-red);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: gap 0.2s;
+    }
+
+    .card-link:hover {
+      gap: 10px;
+      color: #ff3333;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      background: rgba(8, 11, 16, 0.9);
+    }
+
+    footer a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--f1-red);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo-badge" id="nav-logo">
+        <div class="f1-strip"></div>
+        <div class="logo-text">TARAS <span>API</span></div>
+        <div class="badge-pill">v2.0 CDN</div>
+      </a>
+      <div class="nav-links">
+        <a href="#explorer" class="nav-link">Live Explorer</a>
+        <a href="#endpoints" class="nav-link">Endpoints</a>
+        <a href="docs/API_REFERENCE.md" class="nav-link">API Reference</a>
+        <a href="docs/ARCHITECTURE.md" class="nav-link">Architecture</a>
+        <a href="https://github.com/yashajagiya/Taras" target="_blank" rel="noopener" class="btn-github" id="btn-github-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">
+        <span>⚡</span> Edge-Cached Worldwide • Zero Latency • Zero Keys
+      </div>
+      <h1 class="hero-title">
+        The Open-Access <span class="gradient-text">Formula 1 REST API</span>
+      </h1>
+      <p class="hero-description">
+        Direct, static CDN endpoints delivering 2026 championship standings, 23-driver dossiers, 11-constructor technical specs, transparent circuit vectors, and complete race weekend classifications.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number">23</span>
+          <span class="stat-label">Drivers Profiled</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">11</span>
+          <span class="stat-label">Constructors</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">18+</span>
+          <span class="stat-label">Rounds Archived</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">0 ms</span>
+          <span class="stat-label">Server Compute Delay</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Explorer Section -->
+  <section class="explorer-section" id="explorer">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>🔬</span> Interactive API Explorer
+        </h2>
+        <p class="section-subtitle">
+          Test real endpoints live directly in your browser. Inspect responses and copy production-ready code snippets.
+        </p>
+      </div>
+
+      <div class="explorer-box">
+        <!-- Endpoint Input Bar -->
+        <div class="endpoint-bar">
+          <span class="http-method">GET</span>
+          <select id="endpoint-select" class="endpoint-select" aria-label="Select F1 API Endpoint">
+            <option value="v2/overview.json">/v2/overview.json — Home Screen in 1 Request</option>
+            <option value="v2/drivers.json">/v2/drivers.json — All 23 Drivers & Full Profiles</option>
+            <option value="v2/teams.json">/v2/teams.json — All 11 Constructors & 2026 Cars</option>
+            <option value="v2/standings.json">/v2/standings.json — Drivers & Teams Leaderboards</option>
+            <option value="v2/calendar.json">/v2/calendar.json — 2026 Season Schedule & Maps</option>
+            <option value="v2/results/latest.json">/v2/results/latest.json — Active Weekend Sessions</option>
+            <option value="v2/live.json">/v2/live.json — Live Session Status & Flags</option>
+          </select>
+          <button id="btn-fetch" class="btn-send">
+            <span>⚡</span> Fetch Endpoint
+          </button>
+        </div>
+
+        <!-- Explorer Content Grid -->
+        <div class="explorer-grid">
+          <!-- Code Snippets -->
+          <div class="snippet-deck">
+            <div class="deck-tabs">
+              <button class="deck-tab active" data-lang="js" id="tab-js">JavaScript</button>
+              <button class="deck-tab" data-lang="kotlin" id="tab-kotlin">Kotlin / Android</button>
+              <button class="deck-tab" data-lang="python" id="tab-python">Python</button>
+              <button class="deck-tab" data-lang="curl" id="tab-curl">cURL</button>
+            </div>
+            <div class="deck-content">
+              <button class="btn-copy" id="btn-copy-code">Copy Code</button>
+              <pre class="code-preview"><code id="code-snippet">// Code will appear here...</code></pre>
+            </div>
+          </div>
+
+          <!-- JSON Response -->
+          <div class="response-deck">
+            <div class="response-header">
+              <div class="response-meta">
+                <span>Status: <span class="status-badge" id="response-status">200 OK</span></span>
+                <span id="response-time">~12ms</span>
+                <span id="response-size">2.1 KB</span>
+              </div>
+              <button class="btn-copy" id="btn-copy-json">Copy JSON</button>
+            </div>
+            <pre class="json-box"><code id="json-viewer">// Click "Fetch Endpoint" to view live payload...</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Endpoints Catalog Section -->
+  <section class="catalog-section" id="endpoints">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>📚</span> The Unified v2 Endpoints
+        </h2>
+        <p class="section-subtitle">
+          Direct CDN endpoints ready for mobile applications (Retrofit, Ktor, OkHttp) and web clients.
+        </p>
+      </div>
+
+      <div class="catalog-grid">
+        <!-- Overview -->
+        <div class="catalog-card">
+          <div>
+            <div class="card-top">
+              <span class="card-endpoint-path">/v2/overview.json</span>
+              <span class="card-size">~2.1 KB</span>
+            </div>
+            <h3 class="card-title">Home Dashboard</h3>
+            <p class="card-desc">Championship leaders, upcoming Grand Prix countdown, weekend schedule, and latest podium finishers in a single request.</p>
+          </div>
+          <a href="v2/overview.json" target="_blank" class="card-link">View Raw JSON →</a>
+        </div>
+
+        <!-- Drivers -->
+        <div class="catalog-card">
+          <div>
+            <div class="card-top">
+              <span class="card-endpoint-path">/v2/drivers.json</span>
+              <span class="card-size">~208 KB</span>
+            </div>
+            <h3 class="card-title">Driver Dossiers</h3>
+            <p class="card-desc">All 23 drivers including Yuki Tsunoda #22. Contains transparent portraits, vector numbers, hex team colors, 16 season metrics, and 8 career stats.</p>
+          </div>
+          <a href="v2/drivers.json" target="_blank" class="card-link">View Raw JSON →</a>
+        </div>
+
+        <!-- Teams -->
+        <div class="catalog-card">
+          <div>
+            <div class="card-top">
+              <span class="card-endpoint-path">/v2/teams.json</span>
+              <span class="card-size">~84 KB</span>
+            </div>
+            <h3 class="card-title">Constructor Specs</h3>
+            <p class="card-desc">All 11 teams with high-resolution 2026 car side cutouts, white vector logos, engine suppliers, chassis codes, and factory headquarters.</p>
+          </div>
+          <a href="v2/teams.json" target="_blank" class="card-link">View Raw JSON →</a>
+        </div>
+
+        <!-- Standings -->
+        <div class="catalog-card">
+          <div>
+            <div class="card-top">
+              <span class="card-endpoint-path">/v2/standings.json</span>
+              <span class="card-size">~190 KB</span>
+            </div>
+            <h3 class="card-title">Championship Standings</h3>
+            <p class="card-desc">Drivers and Constructors championship tables with round-by-round points accumulation for historical charts and progress graphs.</p>
+          </div>
+          <a href="v2/standings.json" target="_blank" class="card-link">View Raw JSON →</a>
+        </div>
+
+        <!-- Calendar -->
+        <div class="catalog-card">
+          <div>
+            <div class="card-top">
+              <span class="card-endpoint-path">/v2/calendar.json</span>
+              <span class="card-size">~34 KB</span>
+            </div>
+            <h3 class="card-title">Season Calendar & Tracks</h3>
+            <p class="card-desc">Complete 2026 schedule with transparent circuit outlines, lap records, corner counts, DRS zones, and UTC session start times.</p>
+          </div>
+          <a href="v2/calendar.json" target="_blank" class="card-link">View Raw JSON →</a>
+        </div>
+
+        <!-- Latest Results -->
+        <div class="catalog-card">
+          <div>
+            <div class="card-top">
+              <span class="card-endpoint-path">/v2/results/latest.json</span>
+              <span class="card-size">~26 KB</span>
+            </div>
+            <h3 class="card-title">Active Weekend Classifications</h3>
+            <p class="card-desc">Complete classifications for active or recent Grand Prix: FP1, FP2, FP3, Qualifying, Sprint, and final Race results.</p>
+          </div>
+          <a href="v2/results/latest.json" target="_blank" class="card-link">View Raw JSON →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 8px;"><b>Taras F1 API v2</b> — Built for motorsport enthusiasts and developers.</p>
+      <p>Data provided for informational and non-commercial purposes. F1 marks belong to Formula One Licensing B.V. Hosted with ❤️ on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>.</p>
+    </div>
+  </footer>
+
+  <!-- Script for Interactive Functionality -->
+  <script>
+    const endpointSelect = document.getElementById('endpoint-select');
+    const btnFetch = document.getElementById('btn-fetch');
+    const jsonViewer = document.getElementById('json-viewer');
+    const codeSnippet = document.getElementById('code-snippet');
+    const responseStatus = document.getElementById('response-status');
+    const responseTime = document.getElementById('response-time');
+    const responseSize = document.getElementById('response-size');
+    const btnCopyJson = document.getElementById('btn-copy-json');
+    const btnCopyCode = document.getElementById('btn-copy-code');
+    const tabs = document.querySelectorAll('.deck-tab');
+
+    let currentLang = 'js';
+    let rawJsonText = '';
+
+    // Generate Code Snippet
+    function updateCodeSnippet() {
+      const endpoint = endpointSelect.value;
+      const fullUrl = window.location.origin + window.location.pathname.replace(/\/+$/, '') + '/' + endpoint;
+
+      let code = '';
+      if (currentLang === 'js') {
+        code = `// 🏎️ Fetch Formula 1 data with vanilla fetch or React\nconst response = await fetch("${fullUrl}");\nconst data = await response.json();\nconsole.log(data);`;
+      } else if (currentLang === 'kotlin') {
+        code = `// 🤖 Android / Kotlin OkHttp\nval client = OkHttpClient()\nval request = Request.Builder()\n    .url("${fullUrl}")\n    .build()\n\nval response = client.newCall(request).execute()\nval jsonString = response.body?.string()`;
+      } else if (currentLang === 'python') {
+        code = `# 🐍 Python requests\nimport requests\n\nresponse = requests.get("${fullUrl}")\ndata = response.json()\nprint(data)`;
+      } else if (currentLang === 'curl') {
+        code = `# ⚡ Terminal cURL request\ncurl -sSL "${fullUrl}" | jq .`;
+      }
+      codeSnippet.textContent = code;
+    }
+
+    // Fetch and Display JSON
+    async function fetchEndpointData() {
+      const endpoint = endpointSelect.value;
+      jsonViewer.textContent = '// Fetching data from edge CDN...';
+      responseStatus.textContent = 'Loading...';
+      responseStatus.style.color = '#ff8000';
+
+      const startTime = performance.now();
+      try {
+        const res = await fetch(endpoint);
+        const duration = Math.round(performance.now() - startTime);
+        const text = await res.text();
+        rawJsonText = text;
+
+        try {
+          const parsed = JSON.parse(text);
+          jsonViewer.textContent = JSON.stringify(parsed, null, 2);
+        } catch {
+          jsonViewer.textContent = text;
+        }
+
+        responseStatus.textContent = `${res.status} ${res.statusText || 'OK'}`;
+        responseStatus.style.color = res.ok ? '#10b981' : '#e10600';
+        responseTime.textContent = `${duration}ms`;
+        responseSize.textContent = `${(text.length / 1024).toFixed(1)} KB`;
+      } catch (err) {
+        jsonViewer.textContent = `// Error fetching endpoint: ${err.message}\n// If opening locally, ensure running via HTTP server (e.g. npx serve).`;
+        responseStatus.textContent = 'Failed';
+        responseStatus.style.color = '#e10600';
+      }
+      updateCodeSnippet();
+    }
+
+    // Tab switcher
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentLang = tab.getAttribute('data-lang');
+        updateCodeSnippet();
+      });
+    });
+
+    // Copy buttons
+    btnCopyJson.addEventListener('click', () => {
+      navigator.clipboard.writeText(jsonViewer.textContent);
+      btnCopyJson.textContent = '✓ Copied!';
+      setTimeout(() => btnCopyJson.textContent = 'Copy JSON', 2000);
+    });
+
+    btnCopyCode.addEventListener('click', () => {
+      navigator.clipboard.writeText(codeSnippet.textContent);
+      btnCopyCode.textContent = '✓ Copied!';
+      setTimeout(() => btnCopyCode.textContent = 'Copy Code', 2000);
+    });
+
+    // Event Listeners
+    btnFetch.addEventListener('click', fetchEndpointData);
+    endpointSelect.addEventListener('change', () => {
+      updateCodeSnippet();
+      fetchEndpointData();
+    });
+
+    // Initial load
+    updateCodeSnippet();
+    fetchEndpointData();
+  </script>
+</body>
+</html>

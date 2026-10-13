@@ -1,0 +1,45 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Environments & virtualenvs
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE & OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Sensitive credentials & secrets
+*token*.txt
+*token*.json
+secrets/
+*.pem
+*.key
+
+# Private notifications & internal mobile app specifications (Never uploaded)
+docs/mobile_app_specs/
+*notification*
+notification/
+notifications/
+
+# Internal Agent Directives & AI Memory (Kept local, never uploaded)
+brain.md
+AGENTS.md
+.agents/
+
+# Temporary files
+*.tmp
+*.log
+
+
