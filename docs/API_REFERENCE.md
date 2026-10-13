@@ -1,6 +1,6 @@
 # 🏎️ Taras F1 API v2 — Complete API Reference
 
-Welcome to the definitive API reference for **Taras F1 API v2**. This static REST API provides live and historical Formula 1 data, championship standings, driver profiles, team specifications, and weekend session classifications without API keys or rate limits.
+Welcome to the definitive API reference for **Taras F1 API v2**. This static REST API provides live and historical Formula 1 data, championship standings, driver profiles, team specifications, and weekend session classifications without API keys, rate limits, or server costs.
 
 ---
 
@@ -9,15 +9,15 @@ Welcome to the definitive API reference for **Taras F1 API v2**. This static RES
 All endpoints are statically hosted and edge-cached globally on GitHub's Fastly/Cloudflare CDN:
 
 ```text
-https://yashajagiya.github.io/Taras/v2/
+https://yashajagiya.github.io/TarasAPIstatic/v2/
 ```
-*(Legacy fallback URL: `https://yashajagiya.github.io/tarasF1Data/v2/`)*
+*(Legacy v1 Base URL: `https://yashajagiya.github.io/TarasAPIstatic/v1/`)*
 
 - **Protocol:** HTTPS
-- **Format:** Standard JSON (UTF-8)
-- **Authentication:** None required (Zero config / 100% free)
+- **Format:** Standard UTF-8 JSON
+- **Authentication:** None required (Zero config / 100% free & open)
 - **HTTP Method:** `GET` for all endpoints
-- **Cache-Control:** Edge-cached with automatic CDN invalidation on commit
+- **Cache-Control:** Edge-cached worldwide with automatic CDN cache invalidation upon git commit
 
 ---
 
@@ -26,10 +26,10 @@ https://yashajagiya.github.io/Taras/v2/
 | Resource | Path | Size | Description |
 |---|---|:---:|---|
 | **Overview** | [`/v2/overview.json`](#1-overview-v2overviewjson) | ~2.1 KB | Single-request home dashboard: leaders, next race countdown, session schedule, latest podium. |
-| **Drivers** | [`/v2/drivers.json`](#2-drivers-v2driversjson) | ~210 KB | All 23 drivers: portraits, numbers, transparent vector logos, team hex colors, career & season stats. |
-| **Teams** | [`/v2/teams.json`](#3-teams-v2teamsjson) | ~86 KB | All 11 constructors: official white vector logos, transparent 2026 car side cutouts, specs, leadership. |
-| **Standings** | [`/v2/standings.json`](#4-standings-v2standingsjson) | ~195 KB | Complete Drivers and Constructors championship leaderboards with round-by-round points progression. |
-| **Calendar** | [`/v2/calendar.json`](#5-calendar-v2calendarjson) | ~35 KB | Full 24-race 2026 calendar with transparent SVG/PNG circuit track maps, lap records, and UTC schedules. |
+| **Drivers** | [`/v2/drivers.json`](#2-drivers-v2driversjson) | ~208 KB | All 23 drivers: portraits, numbers, transparent vector logos, team hex colors, career & season stats. |
+| **Teams** | [`/v2/teams.json`](#3-teams-v2teamsjson) | ~84 KB | All 11 constructors: official white vector logos, transparent 2026 car side cutouts, specs, leadership. |
+| **Standings** | [`/v2/standings.json`](#4-standings-v2standingsjson) | ~190 KB | Complete Drivers and Constructors championship leaderboards with round-by-round points progression. |
+| **Calendar** | [`/v2/calendar.json`](#5-calendar-v2calendarjson) | ~34 KB | Full 24-race 2026 calendar with transparent SVG/PNG circuit track maps, lap records, and UTC schedules. |
 | **Active Weekend** | [`/v2/results/latest.json`](#6-active-weekend-results-v2resultslatestjson) | ~26 KB | Complete classifications for active / latest weekend (FP1, FP2, FP3, Qualy, Sprint, Race). |
 | **Historical Rounds** | [`/v2/results/round_{N}.json`](#7-historical-rounds-v2resultsround_njson) | ~25 KB | Complete weekend session archives for Rounds 1 through 18 (e.g. `round_17.json`). |
 | **Live Telemetry** | [`/v2/live.json`](#8-live-telemetry-v2livejson) | ~0.4 KB | Live race session state, flag status, current leader, and active timing relay metadata. |
@@ -70,22 +70,22 @@ Designed to hydrate a mobile or web home screen in **a single network request**.
     "circuit_name": "Circuit of The Americas",
     "country": "United States",
     "city": "Austin",
-    "date": "2026-10-18",
+    "date": "2026-10-25",
     "time_utc": "19:00:00Z",
-    "is_sprint": true,
+    "is_sprint": false,
     "track_map": "https://media.formula1.com/...",
     "sessions": {
-      "fp1": "2026-10-16T17:30:00Z",
-      "sprint_qualifying": "2026-10-16T21:30:00Z",
-      "sprint_race": "2026-10-17T18:00:00Z",
-      "qualifying": "2026-10-17T22:00:00Z",
-      "race": "2026-10-18T19:00:00Z"
+      "fp1": "2026-10-23T17:30:00Z",
+      "fp2": "2026-10-23T21:30:00Z",
+      "fp3": "2026-10-24T17:00:00Z",
+      "qualifying": "2026-10-24T21:00:00Z",
+      "race": "2026-10-25T19:00:00Z"
     }
   },
   "latest_podium": [
-    { "position": 1, "driver_name": "Max Verstappen", "team": "Red Bull", "points": 25 },
-    { "position": 2, "driver_name": "Lando Norris", "team": "McLaren", "points": 18 },
-    { "position": 3, "driver_name": "Charles Leclerc", "team": "Ferrari", "points": 15 }
+    { "position": 1, "driver_name": "Max Verstappen", "team": "Red Bull Racing", "points": 25 },
+    { "position": 2, "driver_name": "Charles Leclerc", "team": "Ferrari", "points": 18 },
+    { "position": 3, "driver_name": "Kimi Antonelli", "team": "Mercedes", "points": 15 }
   ]
 }
 ```
@@ -101,7 +101,7 @@ Complete roster of all 23 official Formula 1 drivers (including mid-season subst
 - `name`: Full driver name (e.g. `"Lewis Hamilton"`).
 - `number`: Official permanent race number (`44`).
 - `code`: 3-letter timing broadcast code (`"HAM"`).
-- `portrait`: High-resolution transparent driver cutout.
+- `portrait`: High-resolution transparent driver cutout (`images.portrait`).
 - `team`: Object containing team `id`, `name`, and canonical `color` (ARGB hex, e.g. `"0xFFE8002D"`).
 - `season_2026_stats`: 16 granular season metrics (points, podiums, wins, poles, fastest laps, DNFs, average grid position, etc.).
 - `career_stats`: 8 lifetime statistics (Grand Prix entered, World Championships, career podiums, career points).
@@ -153,21 +153,22 @@ Complete 24-event schedule of the 2026 World Championship.
 
 ## 6. Active Weekend Results (`/v2/results/latest.json`)
 
-Classifications of the active or most recently completed Grand Prix weekend across all 5 sessions:
+Classifications of the active or most recently completed Grand Prix weekend across all sessions:
 - `sessions.practice_1`: Practice 1 classification table (positions 1 through 22, lap times, gaps, laps run).
 - `sessions.practice_2` / `practice_3`: FP2 and FP3 classifications (or null on Sprint weekends).
 - `sessions.sprint_qualifying` & `sessions.sprint_race`: Sprint classifications (where applicable).
 - `sessions.qualifying`: Q1, Q2, and Q3 knockout lap times and final grid positions.
-- `sessions.race`: Final official Grand Prix classification with finish status (`"1:31:24.412"`, `"+5.214s"`, or `"DNF"`), points awarded, and fastest lap bonuses.
+- `sessions.race`: Final official Grand Prix classification with finish status (`"1:42:00.785"`, `"+7.335s"`, or `"DNF"`), points awarded, and fastest lap bonuses.
 
 ---
 
 ## 7. Historical Rounds (`/v2/results/round_{N}.json`)
 
 Non-destructive historical archive. Fetch any specific round by replacing `{N}` with the round number:
-- `GET /v2/results/round_1.json` (Bahrain GP)
+- `GET /v2/results/round_1.json` (Australian GP)
 - `GET /v2/results/round_14.json` (Spanish GP at Madrid)
 - `GET /v2/results/round_17.json` (Singapore GP)
+- `GET /v2/results/round_18.json` (United States GP - Upcoming)
 
 ---
 
@@ -192,7 +193,7 @@ Lightweight polling endpoint updated during live race sessions:
 
 ### JavaScript / TypeScript
 ```javascript
-const response = await fetch("https://yashajagiya.github.io/Taras/v2/overview.json");
+const response = await fetch("https://yashajagiya.github.io/TarasAPIstatic/v2/overview.json");
 const data = await response.json();
 console.log(`Leader: ${data.championship_leader.driver.name}`);
 ```
@@ -201,7 +202,7 @@ console.log(`Leader: ${data.championship_leader.driver.name}`);
 ```kotlin
 val client = OkHttpClient()
 val request = Request.Builder()
-    .url("https://yashajagiya.github.io/Taras/v2/drivers.json")
+    .url("https://yashajagiya.github.io/TarasAPIstatic/v2/drivers.json")
     .build()
 
 val response = client.newCall(request).execute()
@@ -211,8 +212,13 @@ val driversJson = response.body?.string()
 ### Python
 ```python
 import requests
-data = requests.get("https://yashajagiya.github.io/Taras/v2/standings.json").json()
+data = requests.get("https://yashajagiya.github.io/TarasAPIstatic/v2/standings.json").json()
 print("Top 3 Drivers:")
 for driver in data["drivers"][:3]:
     print(f"P{driver['position']}: {driver['name']} - {driver['points']} pts")
+```
+
+### cURL
+```bash
+curl -sSL "https://yashajagiya.github.io/TarasAPIstatic/v2/overview.json" | jq .
 ```

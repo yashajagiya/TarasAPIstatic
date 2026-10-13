@@ -2,7 +2,9 @@
 
 This directory contains the complete legacy **Formula 1 API v1** pipeline, endpoints, datasets, and scraping scripts.
 
-> **Note:** For new integrations and high-performance apps, please use [**Taras F1 API v2**](../tarasF1DataV2/README.md) located in [`/v2`](../v2/).
+> **Note:** For new integrations and high-performance apps, please use [**Taras F1 API v2**](../v2/README.md) located in [`/v2`](../v2/).
+
+**Base CDN URL:** `https://yashajagiya.github.io/TarasAPIstatic/v1/`
 
 ---
 
@@ -27,9 +29,27 @@ This directory contains the complete legacy **Formula 1 API v1** pipeline, endpo
 
 ---
 
-## 🛠️ Running the V1 Scrapers
+## 🛠️ Running the V1 Pipelines
 
-Each session folder has its own isolated scraper under `code/`:
+### Master Asynchronous Anti-Ban Runner
+You can run all V1 scrapers with rotating browser fingerprints and polite jitter via the unified root runner:
+
+```bash
+# Run all V1 scrapers once
+python run_v1.py
+
+# Continuous loop mode (every 5 minutes)
+python run_v1.py --loop --interval 300
+
+# Stealth mode (maximum delays)
+python run_v1.py --stealth
+
+# Only update standings
+python run_v1.py --skip-sessions
+```
+
+### Individual Session Scrapers
+Each session folder also maintains its own isolated script under `code/`:
 
 ```bash
 # Free Practice 1

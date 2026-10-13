@@ -1,6 +1,6 @@
 # 🏗️ Taras F1 API — Architecture & Extension Guide
 
-This document outlines the **Clean, Standalone Static API Architecture** of the Taras F1 API dataset, explaining how both `v1` and `v2` operate as completely self-contained, independent modules.
+This document outlines the **Clean, Standalone Static API Architecture** of the Taras F1 API dataset, explaining how both `v1` and `v2` operate as completely self-contained, independent modules hosted on GitHub Pages edge CDN.
 
 ---
 
@@ -9,9 +9,9 @@ This document outlines the **Clean, Standalone Static API Architecture** of the 
 1. **100% Standalone Modules (`v1` and `v2`):**
    Both `v1/` and `v2/` are entirely self-contained. Each version includes its own scrapers, build engines, registries, and generated JSON endpoints. Neither relies on external shared pipeline directories.
 2. **Edge-Cached Zero Compute:**
-   No runtime application servers, virtual machines, or active databases. All API endpoints exist as pre-rendered JSON files served directly via GitHub's worldwide Fastly/Cloudflare CDN.
+   No runtime application servers, virtual machines, or active databases. All API endpoints exist as pre-rendered JSON files served directly via GitHub's worldwide Fastly/Cloudflare CDN (`https://yashajagiya.github.io/TarasAPIstatic/v2/`).
 3. **Deterministic & Idempotent Builds:**
-   Running `python v2/update.py --skip-scrape` builds the entire V2 dataset deterministically from registries and local caches without side-effects or network dependencies.
+   Running `python run_v2.py --skip-scrape` builds the entire V2 dataset deterministically from registries and local caches without side-effects or network dependencies.
 4. **Non-Destructive Storage:**
    Historical session results (`v2/results/round_{1..18}.json`) are preserved permanently. New rounds are appended without overwriting or destroying past race data.
 5. **Backwards Compatibility:**
@@ -55,7 +55,8 @@ TarasAPIstatic/
 │   ├── ⚙️ PIPELINE LAUNCHERS & RUNNERS
 │   ├── run_v2.py                # Standalone async anti-ban runner with AntiBanClient
 │   ├── build.py                 # Master endpoint builder & aggregator
-│   │   ├── test_v2_integrity.py     # 8-suite automated integrity verification
+│   ├── extract_rounds.py        # Historical round extraction & normalization
+│   ├── test_v2_integrity.py     # 8-suite automated integrity verification
 │   ├── collectors/              # Data adapters (ESPN, Encyclopedia, Sessions)
 │   ├── scrapers/                # Official Formula 1 session HTML parsers
 │   │
@@ -70,38 +71,37 @@ TarasAPIstatic/
 │       │   └── racesimg.json
 │       ├── standings/           # Championship point tracking & car-per-race tables
 │       │   ├── driversperrace.json
-│       │   └── carperrace.json
-│       ├── sessions/            # Raw session cache & extracted weekend packages
-│       │   ├── current/         # Raw session extractions (fp1_extracted.json, etc.)
-│       │   └── rounds/          # Historical round raw packages (round_1.json .. round_18.json)
+│       │   ├── carperrace.json
+│       │   └── standings_cache.json
+│       └── sessions/            # Raw session cache & extracted weekend packages
+│           ├── current/         # Raw session extractions (fp1_extracted.json, etc.)
+│           └── rounds/          # Historical round raw packages (round_1.json .. round_18.json)
 │
 └── docs/                        # Complete technical documentation
     ├── APP_INTEGRATION_GUIDE.md # Android, iOS, Flutter, React Native integration guide
     ├── API_REFERENCE.md         # Full REST API endpoint reference & schemas
     ├── ARCHITECTURE.md          # Architecture & extension guide (this document)
-    ├── F1_DATA_SOURCES.md       # External data source catalog
     ├── PROJECT.md               # Product background & Taras ecosystem role
-    ```
+    └── f1_apis_documentation.md # Community & commercial F1 API comparison
+```
 
 ---
 
 ## 📂 Session Data Architecture: Where Does Session Data Live?
 
-A common question is: **Where does session data live? Should it be in `data/`?**
-
-In Taras F1 API v2, there is a clean separation of concerns:
+In Taras F1 API v2, there is a strict separation between internal raw stores and published public endpoints:
 
 1. **Internal Raw Session Data (`v2/data/sessions/`)**:
-   - **`v2/data/sessions/current/`**: Stores temporary raw session extractions (e.g., `fp1_extracted.json`, `qualifying_raw.json`) actively parsed by scrapers during a race weekend.
-   - **`v2/data/sessions/rounds/`**: Stores offline raw weekend packages (`round_1.json` through `round_18.json`). The anti-ban runner inspects these to determine cache hits (`⚡ Cache Hit`) and prevent redundant network requests.
+   - **`v2/data/sessions/current/`**: Stores temporary raw session extractions (e.g., `fp1_extracted.json`, `qualifying_results.json`, `race_results.json`) actively parsed by scrapers during a live race weekend.
+   - **`v2/data/sessions/rounds/`**: Stores offline raw weekend packages (`round_1.json` through `round_18.json`). The anti-ban runner inspects these to determine cache hits (`⚡ Cache Hit`) and bypass redundant network requests.
 
 2. **Public REST Endpoints (`v2/results/`)**:
-   - **`v2/results/latest.json`**: The public REST endpoint served to client applications representing the most recent race weekend (Practice 1, Practice 2, Practice 3, Qualifying, Sprint, Race).
-   - **`v2/results/round_{1..18}.json`**: Standardized, edge-cached public REST endpoints served to mobile apps and websites via GitHub Pages (`https://<username>.github.io/<repo>/v2/results/round_17.json`).
+   - **`v2/results/latest.json`**: The public REST endpoint served to client applications representing the active or most recent race weekend (Practice 1, Practice 2, Practice 3, Qualifying, Sprint Qualifying, Sprint Race, Grand Prix).
+   - **`v2/results/round_{1..18}.json`**: Standardized, edge-cached public REST endpoints served to mobile apps and websites via GitHub Pages (`https://yashajagiya.github.io/TarasAPIstatic/v2/results/round_17.json`).
 
 This separation keeps the `v2/` root clean:
-- **`v2/` root**: Only contains public endpoints, launchers, and core subdirectories.
-- **`v2/data/`**: Houses all internal registries, image dictionaries, standings tables, and session archives organized by category.
+- **`v2/` root**: Only contains public endpoints, launchers, and module directories.
+- **`v2/data/`**: Houses internal registries, image dictionaries, standings tables, and session archives organized by category.
 
 ---
 
@@ -109,14 +109,14 @@ This separation keeps the `v2/` root clean:
 
 ```mermaid
 graph TD
-    A[Official F1 Web / ESPN / Ergast] -->|Async Anti-Ban Scrapers| B[v2/scrapers/]
+    A[Official F1 Web / ESPN / Live Timing] -->|Async Anti-Ban Scrapers| B[v2/scrapers/]
     B -->|Normalized Raw Sessions| C[v2/data/sessions/current/<br/>v2/data/sessions/rounds/]
     D[Master Registries<br/>v2/data/registries/<br/>calendar_master.json, teams_registry.json] --> E[v2/build.py]
     C --> E
     E -->|Generates Public Endpoints| F[v2/ Root & v2/results/]
     F -->|Validation| G[v2/test_v2_integrity.py]
-    G -->|All 8 Tests Pass| H[Git Commit & Push]
-    H -->|Deploy| I[GitHub Pages Edge CDN<br/>yashajagiya.github.io/Taras/v2/]
+    G -->|All 8 Tests Pass| H[Git Commit]
+    H -->|Deploy via GitHub Pages| I[GitHub Pages Edge CDN<br/>yashajagiya.github.io/TarasAPIstatic/v2/]
 ```
 
 ---
@@ -138,15 +138,15 @@ graph TD
 ### 3. Scraping & Archiving a Race Weekend (Anti-Ban Protected)
 ```bash
 # Scrape specific round with anti-ban protections:
-python run_v2.py --round 18
+python run_v2.py --round 17
 
 # Continuous background loop mode (every 5 minutes with jitter & safety circuit breaker):
 python run_v2.py --loop --interval 300
 
 # Stealth mode with extra conservative delays:
-python run_v2.py --stealth --round 18
+python run_v2.py --stealth --round 17
 ```
-This automatically checks local cache in `v2/data/sessions/rounds/`, scrapes any missing sessions safely, writes `v2/results/round_18.json`, updates `v2/results/latest.json`, recalculates `v2/standings.json`, and runs the integrity verification suite.
+This automatically checks local cache in `v2/data/sessions/rounds/`, scrapes any missing sessions safely, writes `v2/results/round_17.json`, updates `v2/results/latest.json`, recalculates `v2/standings.json`, and runs the integrity verification suite.
 
 ### 4. Running Data Integrity Tests
 ```bash
@@ -159,20 +159,23 @@ Tests verified:
 - [x] Driver and Constructor standings with round points
 - [x] Calendar coverage with valid dates and track maps
 - [x] `results/latest.json` full weekend classification
-- [x] Historical rounds 1 to 16 data retention
+- [x] Historical rounds 1 to 18 data retention
 - [x] Specific Sprint weekend formatting (e.g. Round 17)
 
 ---
 
 ## 🌐 Deploying to GitHub Pages (`github.io`)
 
-1. Commit and push the repository to GitHub:
+1. Commit the repository changes locally:
    ```bash
    git add .
    git commit -m "Update F1 Static API dataset"
+   ```
+2. When ready, push to GitHub:
+   ```bash
    git push origin main
    ```
-2. In GitHub Repository Settings -> **Pages**:
+3. In GitHub Repository Settings -> **Pages**:
    - **Source:** Deploy from a branch
    - **Branch:** `main` / `/ (root)`
-3. Within ~60 seconds, all endpoints are live at `https://<username>.github.io/<repo>/v2/<endpoint>.json`.
+4. Within ~60 seconds, all endpoints are live at `https://yashajagiya.github.io/TarasAPIstatic/v2/<endpoint>.json`.
