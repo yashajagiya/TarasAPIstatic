@@ -386,6 +386,8 @@ async def scrape_round_async(
         "circuit_name": detected_circuit or "Official Circuit",
         "status": "completed" if has_race else "in_progress",
         "is_sprint": is_sprint,
+        "completed_sessions": [key for key in session_keys if sessions_data.get(key)],
+        "upcoming_sessions": [key for key in session_keys if not sessions_data.get(key)],
         "sessions": sessions_data,
         "last_updated": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     }
@@ -410,6 +412,31 @@ async def scrape_round_async(
 # =====================================================================
 # 🚀 Master Async Pipeline Orchestrator
 # =====================================================================
+
+def get_auto_target_round(events: dict) -> int:
+    from collectors.f1_sessions import get_latest_weekend_event
+
+    mapped_events = [
+        event for event in events.values()
+        if event.get("round") in F1_WEB_ROUNDS
+    ]
+    in_progress_events = [
+        event for event in mapped_events
+        if event.get("status") == "in_progress"
+    ]
+    if in_progress_events:
+        return max(in_progress_events, key=lambda event: event["round"])["round"]
+
+    upcoming_events = [
+        event for event in mapped_events
+        if event.get("status") == "upcoming"
+    ]
+    if upcoming_events:
+        return min(upcoming_events, key=lambda event: event["round"])["round"]
+
+    latest = get_latest_weekend_event(events)
+    return latest.get("round", 17) if latest else 17
+
 
 async def run_v2_cycle(
     client: AntiBanClient,
@@ -438,9 +465,8 @@ async def run_v2_cycle(
             rounds_to_scrape = list(F1_WEB_ROUNDS.keys())
         else:
             # Auto-detect latest upcoming or in-progress round
-            from collectors.f1_sessions import get_latest_weekend_event
-            active = get_latest_weekend_event()
-            auto_r = active.get("round", 17) if active else 17
+            from collectors.f1_sessions import load_all_known_sessions
+            auto_r = get_auto_target_round(load_all_known_sessions())
             print(f"  • Auto-detected target: Round {auto_r}")
             rounds_to_scrape = [auto_r]
 

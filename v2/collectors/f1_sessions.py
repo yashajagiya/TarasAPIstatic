@@ -277,6 +277,17 @@ def load_all_known_sessions(repo_dir=None):
                 r_payload = _safe_load_json(fpath)
                 if r_payload and isinstance(r_payload, dict) and "round" in r_payload:
                     r_num_loaded = r_payload["round"]
+                    sessions = r_payload.get("sessions", {})
+                    if isinstance(sessions, dict):
+                        session_keys = list(sessions)
+                        r_payload.setdefault(
+                            "completed_sessions",
+                            [key for key in session_keys if sessions.get(key)]
+                        )
+                        r_payload.setdefault(
+                            "upcoming_sessions",
+                            [key for key in session_keys if not sessions.get(key)]
+                        )
                     events[f"round_{r_num_loaded}"] = r_payload
                     if r_payload.get("status") == "completed" and r_num_loaded > max_completed_round:
                         max_completed_round = r_num_loaded
@@ -403,4 +414,3 @@ if __name__ == "__main__":
     print(f"Latest Active Weekend: Round {latest.get('round')} - {latest.get('race_name')} [{latest.get('status')}]")
     print(f"Completed sessions: {latest.get('completed_sessions')}")
     print(f"Upcoming sessions:  {latest.get('upcoming_sessions')}")
-
