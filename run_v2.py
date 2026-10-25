@@ -10,7 +10,8 @@ Usage:
   python run_v2.py --force          # Force re-scraping existing cached rounds
   python run_v2.py --loop           # Continuous scraping mode with polite jitter
   python run_v2.py --interval 300   # Set loop interval in seconds (default: 300)
-  python run_v2.py --push           # Auto-deploy to GitHub if verified
+  python run_v2.py                  # Build, verify, and publish to GitHub
+  python run_v2.py --no-push        # Build and verify locally only
 """
 
 import os

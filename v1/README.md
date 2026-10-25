@@ -46,7 +46,12 @@ python run_v1.py --stealth
 
 # Only update standings
 python run_v1.py --skip-sessions
+
+# Run without committing/pushing to GitHub
+python run_v1.py --no-push
 ```
+
+The runner commits and pushes validated changes to GitHub by default. Use `--no-push` to keep updates local.
 
 ### Individual Session Scrapers
 Each session folder also maintains its own isolated script under `code/`:

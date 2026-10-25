@@ -489,33 +489,53 @@ def build_v2_api():
     print(f"  • Sessions saved:   FP1, FP2, FP3, Qualy, Sprint, Race all preserved in results/")
     print(f"\n🎉 Taras F1 API v2 successfully built in: {output_dir}")
 
-    # Optional Auto-Commit & Push to GitHub
-    if "--push" in sys.argv:
-        print("\n[GitHub] Auto-committing and pushing to GitHub...")
-        git_commit_and_push(os.path.abspath(os.path.join(BASE_DIR, "..")))
-
-
 def git_commit_and_push(repo_dir):
     import subprocess
-    try:
-        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        print(f"\n[Git] Syncing repository at: {repo_dir}...")
-        v2_targets = [p for p in ["v2", "v1", "extract_rounds.py", "update_v2.py", ".gitignore", "index.html", "docs"] if os.path.exists(os.path.join(repo_dir, p))]
-        subprocess.run(["git", "add"] + v2_targets, cwd=repo_dir, check=True)
-        
-        diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo_dir)
-        if diff.returncode != 0:
-            commit_msg = f"Auto-update Taras F1 API v2 data — {now}"
-            subprocess.run(["git", "commit", "-m", commit_msg], cwd=repo_dir, check=True)
-            push_res = subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, capture_output=True, text=True)
-            if push_res.returncode == 0:
-                print(f"  ✓ Successfully committed and pushed updates to {repo_dir}!")
-            else:
-                print(f"  ⚠️ Git push output: {push_res.stderr or push_res.stdout}")
-        else:
-            print(f"  ℹ️ No changes detected in {repo_dir}, working tree clean.")
-    except Exception as e:
-        print(f"  ⚠️ Git auto-push note for {repo_dir}: {e}")
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"\n[Git] Syncing repository at: {repo_dir}...")
+    v2_targets = [
+        p for p in [
+            "v2", "v1", "extract_rounds.py", "update_v2.py", ".gitignore",
+            "index.html", "docs", "README.md", "run_v1.py", "run_v2.py",
+            ".github/workflows",
+        ]
+        if os.path.exists(os.path.join(repo_dir, p))
+    ]
+    subprocess.run(["git", "add"] + v2_targets, cwd=repo_dir, check=True)
+
+    diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo_dir)
+    if diff.returncode == 0:
+        print(f"  ℹ️ No staged changes to publish in {repo_dir}.")
+        return
+    if diff.returncode != 1:
+        raise subprocess.CalledProcessError(diff.returncode, diff.args)
+
+    commit_msg = f"Auto-update Taras F1 API v2 data — {now}"
+    subprocess.run(["git", "commit", "-m", commit_msg], cwd=repo_dir, check=True)
+    subprocess.run(
+        ["git", "pull", "--rebase", "--autostash", "origin", "main"],
+        cwd=repo_dir,
+        check=True,
+    )
+    subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True)
+    print(f"  ✓ Successfully committed and pushed updates to {repo_dir}!")
+
+
+def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Build, verify, and publish Taras F1 API v2")
+    publish_group = parser.add_mutually_exclusive_group()
+    publish_group.add_argument("--push", dest="push", action="store_true", help="Publish to GitHub (default)")
+    publish_group.add_argument("--no-push", dest="push", action="store_false", help="Build and verify locally only")
+    parser.set_defaults(push=True)
+    args = parser.parse_args()
+
+    build_v2_api()
+    from test_v2_integrity import run_integrity_tests
+    run_integrity_tests()
+    if args.push:
+        git_commit_and_push(os.path.abspath(os.path.join(BASE_DIR, "..")))
 
 
 def run_session_scraper(session_name):
@@ -569,5 +589,4 @@ if __name__ == "__main__":
             sess = sys.argv[i + 1]
             run_session_scraper(sess)
 
-    build_v2_api()
-
+    main()

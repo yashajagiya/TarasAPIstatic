@@ -28,8 +28,11 @@ High-performance, edge-cached Formula 1 REST API served directly from GitHub Pag
   python run_v2.py --stealth           # Maximum safety mode
   python run_v2.py --round 17          # Scrape specific round
   python run_v2.py --skip-scrape       # Offline build without network
+  python run_v2.py --no-push           # Build and verify locally without publishing
   ```
-- **`build.py`:** Master endpoint aggregator and JSON compiler (`python v2/build.py`).
+- **`build.py`:** Master endpoint aggregator, verifier, and publisher (`python v2/build.py`). Use `python v2/build.py --no-push` to keep the build local.
+
+The V2 runner and standalone builder commit and push verified updates to GitHub by default.
 - **`extract_rounds.py`:** Historical round extractor and normalizer (`python v2/extract_rounds.py --round 17`).
 - **`test_v2_integrity.py`:** 8-suite automated data integrity test (`python v2/test_v2_integrity.py`).
 

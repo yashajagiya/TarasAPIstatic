@@ -10,7 +10,8 @@ Usage:
   python v1/run_v1.py --force          # Force re-scraping existing cached sessions
   python v1/run_v1.py --loop           # Continuous scraping mode with polite jitter
   python v1/run_v1.py --interval 300   # Set loop interval in seconds (default: 300)
-  python v1/run_v1.py --push           # Auto-deploy to GitHub if verified
+  python v1/run_v1.py                  # Run, verify, and publish to GitHub
+  python v1/run_v1.py --no-push        # Run and verify locally only
   python v1/run_v1.py --skip-sessions  # Only update standings and calendar
   python v1/run_v1.py --skip-standings # Only update session classifications
 """
@@ -699,7 +700,7 @@ async def run_v1_cycle(
     skip_standings: bool = False,
     skip_sessions: bool = False,
     force: bool = False,
-    push: bool = False
+    push: bool = True
 ) -> bool:
     """Executes one full iteration of the v1 asynchronous scraping and verification pipeline."""
     start_time = time.time()
@@ -749,35 +750,39 @@ async def run_v1_cycle(
             print(f"  [WARN] {rel_path:<36} (missing)")
             all_valid = False
 
-    # Optional Git Push
-    if push:
+    # Publish only after the dataset checks pass
+    if push and all_valid:
         print("\nAuto-committing and pushing V1 updates to GitHub...")
         git_commit_and_push_v1()
+    elif push:
+        print("\nGitHub deployment skipped because V1 integrity verification failed.")
 
     total_time = time.time() - start_time
-    print(f"\n  ✅ V1 Cycle Completed in {total_time:.2f}s (Rate limits encountered: {client.rate_limited_count})")
+    status = "✅" if all_valid else "❌"
+    print(f"\n  {status} V1 Cycle Completed in {total_time:.2f}s (Rate limits encountered: {client.rate_limited_count})")
     return all_valid
 
 
 def git_commit_and_push_v1():
     """Commits and pushes changes in v1 directory to GitHub."""
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    try:
-        subprocess.run(["git", "add", "v1/"], cwd=ROOT_DIR, check=True, capture_output=True)
-        res = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT_DIR, capture_output=True)
-        if res.returncode != 0:
-            msg = f"Auto-update Taras F1 API v1 datasets — {now}"
-            subprocess.run(["git", "commit", "-m", msg], cwd=ROOT_DIR, check=True, capture_output=True)
-            subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "main"], cwd=ROOT_DIR, check=False)
-            push_res = subprocess.run(["git", "push", "origin", "main"], cwd=ROOT_DIR, capture_output=True, text=True)
-            if push_res.returncode == 0:
-                print("  ✓ Pushed V1 updates to GitHub successfully.")
-            else:
-                print(f"  ⚠️ Git push warning: {push_res.stderr.strip()}")
-        else:
-            print("  ✓ No changes to commit in v1.")
-    except Exception as e:
-        print(f"  ⚠️ Git operation error: {e}")
+    subprocess.run(["git", "add", "v1/"], cwd=ROOT_DIR, check=True)
+    res = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT_DIR)
+    if res.returncode == 0:
+        print("  ✓ No changes to commit in v1.")
+        return
+    if res.returncode != 1:
+        raise subprocess.CalledProcessError(res.returncode, res.args)
+
+    msg = f"Auto-update Taras F1 API v1 datasets — {now}"
+    subprocess.run(["git", "commit", "-m", msg], cwd=ROOT_DIR, check=True)
+    subprocess.run(
+        ["git", "pull", "--rebase", "--autostash", "origin", "main"],
+        cwd=ROOT_DIR,
+        check=True,
+    )
+    subprocess.run(["git", "push", "origin", "main"], cwd=ROOT_DIR, check=True)
+    print("  ✓ Pushed V1 updates to GitHub successfully.")
 
 
 # =====================================================================
@@ -842,7 +847,10 @@ def parse_args():
     parser.add_argument("--interval", "-i", type=int, default=300, help="Loop interval in seconds (default: 300)")
     parser.add_argument("--stealth", action="store_true", help="Enable stealth mode with 3.5s - 6.5s delays")
     parser.add_argument("--force", "-f", action="store_true", help="Force re-scraping even if cached")
-    parser.add_argument("--push", "-p", action="store_true", help="Auto-commit and push to GitHub")
+    publish_group = parser.add_mutually_exclusive_group()
+    publish_group.add_argument("--push", "-p", dest="push", action="store_true", help="Publish updates to GitHub (default)")
+    publish_group.add_argument("--no-push", dest="push", action="store_false", help="Run and verify without publishing")
+    parser.set_defaults(push=True)
     parser.add_argument("--skip-standings", action="store_true", help="Skip driver & constructor standings")
     parser.add_argument("--skip-sessions", action="store_true", help="Skip session extraction")
     return parser.parse_args()

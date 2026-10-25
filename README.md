@@ -419,6 +419,9 @@ python run_v2.py --round 17
 
 # Offline build (rebuild all public endpoints without network requests)
 python run_v2.py --skip-scrape
+
+# Build and verify locally without committing/pushing to GitHub
+python run_v2.py --no-push
 ```
 
 #### V1 Legacy API Runner:
@@ -434,7 +437,12 @@ python run_v1.py --stealth
 
 # Only update standings without touching sessions
 python run_v1.py --skip-sessions
+
+# Run and verify locally without committing/pushing to GitHub
+python run_v1.py --no-push
 ```
+
+Both runners publish verified changes to GitHub by default. Publishing requires Git authentication for the configured `origin` remote; if GitHub rejects a push or a rebase encounters conflicts, the runner exits with an error. Use `--no-push` to opt out.
 
 ### 3. Verify Data Integrity
 ```bash

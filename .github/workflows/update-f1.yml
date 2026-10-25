@@ -38,7 +38,7 @@ jobs:
 
       - name: Execute Taras F1 API v2 Master Pipeline
         run: |
-          python run_v2.py --skip-scrape
+          python run_v2.py --skip-scrape --no-push
 
       - name: Verify 100% Data Integrity
         run: |

@@ -8,7 +8,8 @@ Usage:
   python run_v1.py --force          # Force re-scraping existing cached sessions
   python run_v1.py --loop           # Continuous scraping mode with polite jitter
   python run_v1.py --interval 300   # Set loop interval in seconds (default: 300)
-  python run_v1.py --push           # Auto-deploy to GitHub if verified
+  python run_v1.py                  # Run, verify, and publish to GitHub
+  python run_v1.py --no-push        # Run and verify locally only
   python run_v1.py --skip-sessions  # Only update standings and calendar
   python run_v1.py --skip-standings # Only update session classifications
 """

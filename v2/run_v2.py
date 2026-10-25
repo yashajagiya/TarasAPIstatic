@@ -10,7 +10,8 @@ Usage:
   python v2/run_v2.py --skip-scrape    # Build & verify without web requests
   python v2/run_v2.py --stealth        # Maximum safety mode (3.5s - 6.5s delays)
   python v2/run_v2.py --force          # Force re-scraping existing cached rounds
-  python v2/run_v2.py --push           # Auto-deploy to GitHub if verified
+  python v2/run_v2.py                  # Build, verify, and publish to GitHub
+  python v2/run_v2.py --no-push        # Build and verify locally only
 """
 
 import argparse
@@ -445,7 +446,7 @@ async def run_v2_cycle(
     skip_scrape: bool = False,
     force: bool = False,
     stealth: bool = False,
-    push: bool = False
+    push: bool = True
 ) -> bool:
     print("=" * 75)
     print(f"  🚀 TARAS F1 API v2 — ASYNCHRONOUS ANTI-BAN RUNNER [{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
@@ -485,13 +486,13 @@ async def run_v2_cycle(
     from test_v2_integrity import run_integrity_tests
     run_integrity_tests()
 
-    # Step 4: Optional Git Commit & Push
+    # Step 4: Publish verified changes unless explicitly disabled
     if push:
         print("\n[Step 4/4] Auto-committing and deploying updates to GitHub...")
         from build import git_commit_and_push
         git_commit_and_push(ROOT_DIR)
     else:
-        print("\n[Step 4/4] Deployment to GitHub skipped (use --push to commit & deploy).")
+        print("\n[Step 4/4] GitHub deployment skipped (--no-push).")
 
     total_time = time.time() - start_time
     print("\n" + "=" * 75)
@@ -558,7 +559,10 @@ def parse_args():
     parser.add_argument("--stealth", action="store_true", help="Enable maximum safety jitter (3.5s - 6.5s delay)")
     parser.add_argument("--loop", "-l", action="store_true", help="Run continuously in a polite jittered loop")
     parser.add_argument("--interval", "-i", type=int, default=300, help="Loop interval in seconds (default: 300)")
-    parser.add_argument("--push", "-p", action="store_true", help="Auto-commit and push to GitHub")
+    publish_group = parser.add_mutually_exclusive_group()
+    publish_group.add_argument("--push", "-p", dest="push", action="store_true", help="Publish updates to GitHub (default)")
+    publish_group.add_argument("--no-push", dest="push", action="store_false", help="Build and verify without publishing")
+    parser.set_defaults(push=True)
     return parser.parse_args()
 
 

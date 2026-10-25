@@ -29,10 +29,10 @@
     "completed_sessions": [
       "practice_1",
       "practice_2",
-      "practice_3"
+      "practice_3",
+      "qualifying"
     ],
     "upcoming_sessions": [
-      "qualifying",
       "race"
     ]
   },
