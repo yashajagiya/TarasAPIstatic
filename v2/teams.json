@@ -25,7 +25,7 @@
     ],
     "standings": {
       "rank": 1,
-      "points": 578,
+      "points": 607,
       "races": [
         {
           "round": 1,
@@ -183,9 +183,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 29,
+          "display_value": "29"
         },
         {
           "round": 21,
@@ -285,7 +285,7 @@
     ],
     "standings": {
       "rank": 2,
-      "points": 444,
+      "points": 474,
       "races": [
         {
           "round": 1,
@@ -443,9 +443,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 30,
+          "display_value": "30"
         },
         {
           "round": 21,
@@ -520,266 +520,6 @@
     "f1_url": "https://www.formula1.com/en/teams/ferrari"
   },
   {
-    "id": "mclaren",
-    "name": "McLaren",
-    "full_team_name": "McLaren Mastercard F1 Team",
-    "base": "Woking, United Kingdom",
-    "team_chief": "Andrea Stella",
-    "technical_chief": "Peter Prodromou / Neil Houldey",
-    "chassis": "MCL40",
-    "power_unit": "Mercedes",
-    "reserve_driver": "Leonardo Fornaroli, Pato O’Ward",
-    "first_team_entry": "1966",
-    "colors": {
-      "color_argb": "0xFFFF8000",
-      "color_hex": "#FF8000",
-      "accessible_color": "#804000"
-    },
-    "images": {
-      "car": "https://media.formula1.com/image/upload/c_fit,w_2400,h_1200/q_auto:best/d_common:f1:2026:fallback:car:2026fallbackcarright.webp/v1740000001/common/f1/2026/mclaren/2026mclarencarright.png",
-      "logo": "https://media.formula1.com/image/upload/c_fit,w_1024/e_sharpen:100/q_auto:best/v1740000001/common/f1/2026/mclaren/2026mclarenlogowhite.png"
-    },
-    "drivers": [
-      "lando-norris",
-      "oscar-piastri"
-    ],
-    "standings": {
-      "rank": 3,
-      "points": 339,
-      "races": [
-        {
-          "round": 1,
-          "race_code": "AUS",
-          "race_name": "Qatar Airways Australian Grand Prix",
-          "played": true,
-          "points": 10,
-          "display_value": "10"
-        },
-        {
-          "round": 2,
-          "race_code": "CHN",
-          "race_name": "Heineken Chinese Grand Prix",
-          "played": true,
-          "points": 8,
-          "display_value": "8"
-        },
-        {
-          "round": 3,
-          "race_code": "JPN",
-          "race_name": "Aramco Japanese Grand Prix",
-          "played": true,
-          "points": 28,
-          "display_value": "28"
-        },
-        {
-          "round": 4,
-          "race_code": "BRN",
-          "race_name": "Gulf Air Bahrain Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 5,
-          "race_code": "SAU",
-          "race_name": "STC Saudi Arabian Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 6,
-          "race_code": "MIA",
-          "race_name": "Crypto.com Miami Grand Prix",
-          "played": true,
-          "points": 15,
-          "display_value": "15"
-        },
-        {
-          "round": 7,
-          "race_code": "CAN",
-          "race_name": "Lenovo Canadian Grand Prix",
-          "played": true,
-          "points": 12,
-          "display_value": "12"
-        },
-        {
-          "round": 8,
-          "race_code": "MCO",
-          "race_name": "Monaco Grand Prix",
-          "played": true,
-          "points": 12,
-          "display_value": "12"
-        },
-        {
-          "round": 9,
-          "race_code": "BAR",
-          "race_name": "MSC Cruises Barcelona-Catalunya Grand Prix",
-          "played": true,
-          "points": 25,
-          "display_value": "25"
-        },
-        {
-          "round": 10,
-          "race_code": "AUT",
-          "race_name": "Lenovo Austrian Grand Prix",
-          "played": true,
-          "points": 18,
-          "display_value": "18"
-        },
-        {
-          "round": 11,
-          "race_code": "GBR",
-          "race_name": "Pirelli British Grand Prix",
-          "played": true,
-          "points": 20,
-          "display_value": "20"
-        },
-        {
-          "round": 12,
-          "race_code": "BEL",
-          "race_name": "Moët & Chandon Belgian Grand Prix",
-          "played": true,
-          "points": 16,
-          "display_value": "16"
-        },
-        {
-          "round": 13,
-          "race_code": "HUN",
-          "race_name": "AWS Hungarian Grand Prix",
-          "played": true,
-          "points": 25,
-          "display_value": "25"
-        },
-        {
-          "round": 14,
-          "race_code": "NLD",
-          "race_name": "Heineken Dutch Grand Prix",
-          "played": true,
-          "points": 43,
-          "display_value": "43"
-        },
-        {
-          "round": 15,
-          "race_code": "ITA",
-          "race_name": "Pirelli Italian Grand Prix",
-          "played": true,
-          "points": 22,
-          "display_value": "22"
-        },
-        {
-          "round": 16,
-          "race_code": "ESP",
-          "race_name": "Tag Heuer Spanish Grand Prix",
-          "played": true,
-          "points": 19,
-          "display_value": "19"
-        },
-        {
-          "round": 17,
-          "race_code": "AZE",
-          "race_name": "Qatar Airways Azerbaijan Grand Prix",
-          "played": true,
-          "points": 0,
-          "display_value": "-"
-        },
-        {
-          "round": 18,
-          "race_code": "MYS",
-          "race_name": "Gulf Air Bahrain Grand Prix in Malaysia",
-          "played": true,
-          "points": 10,
-          "display_value": "10"
-        },
-        {
-          "round": 19,
-          "race_code": "SGP",
-          "race_name": "Singapore Airlines Singapore Grand Prix",
-          "played": true,
-          "points": 23,
-          "display_value": "23"
-        },
-        {
-          "round": 20,
-          "race_code": "USA",
-          "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 21,
-          "race_code": "MEX",
-          "race_name": "Mexico City Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 22,
-          "race_code": "BRA",
-          "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 23,
-          "race_code": "LAS",
-          "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 24,
-          "race_code": "QAT",
-          "race_name": "Qatar Airways Qatar Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 25,
-          "race_code": "UAE",
-          "race_name": "Etihad Airways Abu Dhabi Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        }
-      ]
-    },
-    "biography": "Since entering the sport in 1966 under the guidance and restless endeavour of eponymous founder Bruce, McLaren's success has been nothing short of breathtaking. Five glittering decades have yielded countless victories, pole positions and podiums, not to mention 10 constructors' championships. What's more, some of the sport's greatest drivers made their names with the team, including Emerson Fittipaldi, Ayrton Senna, Mika Hakkinen and Lewis Hamilton...",
-    "season_2026": {
-      "Season Position": "3rd",
-      "Season Points": "316",
-      "Grand Prix Races": "16",
-      "Grand Prix Points": "263",
-      "Grand Prix Wins": "2",
-      "Grand Prix Podiums": "7",
-      "Grand Prix Poles": "3",
-      "Grand Prix Top 10s": "22",
-      "DHL Fastest Laps": "2",
-      "DNFs": "4",
-      "Sprint Races": "5",
-      "Sprint Points": "53",
-      "Sprint Wins": "1",
-      "Sprint Podiums": "5",
-      "Sprint Poles": "1",
-      "Sprint Top 10s": "10"
-    },
-    "team_summary": {
-      "Grands Prix Entered": "1010",
-      "Team Points": "8099.5",
-      "Highest Race Finish": "1 (x205)",
-      "Podiums": "451",
-      "Highest Grid Position": "1 (x180)",
-      "Pole Positions": "180",
-      "World Championships": "10"
-    },
-    "f1_url": "https://www.formula1.com/en/teams/mclaren"
-  },
-  {
     "id": "red-bull-racing",
     "name": "Red Bull Racing",
     "full_team_name": "Oracle Red Bull Racing",
@@ -804,8 +544,8 @@
       "isack-hadjar"
     ],
     "standings": {
-      "rank": 4,
-      "points": 332,
+      "rank": 3,
+      "points": 355,
       "races": [
         {
           "round": 1,
@@ -963,9 +703,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 23,
+          "display_value": "23"
         },
         {
           "round": 21,
@@ -1040,6 +780,266 @@
     "f1_url": "https://www.formula1.com/en/teams/red-bull-racing"
   },
   {
+    "id": "mclaren",
+    "name": "McLaren",
+    "full_team_name": "McLaren Mastercard F1 Team",
+    "base": "Woking, United Kingdom",
+    "team_chief": "Andrea Stella",
+    "technical_chief": "Peter Prodromou / Neil Houldey",
+    "chassis": "MCL40",
+    "power_unit": "Mercedes",
+    "reserve_driver": "Leonardo Fornaroli, Pato O’Ward",
+    "first_team_entry": "1966",
+    "colors": {
+      "color_argb": "0xFFFF8000",
+      "color_hex": "#FF8000",
+      "accessible_color": "#804000"
+    },
+    "images": {
+      "car": "https://media.formula1.com/image/upload/c_fit,w_2400,h_1200/q_auto:best/d_common:f1:2026:fallback:car:2026fallbackcarright.webp/v1740000001/common/f1/2026/mclaren/2026mclarencarright.png",
+      "logo": "https://media.formula1.com/image/upload/c_fit,w_1024/e_sharpen:100/q_auto:best/v1740000001/common/f1/2026/mclaren/2026mclarenlogowhite.png"
+    },
+    "drivers": [
+      "lando-norris",
+      "oscar-piastri"
+    ],
+    "standings": {
+      "rank": 4,
+      "points": 355,
+      "races": [
+        {
+          "round": 1,
+          "race_code": "AUS",
+          "race_name": "Qatar Airways Australian Grand Prix",
+          "played": true,
+          "points": 10,
+          "display_value": "10"
+        },
+        {
+          "round": 2,
+          "race_code": "CHN",
+          "race_name": "Heineken Chinese Grand Prix",
+          "played": true,
+          "points": 8,
+          "display_value": "8"
+        },
+        {
+          "round": 3,
+          "race_code": "JPN",
+          "race_name": "Aramco Japanese Grand Prix",
+          "played": true,
+          "points": 28,
+          "display_value": "28"
+        },
+        {
+          "round": 4,
+          "race_code": "BRN",
+          "race_name": "Gulf Air Bahrain Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 5,
+          "race_code": "SAU",
+          "race_name": "STC Saudi Arabian Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 6,
+          "race_code": "MIA",
+          "race_name": "Crypto.com Miami Grand Prix",
+          "played": true,
+          "points": 15,
+          "display_value": "15"
+        },
+        {
+          "round": 7,
+          "race_code": "CAN",
+          "race_name": "Lenovo Canadian Grand Prix",
+          "played": true,
+          "points": 12,
+          "display_value": "12"
+        },
+        {
+          "round": 8,
+          "race_code": "MCO",
+          "race_name": "Monaco Grand Prix",
+          "played": true,
+          "points": 12,
+          "display_value": "12"
+        },
+        {
+          "round": 9,
+          "race_code": "BAR",
+          "race_name": "MSC Cruises Barcelona-Catalunya Grand Prix",
+          "played": true,
+          "points": 25,
+          "display_value": "25"
+        },
+        {
+          "round": 10,
+          "race_code": "AUT",
+          "race_name": "Lenovo Austrian Grand Prix",
+          "played": true,
+          "points": 18,
+          "display_value": "18"
+        },
+        {
+          "round": 11,
+          "race_code": "GBR",
+          "race_name": "Pirelli British Grand Prix",
+          "played": true,
+          "points": 20,
+          "display_value": "20"
+        },
+        {
+          "round": 12,
+          "race_code": "BEL",
+          "race_name": "Moët & Chandon Belgian Grand Prix",
+          "played": true,
+          "points": 16,
+          "display_value": "16"
+        },
+        {
+          "round": 13,
+          "race_code": "HUN",
+          "race_name": "AWS Hungarian Grand Prix",
+          "played": true,
+          "points": 25,
+          "display_value": "25"
+        },
+        {
+          "round": 14,
+          "race_code": "NLD",
+          "race_name": "Heineken Dutch Grand Prix",
+          "played": true,
+          "points": 43,
+          "display_value": "43"
+        },
+        {
+          "round": 15,
+          "race_code": "ITA",
+          "race_name": "Pirelli Italian Grand Prix",
+          "played": true,
+          "points": 22,
+          "display_value": "22"
+        },
+        {
+          "round": 16,
+          "race_code": "ESP",
+          "race_name": "Tag Heuer Spanish Grand Prix",
+          "played": true,
+          "points": 19,
+          "display_value": "19"
+        },
+        {
+          "round": 17,
+          "race_code": "AZE",
+          "race_name": "Qatar Airways Azerbaijan Grand Prix",
+          "played": true,
+          "points": 0,
+          "display_value": "-"
+        },
+        {
+          "round": 18,
+          "race_code": "MYS",
+          "race_name": "Gulf Air Bahrain Grand Prix in Malaysia",
+          "played": true,
+          "points": 10,
+          "display_value": "10"
+        },
+        {
+          "round": 19,
+          "race_code": "SGP",
+          "race_name": "Singapore Airlines Singapore Grand Prix",
+          "played": true,
+          "points": 23,
+          "display_value": "23"
+        },
+        {
+          "round": 20,
+          "race_code": "USA",
+          "race_name": "MSC Cruises United States Grand Prix",
+          "played": true,
+          "points": 16,
+          "display_value": "16"
+        },
+        {
+          "round": 21,
+          "race_code": "MEX",
+          "race_name": "Mexico City Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 22,
+          "race_code": "BRA",
+          "race_name": "MSC Cruises São Paulo Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 23,
+          "race_code": "LAS",
+          "race_name": "Heineken Las Vegas Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 24,
+          "race_code": "QAT",
+          "race_name": "Qatar Airways Qatar Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 25,
+          "race_code": "UAE",
+          "race_name": "Etihad Airways Abu Dhabi Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        }
+      ]
+    },
+    "biography": "Since entering the sport in 1966 under the guidance and restless endeavour of eponymous founder Bruce, McLaren's success has been nothing short of breathtaking. Five glittering decades have yielded countless victories, pole positions and podiums, not to mention 10 constructors' championships. What's more, some of the sport's greatest drivers made their names with the team, including Emerson Fittipaldi, Ayrton Senna, Mika Hakkinen and Lewis Hamilton...",
+    "season_2026": {
+      "Season Position": "3rd",
+      "Season Points": "316",
+      "Grand Prix Races": "16",
+      "Grand Prix Points": "263",
+      "Grand Prix Wins": "2",
+      "Grand Prix Podiums": "7",
+      "Grand Prix Poles": "3",
+      "Grand Prix Top 10s": "22",
+      "DHL Fastest Laps": "2",
+      "DNFs": "4",
+      "Sprint Races": "5",
+      "Sprint Points": "53",
+      "Sprint Wins": "1",
+      "Sprint Podiums": "5",
+      "Sprint Poles": "1",
+      "Sprint Top 10s": "10"
+    },
+    "team_summary": {
+      "Grands Prix Entered": "1010",
+      "Team Points": "8099.5",
+      "Highest Race Finish": "1 (x205)",
+      "Podiums": "451",
+      "Highest Grid Position": "1 (x180)",
+      "Pole Positions": "180",
+      "World Championships": "10"
+    },
+    "f1_url": "https://www.formula1.com/en/teams/mclaren"
+  },
+  {
     "id": "racing-bulls",
     "name": "Racing Bulls",
     "full_team_name": "Visa Cash App Racing Bulls Formula One Team",
@@ -1066,7 +1066,7 @@
     ],
     "standings": {
       "rank": 5,
-      "points": 100,
+      "points": 102,
       "races": [
         {
           "round": 1,
@@ -1224,9 +1224,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 2,
+          "display_value": "2"
         },
         {
           "round": 21,
@@ -1326,7 +1326,7 @@
     ],
     "standings": {
       "rank": 6,
-      "points": 68,
+      "points": 69,
       "races": [
         {
           "round": 1,
@@ -1484,9 +1484,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 1,
+          "display_value": "1"
         },
         {
           "round": 21,
@@ -1744,9 +1744,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 21,
@@ -2004,9 +2004,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 21,
@@ -2264,9 +2264,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 21,
@@ -2524,9 +2524,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 21,
@@ -2784,9 +2784,9 @@
           "round": 20,
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 21,

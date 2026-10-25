@@ -20,7 +20,7 @@
     },
     "standings": {
       "rank": 1,
-      "points": 340,
+      "points": 365,
       "races": [
         {
           "round": 1,
@@ -179,8 +179,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 25,
+          "display_value": "25"
         },
         {
           "round": 21,
@@ -295,7 +295,7 @@
     },
     "standings": {
       "rank": 2,
-      "points": 238,
+      "points": 242,
       "races": [
         {
           "round": 1,
@@ -454,8 +454,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 4,
+          "display_value": "4"
         },
         {
           "round": 21,
@@ -569,7 +569,7 @@
     },
     "standings": {
       "rank": 3,
-      "points": 229,
+      "points": 241,
       "races": [
         {
           "round": 1,
@@ -728,8 +728,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 12,
+          "display_value": "12"
         },
         {
           "round": 21,
@@ -839,7 +839,7 @@
     },
     "standings": {
       "rank": 4,
-      "points": 221,
+      "points": 236,
       "races": [
         {
           "round": 1,
@@ -998,8 +998,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 15,
+          "display_value": "15"
         },
         {
           "round": 21,
@@ -1111,7 +1111,7 @@
     },
     "standings": {
       "rank": 5,
-      "points": 215,
+      "points": 233,
       "races": [
         {
           "round": 1,
@@ -1270,8 +1270,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 18,
+          "display_value": "18"
         },
         {
           "round": 21,
@@ -1383,7 +1383,7 @@
     },
     "standings": {
       "rank": 6,
-      "points": 201,
+      "points": 211,
       "races": [
         {
           "round": 1,
@@ -1542,8 +1542,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 10,
+          "display_value": "10"
         },
         {
           "round": 21,
@@ -1656,7 +1656,7 @@
     },
     "standings": {
       "rank": 7,
-      "points": 138,
+      "points": 144,
       "races": [
         {
           "round": 1,
@@ -1815,8 +1815,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 6,
+          "display_value": "6"
         },
         {
           "round": 21,
@@ -1929,7 +1929,7 @@
     },
     "standings": {
       "rank": 8,
-      "points": 97,
+      "points": 105,
       "races": [
         {
           "round": 1,
@@ -2088,8 +2088,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 8,
+          "display_value": "8"
         },
         {
           "round": 21,
@@ -2203,7 +2203,7 @@
     },
     "standings": {
       "rank": 9,
-      "points": 75,
+      "points": 77,
       "races": [
         {
           "round": 1,
@@ -2362,8 +2362,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 2,
+          "display_value": "2"
         },
         {
           "round": 21,
@@ -2477,7 +2477,7 @@
     },
     "standings": {
       "rank": 10,
-      "points": 41,
+      "points": 42,
       "races": [
         {
           "round": 1,
@@ -2636,8 +2636,8 @@
           "race_code": "USA",
           "race_name": "MSC Cruises United States Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 1,
+          "display_value": "1"
         },
         {
           "round": 21,

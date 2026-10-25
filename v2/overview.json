@@ -9,33 +9,18 @@
       "name": "Kimi Antonelli",
       "team": "Mercedes",
       "color_hex": "#27F4D2",
-      "points": 340,
+      "points": 365,
       "image": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mercedes/andant01/2026mercedesandant01right.webp"
     },
     "team": {
       "id": "mercedes",
       "name": "Mercedes",
       "color_hex": "#27F4D2",
-      "points": 578,
+      "points": 607,
       "logo": "https://media.formula1.com/image/upload/c_fit,w_1024/e_sharpen:100/q_auto:best/v1740000001/common/f1/2026/mercedes/2026mercedeslogowhite.png"
     }
   },
-  "active_weekend": {
-    "round": 18,
-    "race_name": "United States Grand Prix",
-    "circuit_name": "Official Circuit",
-    "country": null,
-    "status": "in_progress",
-    "completed_sessions": [
-      "practice_1",
-      "practice_2",
-      "practice_3",
-      "qualifying"
-    ],
-    "upcoming_sessions": [
-      "race"
-    ]
-  },
+  "active_weekend": null,
   "next_event": {
     "round": 18,
     "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026",
@@ -69,16 +54,16 @@
     }
   },
   "latest_race": {
-    "round": 17,
-    "race_name": "Formula 1 Singapore Airlines Singapore Grand Prix 2026",
-    "circuit_name": "Marina Bay Street Circuit",
-    "winner": "Max Verstappen",
+    "round": 18,
+    "race_name": "United States Grand Prix",
+    "circuit_name": "Official Circuit",
+    "winner": "Kimi Antonelli",
     "podium": [
       {
         "position": 1,
-        "driver_number": 3,
-        "name": "Max Verstappen",
-        "team": "Red Bull Racing"
+        "driver_number": 12,
+        "name": "Kimi Antonelli",
+        "team": "Mercedes"
       },
       {
         "position": 2,
@@ -88,9 +73,9 @@
       },
       {
         "position": 3,
-        "driver_number": 12,
-        "name": "Kimi Antonelli",
-        "team": "Mercedes"
+        "driver_number": 3,
+        "name": "Max Verstappen",
+        "team": "Red Bull Racing"
       }
     ]
   }
