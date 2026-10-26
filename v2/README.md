@@ -31,6 +31,7 @@ High-performance, edge-cached Formula 1 REST API served directly from GitHub Pag
   python run_v2.py --no-push           # Build and verify locally without publishing
   ```
 - **`build.py`:** Master endpoint aggregator, verifier, and publisher (`python v2/build.py`). Use `python v2/build.py --no-push` to keep the build local.
+- **`scrapers/scrape_calendar.py`:** Refreshes upcoming schedules from the `f1api.dev` calendar feed and merges winners from completed V2 round archives (`python v2/scrapers/scrape_calendar.py`). Curated circuit details and archived race schedules are preserved.
 
 The V2 runner and standalone builder commit and push verified updates to GitHub by default.
 - **`extract_rounds.py`:** Historical round extractor and normalizer (`python v2/extract_rounds.py --round 17`).

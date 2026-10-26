@@ -52,7 +52,7 @@
       "winner": {
         "drivernumber": 63,
         "fullName": "George Russell",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -99,8 +99,8 @@
       },
       "winner": {
         "drivernumber": 12,
-        "fullName": "Andrea Kimi Antonelli",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "fullName": "Kimi Antonelli",
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -147,8 +147,8 @@
       },
       "winner": {
         "drivernumber": 12,
-        "fullName": "Andrea Kimi Antonelli",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "fullName": "Kimi Antonelli",
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -195,8 +195,8 @@
       },
       "winner": {
         "drivernumber": 12,
-        "fullName": "Andrea Kimi Antonelli",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "fullName": "Kimi Antonelli",
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -243,8 +243,8 @@
       },
       "winner": {
         "drivernumber": 12,
-        "fullName": "Andrea Kimi Antonelli",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "fullName": "Kimi Antonelli",
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -291,8 +291,8 @@
       },
       "winner": {
         "drivernumber": 12,
-        "fullName": "Andrea Kimi Antonelli",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "fullName": "Kimi Antonelli",
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -340,7 +340,7 @@
       "winner": {
         "drivernumber": 44,
         "fullName": "Lewis Hamilton",
-        "teamWinner": "Scuderia Ferrari"
+        "teamWinner": "Ferrari"
       }
     },
     {
@@ -388,7 +388,7 @@
       "winner": {
         "drivernumber": 63,
         "fullName": "George Russell",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -436,7 +436,7 @@
       "winner": {
         "drivernumber": 16,
         "fullName": "Charles Leclerc",
-        "teamWinner": "Scuderia Ferrari"
+        "teamWinner": "Ferrari"
       }
     },
     {
@@ -483,8 +483,8 @@
       },
       "winner": {
         "drivernumber": 12,
-        "fullName": "Andrea Kimi Antonelli",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "fullName": "Kimi Antonelli",
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -530,9 +530,9 @@
         "gpName": "AWS Hungarian GP"
       },
       "winner": {
-        "drivernumber": 4,
+        "drivernumber": 1,
         "fullName": "Lando Norris",
-        "teamWinner": "McLaren Formula 1 Team"
+        "teamWinner": "McLaren"
       }
     },
     {
@@ -578,9 +578,9 @@
         "gpName": "Heineken Dutch GP"
       },
       "winner": {
-        "drivernumber": 4,
+        "drivernumber": 1,
         "fullName": "Lando Norris",
-        "teamWinner": "McLaren Formula 1 Team"
+        "teamWinner": "McLaren"
       }
     },
     {
@@ -627,8 +627,8 @@
       },
       "winner": {
         "drivernumber": 12,
-        "fullName": "Andrea Kimi Antonelli",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "fullName": "Kimi Antonelli",
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -675,8 +675,8 @@
       },
       "winner": {
         "drivernumber": 12,
-        "fullName": "Andrea Kimi Antonelli",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "fullName": "Kimi Antonelli",
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -724,7 +724,7 @@
       "winner": {
         "drivernumber": 63,
         "fullName": "George Russell",
-        "teamWinner": "Mercedes Formula 1 Team"
+        "teamWinner": "Mercedes"
       }
     },
     {
@@ -865,7 +865,11 @@
         "trackImage": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackaustindetailed.webp",
         "gpName": "MSC Cruises United States GP"
       },
-      "winner": null
+      "winner": {
+        "drivernumber": 12,
+        "fullName": "Kimi Antonelli",
+        "teamWinner": "Mercedes"
+      }
     },
     {
       "raceId": "mexican_2026",

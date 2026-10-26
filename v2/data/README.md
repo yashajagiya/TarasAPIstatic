@@ -11,7 +11,7 @@ v2/data/
 ├── registries/           ← Authoritative 2026 Season Registries & Encyclopedias
 │   ├── drivers_registry.json    • All 23 drivers: permanent numbers, codes, team colors, portrait URLs
 │   ├── teams_registry.json      • All 11 constructors: chassis, power units, team chiefs, technical specs
-│   ├── calendar_master.json     • Canonical 24-race calendar: circuits, corners, lap records, UTC times
+│   ├── calendar_master.json     • V2 calendar registry: circuits, corners, lap records, UTC times
 │   ├── drivers_data.json        • Deep encyclopedia: biographies, 16 season metrics, 8 career statistics
 │   └── races_data.json          • Circuit details: geo-coordinates, circuit lengths, track metadata
 │
@@ -46,13 +46,16 @@ v2/data/
 
 ## 🛠️ Data Flow & Build Pipeline
 
-1. **Scraping (`run_v2.py` / `extract_rounds.py`):**
+1. **Calendar refresh (`scrapers/scrape_calendar.py`):**
+   - Upcoming schedules are refreshed from the `f1api.dev` season calendar feed.
+   - Completed round archives are the source of truth for race winners; archived schedules and curated circuit metadata are retained.
+2. **Session scraping (`run_v2.py` / `extract_rounds.py`):**
    - Live weekend sessions are parsed and written into `data/sessions/current/`.
    - Completed weekend packages are archived into `data/sessions/rounds/round_{N}.json`.
-2. **Aggregating (`build.py`):**
+3. **Aggregating (`build.py`):**
    - Reads registries from `data/registries/`.
    - Merges standings from `data/standings/` and live ESPN feed.
    - Combines image assets from `data/images/`.
    - Compiles session packages from `data/sessions/rounds/` and `data/sessions/current/`.
-3. **Publishing (`v2/*.json` & `v2/results/`):**
+4. **Publishing (`v2/*.json` & `v2/results/`):**
    - Emits standardized, edge-cached static REST endpoints directly into `v2/` for GitHub Pages distribution.

@@ -50,7 +50,7 @@
     "winner": {
       "drivernumber": 63,
       "fullName": "George Russell",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -115,8 +115,8 @@
     },
     "winner": {
       "drivernumber": 12,
-      "fullName": "Andrea Kimi Antonelli",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "fullName": "Kimi Antonelli",
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -169,8 +169,8 @@
     },
     "winner": {
       "drivernumber": 12,
-      "fullName": "Andrea Kimi Antonelli",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "fullName": "Kimi Antonelli",
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -235,8 +235,8 @@
     },
     "winner": {
       "drivernumber": 12,
-      "fullName": "Andrea Kimi Antonelli",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "fullName": "Kimi Antonelli",
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -301,8 +301,8 @@
     },
     "winner": {
       "drivernumber": 12,
-      "fullName": "Andrea Kimi Antonelli",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "fullName": "Kimi Antonelli",
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -355,8 +355,8 @@
     },
     "winner": {
       "drivernumber": 12,
-      "fullName": "Andrea Kimi Antonelli",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "fullName": "Kimi Antonelli",
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -410,7 +410,7 @@
     "winner": {
       "drivernumber": 44,
       "fullName": "Lewis Hamilton",
-      "teamWinner": "Scuderia Ferrari"
+      "teamWinner": "Ferrari"
     }
   },
   {
@@ -464,7 +464,7 @@
     "winner": {
       "drivernumber": 63,
       "fullName": "George Russell",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -530,7 +530,7 @@
     "winner": {
       "drivernumber": 16,
       "fullName": "Charles Leclerc",
-      "teamWinner": "Scuderia Ferrari"
+      "teamWinner": "Ferrari"
     }
   },
   {
@@ -583,8 +583,8 @@
     },
     "winner": {
       "drivernumber": 12,
-      "fullName": "Andrea Kimi Antonelli",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "fullName": "Kimi Antonelli",
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -636,9 +636,9 @@
       }
     },
     "winner": {
-      "drivernumber": 4,
+      "drivernumber": 1,
       "fullName": "Lando Norris",
-      "teamWinner": "McLaren Formula 1 Team"
+      "teamWinner": "McLaren"
     }
   },
   {
@@ -702,9 +702,9 @@
       }
     },
     "winner": {
-      "drivernumber": 4,
+      "drivernumber": 1,
       "fullName": "Lando Norris",
-      "teamWinner": "McLaren Formula 1 Team"
+      "teamWinner": "McLaren"
     }
   },
   {
@@ -757,8 +757,8 @@
     },
     "winner": {
       "drivernumber": 12,
-      "fullName": "Andrea Kimi Antonelli",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "fullName": "Kimi Antonelli",
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -811,8 +811,8 @@
     },
     "winner": {
       "drivernumber": 12,
-      "fullName": "Andrea Kimi Antonelli",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "fullName": "Kimi Antonelli",
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -866,7 +866,7 @@
     "winner": {
       "drivernumber": 63,
       "fullName": "George Russell",
-      "teamWinner": "Mercedes Formula 1 Team"
+      "teamWinner": "Mercedes"
     }
   },
   {
@@ -1037,7 +1037,11 @@
         "time": "21:00:00Z"
       }
     },
-    "winner": null
+    "winner": {
+      "drivernumber": 12,
+      "fullName": "Kimi Antonelli",
+      "teamWinner": "Mercedes"
+    }
   },
   {
     "round": 19,

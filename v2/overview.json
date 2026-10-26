@@ -22,33 +22,33 @@
   },
   "active_weekend": null,
   "next_event": {
-    "round": 18,
-    "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026",
-    "circuit_name": "Circuit of The Americas",
-    "country": "United States",
+    "round": 19,
+    "race_name": "Formula 1 Gran Premio de La Ciudad de México 2026",
+    "circuit_name": "Autódromo Hermanos Rodríguez",
+    "country": "Mexico",
     "schedule": {
       "race": {
-        "date": "2026-10-25",
-        "time": "19:00:00Z"
+        "date": "2026-11-01",
+        "time": "20:00:00Z"
       },
       "qualy": {
-        "date": "2026-10-24",
+        "date": "2026-10-31",
         "time": "21:00:00Z"
       },
       "fp1": {
-        "date": "2026-10-23",
-        "time": "17:30:00Z"
+        "date": "2026-10-30",
+        "time": "18:30:00Z"
       },
       "fp2": {
-        "date": "2026-10-23",
-        "time": "21:30:00Z"
+        "date": "2026-10-30",
+        "time": "22:00:00Z"
       },
       "fp3": {
-        "date": "2026-10-24",
-        "time": "17:00:00Z"
+        "date": "2026-10-31",
+        "time": "17:30:00Z"
       },
       "qualifying": {
-        "date": "2026-10-24",
+        "date": "2026-10-31",
         "time": "21:00:00Z"
       }
     }
