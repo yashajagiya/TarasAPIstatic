@@ -865,7 +865,11 @@
         "trackImage": null,
         "gpName": null
       },
-      "winner": null
+      "winner": {
+        "drivernumber": 12,
+        "fullName": "Andrea Kimi Antonelli",
+        "teamWinner": "Mercedes Formula 1 Team"
+      }
     },
     {
       "raceId": "mexican_2026",
