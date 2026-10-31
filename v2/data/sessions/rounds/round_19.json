@@ -1,13 +1,10 @@
 {
   "round": 19,
-  "race_name": "Formula 1 Gran Premio de La Ciudad de México 2026",
-  "country": "Mexico",
-  "circuit_id": "hermanos_rodriguez",
-  "circuit_name": "Autódromo Hermanos Rodríguez, Mexico City",
-  "date_range": "30 Oct - 01 Nov 2026",
+  "season": 2026,
+  "race_name": "Mexico Grand Prix",
+  "circuit_name": "Official Circuit",
   "status": "in_progress",
-  "weekend_format": "conventional",
-  "has_sprint": false,
+  "is_sprint": false,
   "completed_sessions": [
     "practice_1",
     "practice_2",
@@ -619,8 +616,7 @@
       }
     ],
     "qualifying": null,
-    "sprint_qualifying": null,
-    "sprint_race": null,
     "race": null
-  }
+  },
+  "last_updated": "2026-10-31T20:52:16Z"
 }
