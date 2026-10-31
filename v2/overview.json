@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "round_current": 18,
+  "round_current": 19,
   "round_total": 23,
   "championship_leader": {
     "driver": {
@@ -20,7 +20,22 @@
       "logo": "https://media.formula1.com/image/upload/c_fit,w_1024/e_sharpen:100/q_auto:best/v1740000001/common/f1/2026/mercedes/2026mercedeslogowhite.png"
     }
   },
-  "active_weekend": null,
+  "active_weekend": {
+    "round": 19,
+    "race_name": "Formula 1 Gran Premio de La Ciudad de México 2026",
+    "circuit_name": "Autódromo Hermanos Rodríguez",
+    "country": "Mexico",
+    "status": "in_progress",
+    "completed_sessions": [
+      "practice_1",
+      "practice_2",
+      "practice_3"
+    ],
+    "upcoming_sessions": [
+      "qualifying",
+      "race"
+    ]
+  },
   "next_event": {
     "round": 19,
     "race_name": "Formula 1 Gran Premio de La Ciudad de México 2026",
@@ -56,7 +71,7 @@
   "latest_race": {
     "round": 18,
     "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026",
-    "circuit_name": "Circuit of The Americas",
+    "circuit_name": "Circuit of The Americas, Austin",
     "winner": "Kimi Antonelli",
     "podium": [
       {
