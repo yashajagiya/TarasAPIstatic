@@ -25,7 +25,7 @@
     ],
     "standings": {
       "rank": 1,
-      "points": 607,
+      "points": 630,
       "races": [
         {
           "round": 1,
@@ -191,9 +191,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 23,
+          "display_value": "23"
         },
         {
           "round": 22,
@@ -285,7 +285,7 @@
     ],
     "standings": {
       "rank": 2,
-      "points": 474,
+      "points": 504,
       "races": [
         {
           "round": 1,
@@ -451,9 +451,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 30,
+          "display_value": "30"
         },
         {
           "round": 22,
@@ -545,7 +545,7 @@
     ],
     "standings": {
       "rank": 3,
-      "points": 355,
+      "points": 382,
       "races": [
         {
           "round": 1,
@@ -711,9 +711,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 27,
+          "display_value": "27"
         },
         {
           "round": 22,
@@ -805,7 +805,7 @@
     ],
     "standings": {
       "rank": 4,
-      "points": 355,
+      "points": 365,
       "races": [
         {
           "round": 1,
@@ -971,9 +971,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 10,
+          "display_value": "10"
         },
         {
           "round": 22,
@@ -1066,7 +1066,7 @@
     ],
     "standings": {
       "rank": 5,
-      "points": 102,
+      "points": 108,
       "races": [
         {
           "round": 1,
@@ -1232,9 +1232,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 6,
+          "display_value": "6"
         },
         {
           "round": 22,
@@ -1492,9 +1492,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 22,
@@ -1586,7 +1586,7 @@
     ],
     "standings": {
       "rank": 7,
-      "points": 30,
+      "points": 31,
       "races": [
         {
           "round": 1,
@@ -1752,9 +1752,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 1,
+          "display_value": "1"
         },
         {
           "round": 22,
@@ -1841,12 +1841,12 @@
       "logo": "https://media.formula1.com/image/upload/c_fit,w_1024/e_sharpen:100/q_auto:best/v1740000001/common/f1/2026/audi/2026audilogowhite.png"
     },
     "drivers": [
-      "nico-hulkenberg",
-      "gabriel-bortoleto"
+      "gabriel-bortoleto",
+      "nico-hulkenberg"
     ],
     "standings": {
       "rank": 8,
-      "points": 23,
+      "points": 27,
       "races": [
         {
           "round": 1,
@@ -2012,9 +2012,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 8,
+          "display_value": "8"
         },
         {
           "round": 22,
@@ -2272,9 +2272,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 22,
@@ -2532,9 +2532,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 22,
@@ -2792,9 +2792,9 @@
           "round": 21,
           "race_code": "MEX",
           "race_name": "Mexico City Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 22,
