@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "round_current": 19,
+  "round_current": 20,
   "round_total": 23,
   "championship_leader": {
     "driver": {
@@ -21,18 +21,18 @@
     }
   },
   "active_weekend": {
-    "round": 19,
-    "race_name": "Formula 1 Gran Premio de La Ciudad de México 2026",
-    "circuit_name": "Autódromo Hermanos Rodríguez",
-    "country": "Mexico",
+    "round": 20,
+    "race_name": "Brazil Grand Prix",
+    "circuit_name": "Official Circuit",
+    "country": null,
     "status": "in_progress",
     "completed_sessions": [
       "practice_1",
       "practice_2",
-      "practice_3"
+      "practice_3",
+      "qualifying"
     ],
     "upcoming_sessions": [
-      "qualifying",
       "race"
     ]
   },
@@ -69,28 +69,28 @@
     }
   },
   "latest_race": {
-    "round": 18,
-    "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026",
-    "circuit_name": "Circuit of The Americas, Austin",
-    "winner": "Kimi Antonelli",
+    "round": 19,
+    "race_name": "Mexico Grand Prix",
+    "circuit_name": "Official Circuit",
+    "winner": "Max Verstappen",
     "podium": [
       {
         "position": 1,
-        "driver_number": 12,
-        "name": "Kimi Antonelli",
-        "team": "Mercedes"
+        "driver_number": 3,
+        "name": "Max Verstappen",
+        "team": "Red Bull Racing"
       },
       {
         "position": 2,
-        "driver_number": 16,
-        "name": "Charles Leclerc",
+        "driver_number": 44,
+        "name": "Lewis Hamilton",
         "team": "Ferrari"
       },
       {
         "position": 3,
-        "driver_number": 3,
-        "name": "Max Verstappen",
-        "team": "Red Bull Racing"
+        "driver_number": 12,
+        "name": "Kimi Antonelli",
+        "team": "Mercedes"
       }
     ]
   }
