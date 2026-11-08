@@ -2,7 +2,7 @@
   "round": 19,
   "season": 2026,
   "race_name": "Mexico Grand Prix",
-  "circuit_name": "Official Circuit",
+  "circuit_name": "Autódromo Hermanos Rodríguez, Mexico City",
   "status": "completed",
   "is_sprint": false,
   "completed_sessions": [
@@ -1081,5 +1081,5 @@
       }
     ]
   },
-  "last_updated": "2026-11-08T05:36:39Z"
+  "last_updated": "2026-11-08T06:12:38Z"
 }

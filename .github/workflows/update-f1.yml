@@ -35,12 +35,48 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Refresh V2 Calendar from season feed and archived results
+        id: calendar-refresh
+        continue-on-error: true
         run: |
           python v2/scrapers/scrape_calendar.py
 
+      - name: Report calendar refresh failure
+        if: steps.calendar-refresh.outcome == 'failure'
+        run: |
+          echo "::warning::Calendar feed refresh failed; continuing with the checked-in calendar registry."
+          echo "Calendar feed refresh failed; the update used the checked-in calendar registry." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Select latest completed Grand Prix weekend
+        id: latest-round
+        run: |
+          ROUND=$(python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          calendar = json.loads(Path("v2/data/registries/calendar_master.json").read_text(encoding="utf-8"))
+          now = datetime.now(timezone.utc)
+          completed = []
+          for race in calendar.get("races", []):
+              scheduled = race.get("schedule", {}).get("race", {})
+              if not scheduled.get("date") or not scheduled.get("time"):
+                  continue
+              race_time = datetime.fromisoformat(
+                  f"{scheduled['date']}T{scheduled['time'].replace('Z', '+00:00')}"
+              )
+              if race_time <= now:
+                  completed.append((race_time, race["round"]))
+
+          if not completed:
+              raise SystemExit("No completed Grand Prix found in the calendar")
+          print(max(completed)[1])
+          PY
+          )
+          echo "round=$ROUND" >> "$GITHUB_OUTPUT"
+
       - name: Execute Taras F1 API v2 Master Pipeline
         run: |
-          python run_v2.py --skip-scrape --no-push
+          python run_v2.py --round "${{ steps.latest-round.outputs.round }}" --force --no-push
 
       - name: Verify 100% Data Integrity
         run: |

@@ -218,15 +218,19 @@ async def scrape_session_table_async(
     h1 = soup.find("h1")
     title = clean_str(h1.text) if h1 else ""
 
-    caption = soup.find("p", class_=re.compile(r"f1-header-sub", re.I))
-    header_meta = clean_str(caption.text) if caption else ""
-
     date_text, circuit_text = "", ""
-    if "-" in header_meta:
-        parts = [p.strip() for p in header_meta.split("-", 1)]
-        date_text, circuit_text = parts[0], parts[1]
+    header_details = h1.find_all_next("p", limit=2) if h1 else []
+    if len(header_details) >= 2:
+        date_text = clean_str(header_details[0].text)
+        circuit_text = clean_str(header_details[1].text)
     else:
-        circuit_text = header_meta
+        caption = soup.find("p", class_=re.compile(r"f1-header-sub", re.I))
+        header_meta = clean_str(caption.text) if caption else ""
+        if "-" in header_meta:
+            parts = [part.strip() for part in header_meta.split("-", 1)]
+            date_text, circuit_text = parts[0], parts[1]
+        else:
+            circuit_text = header_meta
 
     table = soup.find("table")
     if not table:
