@@ -25,7 +25,7 @@
     ],
     "standings": {
       "rank": 1,
-      "points": 630,
+      "points": 652,
       "races": [
         {
           "round": 1,
@@ -199,9 +199,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 22,
+          "display_value": "22"
         },
         {
           "round": 23,
@@ -285,7 +285,7 @@
     ],
     "standings": {
       "rank": 2,
-      "points": 504,
+      "points": 510,
       "races": [
         {
           "round": 1,
@@ -459,9 +459,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 6,
+          "display_value": "6"
         },
         {
           "round": 23,
@@ -545,7 +545,7 @@
     ],
     "standings": {
       "rank": 3,
-      "points": 382,
+      "points": 415,
       "races": [
         {
           "round": 1,
@@ -719,9 +719,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 33,
+          "display_value": "33"
         },
         {
           "round": 23,
@@ -805,7 +805,7 @@
     ],
     "standings": {
       "rank": 4,
-      "points": 365,
+      "points": 398,
       "races": [
         {
           "round": 1,
@@ -979,9 +979,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 33,
+          "display_value": "33"
         },
         {
           "round": 23,
@@ -1066,7 +1066,7 @@
     ],
     "standings": {
       "rank": 5,
-      "points": 108,
+      "points": 114,
       "races": [
         {
           "round": 1,
@@ -1240,9 +1240,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 6,
+          "display_value": "6"
         },
         {
           "round": 23,
@@ -1500,9 +1500,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,
@@ -1760,9 +1760,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,
@@ -1846,7 +1846,7 @@
     ],
     "standings": {
       "rank": 8,
-      "points": 27,
+      "points": 28,
       "races": [
         {
           "round": 1,
@@ -2020,9 +2020,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 1,
+          "display_value": "1"
         },
         {
           "round": 23,
@@ -2280,9 +2280,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,
@@ -2540,9 +2540,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,
@@ -2800,9 +2800,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,

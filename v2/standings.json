@@ -10,7 +10,7 @@
       "code": "ANT",
       "team_name": "Mercedes",
       "nationality": "Italy",
-      "points": 380,
+      "points": 390,
       "races": [
         {
           "round": 1,
@@ -185,8 +185,8 @@
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 10,
+          "display_value": "10"
         },
         {
           "round": 23,
@@ -223,7 +223,7 @@
       "code": "VER",
       "team_name": "Red Bull Racing",
       "nationality": "Netherlands",
-      "points": 261,
+      "points": 279,
       "races": [
         {
           "round": 1,
@@ -398,8 +398,8 @@
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 18,
+          "display_value": "18"
         },
         {
           "round": 23,
@@ -429,6 +429,219 @@
     },
     {
       "rank": 3,
+      "driver_id": "george-russell",
+      "driver_number": 63,
+      "name": "George Russell",
+      "short_name": "G. Russell",
+      "code": "RUS",
+      "team_name": "Mercedes",
+      "nationality": "Britain",
+      "points": 262,
+      "races": [
+        {
+          "round": 1,
+          "race_code": "AUS",
+          "race_name": "Qatar Airways Australian Grand Prix",
+          "played": true,
+          "points": 25,
+          "display_value": "25"
+        },
+        {
+          "round": 2,
+          "race_code": "CHN",
+          "race_name": "Heineken Chinese Grand Prix",
+          "played": true,
+          "points": 26,
+          "display_value": "26"
+        },
+        {
+          "round": 3,
+          "race_code": "JPN",
+          "race_name": "Aramco Japanese Grand Prix",
+          "played": true,
+          "points": 12,
+          "display_value": "12"
+        },
+        {
+          "round": 4,
+          "race_code": "BRN",
+          "race_name": "Gulf Air Bahrain Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 5,
+          "race_code": "SAU",
+          "race_name": "STC Saudi Arabian Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 6,
+          "race_code": "MIA",
+          "race_name": "Crypto.com Miami Grand Prix",
+          "played": true,
+          "points": 17,
+          "display_value": "17"
+        },
+        {
+          "round": 7,
+          "race_code": "CAN",
+          "race_name": "Lenovo Canadian Grand Prix",
+          "played": true,
+          "points": 8,
+          "display_value": "8"
+        },
+        {
+          "round": 8,
+          "race_code": "MCO",
+          "race_name": "Monaco Grand Prix",
+          "played": true,
+          "points": 0,
+          "display_value": "-"
+        },
+        {
+          "round": 9,
+          "race_code": "BAR",
+          "race_name": "MSC Cruises Barcelona-Catalunya Grand Prix",
+          "played": true,
+          "points": 18,
+          "display_value": "18"
+        },
+        {
+          "round": 10,
+          "race_code": "AUT",
+          "race_name": "Lenovo Austrian Grand Prix",
+          "played": true,
+          "points": 25,
+          "display_value": "25"
+        },
+        {
+          "round": 11,
+          "race_code": "GBR",
+          "race_name": "Pirelli British Grand Prix",
+          "played": true,
+          "points": 23,
+          "display_value": "23"
+        },
+        {
+          "round": 12,
+          "race_code": "BEL",
+          "race_name": "Moët & Chandon Belgian Grand Prix",
+          "played": true,
+          "points": 0,
+          "display_value": "-"
+        },
+        {
+          "round": 13,
+          "race_code": "HUN",
+          "race_name": "AWS Hungarian Grand Prix",
+          "played": true,
+          "points": 6,
+          "display_value": "6"
+        },
+        {
+          "round": 14,
+          "race_code": "NLD",
+          "race_name": "Heineken Dutch Grand Prix",
+          "played": true,
+          "points": 23,
+          "display_value": "23"
+        },
+        {
+          "round": 15,
+          "race_code": "ITA",
+          "race_name": "Pirelli Italian Grand Prix",
+          "played": true,
+          "points": 18,
+          "display_value": "18"
+        },
+        {
+          "round": 16,
+          "race_code": "ESP",
+          "race_name": "Tag Heuer Spanish Grand Prix",
+          "played": true,
+          "points": 10,
+          "display_value": "10"
+        },
+        {
+          "round": 17,
+          "race_code": "AZE",
+          "race_name": "Qatar Airways Azerbaijan Grand Prix",
+          "played": true,
+          "points": 25,
+          "display_value": "25"
+        },
+        {
+          "round": 18,
+          "race_code": "MYS",
+          "race_name": "Gulf Air Bahrain Grand Prix in Malaysia",
+          "played": true,
+          "points": 0,
+          "display_value": "-"
+        },
+        {
+          "round": 19,
+          "race_code": "SGP",
+          "race_name": "Singapore Airlines Singapore Grand Prix",
+          "played": true,
+          "points": 2,
+          "display_value": "2"
+        },
+        {
+          "round": 20,
+          "race_code": "USA",
+          "race_name": "MSC Cruises United States Grand Prix",
+          "played": true,
+          "points": 4,
+          "display_value": "4"
+        },
+        {
+          "round": 21,
+          "race_code": "MEX",
+          "race_name": "Mexico City Grand Prix",
+          "played": true,
+          "points": 8,
+          "display_value": "8"
+        },
+        {
+          "round": 22,
+          "race_code": "BRA",
+          "race_name": "MSC Cruises São Paulo Grand Prix",
+          "played": true,
+          "points": 12,
+          "display_value": "12"
+        },
+        {
+          "round": 23,
+          "race_code": "LAS",
+          "race_name": "Heineken Las Vegas Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 24,
+          "race_code": "QAT",
+          "race_name": "Qatar Airways Qatar Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 25,
+          "race_code": "UAE",
+          "race_name": "Etihad Airways Abu Dhabi Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        }
+      ]
+    },
+    {
+      "rank": 4,
       "driver_id": "lewis-hamilton",
       "driver_number": 44,
       "name": "Lewis Hamilton",
@@ -436,7 +649,7 @@
       "code": "HAM",
       "team_name": "Ferrari",
       "nationality": "Britain",
-      "points": 259,
+      "points": 261,
       "races": [
         {
           "round": 1,
@@ -611,221 +824,8 @@
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
-        },
-        {
-          "round": 23,
-          "race_code": "LAS",
-          "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 24,
-          "race_code": "QAT",
-          "race_name": "Qatar Airways Qatar Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 25,
-          "race_code": "UAE",
-          "race_name": "Etihad Airways Abu Dhabi Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        }
-      ]
-    },
-    {
-      "rank": 4,
-      "driver_id": "george-russell",
-      "driver_number": 63,
-      "name": "George Russell",
-      "short_name": "G. Russell",
-      "code": "RUS",
-      "team_name": "Mercedes",
-      "nationality": "Britain",
-      "points": 250,
-      "races": [
-        {
-          "round": 1,
-          "race_code": "AUS",
-          "race_name": "Qatar Airways Australian Grand Prix",
-          "played": true,
-          "points": 25,
-          "display_value": "25"
-        },
-        {
-          "round": 2,
-          "race_code": "CHN",
-          "race_name": "Heineken Chinese Grand Prix",
-          "played": true,
-          "points": 26,
-          "display_value": "26"
-        },
-        {
-          "round": 3,
-          "race_code": "JPN",
-          "race_name": "Aramco Japanese Grand Prix",
-          "played": true,
-          "points": 12,
-          "display_value": "12"
-        },
-        {
-          "round": 4,
-          "race_code": "BRN",
-          "race_name": "Gulf Air Bahrain Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 5,
-          "race_code": "SAU",
-          "race_name": "STC Saudi Arabian Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
-        },
-        {
-          "round": 6,
-          "race_code": "MIA",
-          "race_name": "Crypto.com Miami Grand Prix",
-          "played": true,
-          "points": 17,
-          "display_value": "17"
-        },
-        {
-          "round": 7,
-          "race_code": "CAN",
-          "race_name": "Lenovo Canadian Grand Prix",
-          "played": true,
-          "points": 8,
-          "display_value": "8"
-        },
-        {
-          "round": 8,
-          "race_code": "MCO",
-          "race_name": "Monaco Grand Prix",
-          "played": true,
-          "points": 0,
-          "display_value": "-"
-        },
-        {
-          "round": 9,
-          "race_code": "BAR",
-          "race_name": "MSC Cruises Barcelona-Catalunya Grand Prix",
-          "played": true,
-          "points": 18,
-          "display_value": "18"
-        },
-        {
-          "round": 10,
-          "race_code": "AUT",
-          "race_name": "Lenovo Austrian Grand Prix",
-          "played": true,
-          "points": 25,
-          "display_value": "25"
-        },
-        {
-          "round": 11,
-          "race_code": "GBR",
-          "race_name": "Pirelli British Grand Prix",
-          "played": true,
-          "points": 23,
-          "display_value": "23"
-        },
-        {
-          "round": 12,
-          "race_code": "BEL",
-          "race_name": "Moët & Chandon Belgian Grand Prix",
-          "played": true,
-          "points": 0,
-          "display_value": "-"
-        },
-        {
-          "round": 13,
-          "race_code": "HUN",
-          "race_name": "AWS Hungarian Grand Prix",
-          "played": true,
-          "points": 6,
-          "display_value": "6"
-        },
-        {
-          "round": 14,
-          "race_code": "NLD",
-          "race_name": "Heineken Dutch Grand Prix",
-          "played": true,
-          "points": 23,
-          "display_value": "23"
-        },
-        {
-          "round": 15,
-          "race_code": "ITA",
-          "race_name": "Pirelli Italian Grand Prix",
-          "played": true,
-          "points": 18,
-          "display_value": "18"
-        },
-        {
-          "round": 16,
-          "race_code": "ESP",
-          "race_name": "Tag Heuer Spanish Grand Prix",
-          "played": true,
-          "points": 10,
-          "display_value": "10"
-        },
-        {
-          "round": 17,
-          "race_code": "AZE",
-          "race_name": "Qatar Airways Azerbaijan Grand Prix",
-          "played": true,
-          "points": 25,
-          "display_value": "25"
-        },
-        {
-          "round": 18,
-          "race_code": "MYS",
-          "race_name": "Gulf Air Bahrain Grand Prix in Malaysia",
-          "played": true,
-          "points": 0,
-          "display_value": "-"
-        },
-        {
-          "round": 19,
-          "race_code": "SGP",
-          "race_name": "Singapore Airlines Singapore Grand Prix",
-          "played": true,
           "points": 2,
           "display_value": "2"
-        },
-        {
-          "round": 20,
-          "race_code": "USA",
-          "race_name": "MSC Cruises United States Grand Prix",
-          "played": true,
-          "points": 4,
-          "display_value": "4"
-        },
-        {
-          "round": 21,
-          "race_code": "MEX",
-          "race_name": "Mexico City Grand Prix",
-          "played": true,
-          "points": 8,
-          "display_value": "8"
-        },
-        {
-          "round": 22,
-          "race_code": "BRA",
-          "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": true,
-          "points": 0,
-          "display_value": "-"
         },
         {
           "round": 23,
@@ -862,7 +862,7 @@
       "code": "LEC",
       "team_name": "Ferrari",
       "nationality": "Monaco",
-      "points": 245,
+      "points": 249,
       "races": [
         {
           "round": 1,
@@ -1037,8 +1037,8 @@
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 4,
+          "display_value": "4"
         },
         {
           "round": 23,
@@ -1075,7 +1075,7 @@
       "code": "NOR",
       "team_name": "McLaren",
       "nationality": "Britain",
-      "points": 221,
+      "points": 246,
       "races": [
         {
           "round": 1,
@@ -1250,8 +1250,8 @@
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 25,
+          "display_value": "25"
         },
         {
           "round": 23,
@@ -1288,7 +1288,7 @@
       "code": "PIA",
       "team_name": "McLaren",
       "nationality": "Australia",
-      "points": 144,
+      "points": 152,
       "races": [
         {
           "round": 1,
@@ -1463,8 +1463,8 @@
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 8,
+          "display_value": "8"
         },
         {
           "round": 23,
@@ -1501,7 +1501,7 @@
       "code": "HAD",
       "team_name": "Red Bull Racing",
       "nationality": "France",
-      "points": 107,
+      "points": 122,
       "races": [
         {
           "round": 1,
@@ -1676,8 +1676,8 @@
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 15,
+          "display_value": "15"
         },
         {
           "round": 23,
@@ -1714,7 +1714,7 @@
       "code": "LAW",
       "team_name": "Racing Bulls",
       "nationality": "New Zealand",
-      "points": 83,
+      "points": 89,
       "races": [
         {
           "round": 1,
@@ -1889,8 +1889,8 @@
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 6,
+          "display_value": "6"
         },
         {
           "round": 23,
@@ -2992,7 +2992,7 @@
       "code": "HUL",
       "team_name": "Audi",
       "nationality": "Germany",
-      "points": 13,
+      "points": 14,
       "races": [
         {
           "round": 1,
@@ -3167,8 +3167,8 @@
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
           "played": true,
-          "points": 0,
-          "display_value": "-"
+          "points": 1,
+          "display_value": "1"
         },
         {
           "round": 23,
@@ -5112,6 +5112,219 @@
           "display_value": ""
         }
       ]
+    },
+    {
+      "rank": 25,
+      "driver_id": "rafaelcamara",
+      "driver_number": null,
+      "name": "Rafael Câmara",
+      "short_name": "R. Câmara",
+      "code": "",
+      "team_name": "",
+      "nationality": "Brazil",
+      "points": 0,
+      "races": [
+        {
+          "round": 1,
+          "race_code": "AUS",
+          "race_name": "Qatar Airways Australian Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 2,
+          "race_code": "CHN",
+          "race_name": "Heineken Chinese Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 3,
+          "race_code": "JPN",
+          "race_name": "Aramco Japanese Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 4,
+          "race_code": "BRN",
+          "race_name": "Gulf Air Bahrain Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 5,
+          "race_code": "SAU",
+          "race_name": "STC Saudi Arabian Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 6,
+          "race_code": "MIA",
+          "race_name": "Crypto.com Miami Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 7,
+          "race_code": "CAN",
+          "race_name": "Lenovo Canadian Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 8,
+          "race_code": "MCO",
+          "race_name": "Monaco Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 9,
+          "race_code": "BAR",
+          "race_name": "MSC Cruises Barcelona-Catalunya Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 10,
+          "race_code": "AUT",
+          "race_name": "Lenovo Austrian Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 11,
+          "race_code": "GBR",
+          "race_name": "Pirelli British Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 12,
+          "race_code": "BEL",
+          "race_name": "Moët & Chandon Belgian Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 13,
+          "race_code": "HUN",
+          "race_name": "AWS Hungarian Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 14,
+          "race_code": "NLD",
+          "race_name": "Heineken Dutch Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 15,
+          "race_code": "ITA",
+          "race_name": "Pirelli Italian Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 16,
+          "race_code": "ESP",
+          "race_name": "Tag Heuer Spanish Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 17,
+          "race_code": "AZE",
+          "race_name": "Qatar Airways Azerbaijan Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 18,
+          "race_code": "MYS",
+          "race_name": "Gulf Air Bahrain Grand Prix in Malaysia",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 19,
+          "race_code": "SGP",
+          "race_name": "Singapore Airlines Singapore Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 20,
+          "race_code": "USA",
+          "race_name": "MSC Cruises United States Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 21,
+          "race_code": "MEX",
+          "race_name": "Mexico City Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 22,
+          "race_code": "BRA",
+          "race_name": "MSC Cruises São Paulo Grand Prix",
+          "played": true,
+          "points": 0,
+          "display_value": "-"
+        },
+        {
+          "round": 23,
+          "race_code": "LAS",
+          "race_name": "Heineken Las Vegas Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 24,
+          "race_code": "QAT",
+          "race_name": "Qatar Airways Qatar Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        },
+        {
+          "round": 25,
+          "race_code": "UAE",
+          "race_name": "Etihad Airways Abu Dhabi Grand Prix",
+          "played": false,
+          "points": 0,
+          "display_value": ""
+        }
+      ]
     }
   ],
   "teams": [
@@ -5119,7 +5332,7 @@
       "rank": 1,
       "team_id": "mercedes",
       "team_name": "Mercedes",
-      "points": 630,
+      "points": 652,
       "races": [
         {
           "round": 1,
@@ -5293,9 +5506,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 22,
+          "display_value": "22"
         },
         {
           "round": 23,
@@ -5327,7 +5540,7 @@
       "rank": 2,
       "team_id": "ferrari",
       "team_name": "Ferrari",
-      "points": 504,
+      "points": 510,
       "races": [
         {
           "round": 1,
@@ -5501,9 +5714,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 6,
+          "display_value": "6"
         },
         {
           "round": 23,
@@ -5535,7 +5748,7 @@
       "rank": 3,
       "team_id": "redbullracing",
       "team_name": "Red Bull Racing",
-      "points": 382,
+      "points": 415,
       "races": [
         {
           "round": 1,
@@ -5709,9 +5922,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 33,
+          "display_value": "33"
         },
         {
           "round": 23,
@@ -5743,7 +5956,7 @@
       "rank": 4,
       "team_id": "mclaren",
       "team_name": "McLaren",
-      "points": 365,
+      "points": 398,
       "races": [
         {
           "round": 1,
@@ -5917,9 +6130,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 33,
+          "display_value": "33"
         },
         {
           "round": 23,
@@ -5951,7 +6164,7 @@
       "rank": 5,
       "team_id": "racingbulls",
       "team_name": "Racing Bulls",
-      "points": 108,
+      "points": 114,
       "races": [
         {
           "round": 1,
@@ -6125,9 +6338,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 6,
+          "display_value": "6"
         },
         {
           "round": 23,
@@ -6333,9 +6546,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,
@@ -6541,9 +6754,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,
@@ -6575,7 +6788,7 @@
       "rank": 8,
       "team_id": "audi",
       "team_name": "Audi",
-      "points": 27,
+      "points": 28,
       "races": [
         {
           "round": 1,
@@ -6749,9 +6962,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 1,
+          "display_value": "1"
         },
         {
           "round": 23,
@@ -6957,9 +7170,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,
@@ -7165,9 +7378,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,
@@ -7373,9 +7586,9 @@
           "round": 22,
           "race_code": "BRA",
           "race_name": "MSC Cruises São Paulo Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 23,
