@@ -12,14 +12,14 @@
     "biography": "Mercedes’ modern F1 revival started with the creation of a works squad for 2010 - the platform for a meteoric rise up the Grand Prix order. The team generated huge excitement from the off with the sensational return of Michael Schumacher, but headlines soon followed on track: three podiums in their debut season, all via Nico Rosberg - who then claimed a breakthrough pole/victory double at China in 2012.",
     "season_2026": {
       "Season Position": "1st",
-      "Season Points": "607",
-      "Grand Prix Races": "18",
-      "Grand Prix Points": "542",
+      "Season Points": "652",
+      "Grand Prix Races": "20",
+      "Grand Prix Points": "587",
       "Grand Prix Wins": "12",
-      "Grand Prix Podiums": "23",
+      "Grand Prix Podiums": "24",
       "Grand Prix Poles": "12",
-      "Grand Prix Top 10s": "30",
-      "DHL Fastest Laps": "9",
+      "Grand Prix Top 10s": "34",
+      "DHL Fastest Laps": "10",
       "DNFs": "4",
       "Sprint Races": "6",
       "Sprint Points": "65",
@@ -29,13 +29,13 @@
       "Sprint Top 10s": "11"
     },
     "team_summary": {
-      "Grands Prix Entered": "347",
-      "Team Points": "8766.5",
+      "Grands Prix Entered": "349",
+      "Team Points": "8811.5",
       "Highest Race Finish": "1 (x134)",
-      "Podiums": "219",
+      "Podiums": "220",
       "Highest Grid Position": "1 (x148)",
       "Pole Positions": "148",
-      "World Championships": "8"
+      "World Championships": "9"
     },
     "team_profile": {
       "Full Team Name": "Mercedes-AMG PETRONAS Formula One Team",
@@ -61,14 +61,14 @@
     "biography": "For many, Ferrari and Formula 1 racing have become inseparable. The only team to have competed in every season since the world championship began, the Prancing Horse has grown from the humble dream of founder Enzo Ferrari to become one of the most iconic and recognised brands in the world. Success came quickly through the likes of Alberto Ascari and John Surtees, and continued – in amongst leaner times – with Niki Lauda in the 1970s and then Michael Schumacher in the 2000s, when Ferrari claimed a then unprecedented five consecutive title doubles, securing their status as the most successful and decorated team in F1 history...",
     "season_2026": {
       "Season Position": "2nd",
-      "Season Points": "474",
-      "Grand Prix Races": "18",
-      "Grand Prix Points": "413",
+      "Season Points": "510",
+      "Grand Prix Races": "20",
+      "Grand Prix Points": "449",
       "Grand Prix Wins": "2",
-      "Grand Prix Podiums": "12",
-      "Grand Prix Poles": "0",
-      "Grand Prix Top 10s": "32",
-      "DHL Fastest Laps": "5",
+      "Grand Prix Podiums": "13",
+      "Grand Prix Poles": "1",
+      "Grand Prix Top 10s": "36",
+      "DHL Fastest Laps": "6",
       "DNFs": "4",
       "Sprint Races": "6",
       "Sprint Points": "61",
@@ -78,12 +78,12 @@
       "Sprint Top 10s": "12"
     },
     "team_summary": {
-      "Grands Prix Entered": "1141",
-      "Team Points": "11149",
+      "Grands Prix Entered": "1143",
+      "Team Points": "11185",
       "Highest Race Finish": "1 (x251)",
-      "Podiums": "650",
-      "Highest Grid Position": "1 (x254)",
-      "Pole Positions": "254",
+      "Podiums": "651",
+      "Highest Grid Position": "1 (x255)",
+      "Pole Positions": "255",
       "World Championships": "16"
     },
     "team_profile": {
@@ -110,13 +110,13 @@
     "biography": "Since entering the sport in 1966 under the guidance and restless endeavour of eponymous founder Bruce, McLaren's success has been nothing short of breathtaking. Five glittering decades have yielded countless victories, pole positions and podiums, not to mention 10 constructors' championships. What's more, some of the sport's greatest drivers made their names with the team, including Emerson Fittipaldi, Ayrton Senna, Mika Hakkinen and Lewis Hamilton...",
     "season_2026": {
       "Season Position": "4th",
-      "Season Points": "355",
-      "Grand Prix Races": "18",
-      "Grand Prix Points": "301",
-      "Grand Prix Wins": "2",
-      "Grand Prix Podiums": "7",
-      "Grand Prix Poles": "3",
-      "Grand Prix Top 10s": "26",
+      "Season Points": "398",
+      "Grand Prix Races": "20",
+      "Grand Prix Points": "344",
+      "Grand Prix Wins": "3",
+      "Grand Prix Podiums": "8",
+      "Grand Prix Poles": "4",
+      "Grand Prix Top 10s": "29",
       "DHL Fastest Laps": "2",
       "DNFs": "4",
       "Sprint Races": "6",
@@ -127,12 +127,12 @@
       "Sprint Top 10s": "11"
     },
     "team_summary": {
-      "Grands Prix Entered": "1012",
-      "Team Points": "8138.5",
-      "Highest Race Finish": "1 (x205)",
-      "Podiums": "451",
-      "Highest Grid Position": "1 (x180)",
-      "Pole Positions": "180",
+      "Grands Prix Entered": "1014",
+      "Team Points": "8181.5",
+      "Highest Race Finish": "1 (x206)",
+      "Podiums": "452",
+      "Highest Grid Position": "1 (x181)",
+      "Pole Positions": "181",
       "World Championships": "10"
     },
     "team_profile": {
@@ -149,7 +149,51 @@
   {
     "slug": "red-bull-racing",
     "url": "https://www.formula1.com/en/teams/red-bull-racing",
-    "error": "500 Server Error: Internal Server Error for url: https://www.formula1.com/en/teams/red-bull-racing"
+    "hero": {
+      "name": "Red Bull Racing",
+      "team_color": "0xFF3671C6",
+      "accessible_color": "#142948",
+      "team_car": "https://media.formula1.com/image/upload/c_fit,w_2400,h_1200/q_auto:best/d_common:f1:2026:fallback:car:2026fallbackcarright.webp/v1740000001/common/f1/2026/redbullracing/2026redbullracingcarright.png",
+      "team_logo": "https://media.formula1.com/image/upload/c_fit,w_1024/e_sharpen:100/q_auto:best/v1740000001/common/f1/2026/redbullracing/2026redbullracinglogowhite.png"
+    },
+    "biography": "Red Bull were no strangers to F1 - as sponsors - prior to formally entering as a works team in 2004. Nonetheless, the scale of their success over the following decade was staggering. After a first podium in 2006, the team hit their stride in 2009, claiming six victories and second in the constructors' standings. Over the next four seasons they were a tour de force, claiming consecutive title doubles between 2010 and 2013, with Sebastian Vettel emerging as the sport's youngest quadruple champion. Now they are recapturing that glory with an equally exciting talent – one named Max Verstappen…",
+    "season_2026": {
+      "Season Position": "3rd",
+      "Season Points": "415",
+      "Grand Prix Races": "20",
+      "Grand Prix Points": "395",
+      "Grand Prix Wins": "3",
+      "Grand Prix Podiums": "15",
+      "Grand Prix Poles": "2",
+      "Grand Prix Top 10s": "32",
+      "DHL Fastest Laps": "2",
+      "DNFs": "6",
+      "Sprint Races": "6",
+      "Sprint Points": "20",
+      "Sprint Wins": "1",
+      "Sprint Podiums": "1",
+      "Sprint Poles": "1",
+      "Sprint Top 10s": "8"
+    },
+    "team_summary": {
+      "Grands Prix Entered": "438",
+      "Team Points": "8703",
+      "Highest Race Finish": "1 (x133)",
+      "Podiums": "246",
+      "Highest Grid Position": "1 (x113)",
+      "Pole Positions": "113",
+      "World Championships": "6"
+    },
+    "team_profile": {
+      "Full Team Name": "Oracle Red Bull Racing",
+      "Base": "Milton Keynes, United Kingdom",
+      "Team Chief": "Laurent Mekies",
+      "Technical Chief": "Pierre Waché",
+      "Chassis": "RB22",
+      "Power Unit": "Red Bull Ford",
+      "Reserve Driver": "Yuki Tsunoda",
+      "First Team Entry": "1997"
+    }
   },
   {
     "slug": "racing-bulls",
@@ -164,15 +208,15 @@
     "biography": "Established in 2006 as a squad in which young drivers from Red Bull’s prodigious talent pool could cut their F1 teeth, Racing Bulls – originally named Toro Rosso, then AlphaTauri, then RB – were formed from the ashes of the plucky Minardi team. Sebastian Vettel gave validity to the approach almost immediately, delivering a fairy-tale win in 2008, before going on to enjoy world championship success with parent team Red Bull Racing. Today the ethos of nurturing talent still holds true, though the Italian squad are no longer simply a ‘B team’ but a constructor in their own right...",
     "season_2026": {
       "Season Position": "5th",
-      "Season Points": "102",
-      "Grand Prix Races": "18",
-      "Grand Prix Points": "94",
+      "Season Points": "114",
+      "Grand Prix Races": "20",
+      "Grand Prix Points": "106",
       "Grand Prix Wins": "0",
       "Grand Prix Podiums": "0",
       "Grand Prix Poles": "0",
-      "Grand Prix Top 10s": "23",
+      "Grand Prix Top 10s": "25",
       "DHL Fastest Laps": "0",
-      "DNFs": "1",
+      "DNFs": "2",
       "Sprint Races": "6",
       "Sprint Points": "8",
       "Sprint Wins": "0",
@@ -181,8 +225,8 @@
       "Sprint Top 10s": "6"
     },
     "team_summary": {
-      "Grands Prix Entered": "417",
-      "Team Points": "1049",
+      "Grands Prix Entered": "419",
+      "Team Points": "1061",
       "Highest Race Finish": "1 (x2)",
       "Podiums": "6",
       "Highest Grid Position": "1 (x1)",
@@ -214,7 +258,7 @@
     "season_2026": {
       "Season Position": "6th",
       "Season Points": "69",
-      "Grand Prix Races": "18",
+      "Grand Prix Races": "20",
       "Grand Prix Points": "67",
       "Grand Prix Wins": "0",
       "Grand Prix Podiums": "0",
@@ -230,7 +274,7 @@
       "Sprint Top 10s": "5"
     },
     "team_summary": {
-      "Grands Prix Entered": "410",
+      "Grands Prix Entered": "412",
       "Team Points": "2069",
       "Highest Race Finish": "1 (x21)",
       "Podiums": "60",
@@ -262,15 +306,15 @@
     "biography": "Haas made their highly impressive debut in 2016, and in the process became the first all-American-led F1 squad in three decades. Founded by industrialist Gene Haas, they are based in the United States on the same Kannapolis, North Carolina facility as his championship-winning NASCAR Sprint Cup Series team, Stewart-Haas Racing. The Ferrari-powered team also have a UK factory in Banbury…",
     "season_2026": {
       "Season Position": "7th",
-      "Season Points": "30",
-      "Grand Prix Races": "18",
-      "Grand Prix Points": "26",
+      "Season Points": "31",
+      "Grand Prix Races": "20",
+      "Grand Prix Points": "27",
       "Grand Prix Wins": "0",
       "Grand Prix Podiums": "0",
       "Grand Prix Poles": "0",
-      "Grand Prix Top 10s": "7",
+      "Grand Prix Top 10s": "8",
       "DHL Fastest Laps": "0",
-      "DNFs": "6",
+      "DNFs": "7",
       "Sprint Races": "6",
       "Sprint Points": "4",
       "Sprint Wins": "0",
@@ -279,8 +323,8 @@
       "Sprint Top 10s": "4"
     },
     "team_summary": {
-      "Grands Prix Entered": "232",
-      "Team Points": "416",
+      "Grands Prix Entered": "234",
+      "Team Points": "417",
       "Highest Race Finish": "4 (x2)",
       "Podiums": "0",
       "Highest Grid Position": "4 (x1)",
@@ -311,13 +355,13 @@
     "biography": "Given Audi’s decades of success in global motorsport, it’s hard to believe that 2026 marks the famous German marque’s first foray into Formula 1. Having announced plans to become a power unit supplier back in 2022, their hunger to compete quickly grew – resulting in the acquisition of the Sauber team, now the first-ever Audi works squad.",
     "season_2026": {
       "Season Position": "8th",
-      "Season Points": "23",
-      "Grand Prix Races": "18",
-      "Grand Prix Points": "21",
+      "Season Points": "28",
+      "Grand Prix Races": "20",
+      "Grand Prix Points": "26",
       "Grand Prix Wins": "0",
       "Grand Prix Podiums": "0",
       "Grand Prix Poles": "0",
-      "Grand Prix Top 10s": "7",
+      "Grand Prix Top 10s": "9",
       "DHL Fastest Laps": "0",
       "DNFs": "4",
       "Sprint Races": "6",
@@ -328,11 +372,11 @@
       "Sprint Top 10s": "2"
     },
     "team_summary": {
-      "Grands Prix Entered": "18",
-      "Team Points": "23",
-      "Highest Race Finish": "8 (x4)",
+      "Grands Prix Entered": "20",
+      "Team Points": "28",
+      "Highest Race Finish": "8 (x5)",
       "Podiums": "0",
-      "Highest Grid Position": "8 (x1)",
+      "Highest Grid Position": "4 (x1)",
       "Pole Positions": "0",
       "World Championships": "0"
     },
@@ -350,7 +394,51 @@
   {
     "slug": "williams",
     "url": "https://www.formula1.com/en/teams/williams",
-    "error": "500 Server Error: Internal Server Error for url: https://www.formula1.com/en/teams/williams"
+    "hero": {
+      "name": "Williams",
+      "team_color": "0xFF1868DB",
+      "accessible_color": "#082145",
+      "team_car": "https://media.formula1.com/image/upload/c_fit,w_2400,h_1200/q_auto:best/d_common:f1:2026:fallback:car:2026fallbackcarright.webp/v1740000001/common/f1/2026/williams/2026williamscarright.png",
+      "team_logo": "https://media.formula1.com/image/upload/c_fit,w_1024/e_sharpen:100/q_auto:best/v1740000001/common/f1/2026/williams/2026williamslogowhite.png"
+    },
+    "biography": "Driven on by the brilliance and passion of the late Sir Frank Williams, Williams grew from humble beginnings to become a Formula 1 behemoth, unrivalled by all except Ferrari and McLaren in terms of enduring success. Over the past four decades the team has racked up Grand Prix wins and championship glory, and in the process nurtured some of the greatest talents in the sport, both in and out the cockpit. And, following the Williams family's decision to step aside after the 2020 sale of the team to Dorilton Capital, a new era has begun...",
+    "season_2026": {
+      "Season Position": "9th",
+      "Season Points": "12",
+      "Grand Prix Races": "20",
+      "Grand Prix Points": "12",
+      "Grand Prix Wins": "0",
+      "Grand Prix Podiums": "0",
+      "Grand Prix Poles": "0",
+      "Grand Prix Top 10s": "6",
+      "DHL Fastest Laps": "0",
+      "DNFs": "9",
+      "Sprint Races": "6",
+      "Sprint Points": "0",
+      "Sprint Wins": "0",
+      "Sprint Podiums": "0",
+      "Sprint Poles": "0",
+      "Sprint Top 10s": "1"
+    },
+    "team_summary": {
+      "Grands Prix Entered": "871",
+      "Team Points": "3780",
+      "Highest Race Finish": "1 (x114)",
+      "Podiums": "245",
+      "Highest Grid Position": "1 (x128)",
+      "Pole Positions": "128",
+      "World Championships": "9"
+    },
+    "team_profile": {
+      "Full Team Name": "Atlassian Williams F1 Team",
+      "Base": "Grove, United Kingdom",
+      "Team Chief": "James Vowles",
+      "Technical Chief": "Pat Fry",
+      "Chassis": "FW48",
+      "Power Unit": "Mercedes",
+      "Reserve Driver": "",
+      "First Team Entry": "1978"
+    }
   },
   {
     "slug": "aston-martin",
@@ -366,14 +454,14 @@
     "season_2026": {
       "Season Position": "10th",
       "Season Points": "7",
-      "Grand Prix Races": "18",
+      "Grand Prix Races": "20",
       "Grand Prix Points": "7",
       "Grand Prix Wins": "0",
       "Grand Prix Podiums": "0",
       "Grand Prix Poles": "0",
       "Grand Prix Top 10s": "3",
       "DHL Fastest Laps": "0",
-      "DNFs": "17",
+      "DNFs": "20",
       "Sprint Races": "6",
       "Sprint Points": "0",
       "Sprint Wins": "0",
@@ -382,7 +470,7 @@
       "Sprint Top 10s": "0"
     },
     "team_summary": {
-      "Grands Prix Entered": "170",
+      "Grands Prix Entered": "172",
       "Team Points": "870",
       "Highest Race Finish": "1 (x1)",
       "Podiums": "12",
@@ -415,14 +503,14 @@
     "season_2026": {
       "Season Position": "11th",
       "Season Points": "0",
-      "Grand Prix Races": "18",
+      "Grand Prix Races": "20",
       "Grand Prix Points": "0",
       "Grand Prix Wins": "0",
       "Grand Prix Podiums": "0",
       "Grand Prix Poles": "0",
       "Grand Prix Top 10s": "0",
       "DHL Fastest Laps": "0",
-      "DNFs": "14",
+      "DNFs": "15",
       "Sprint Races": "6",
       "Sprint Points": "0",
       "Sprint Wins": "0",
@@ -431,7 +519,7 @@
       "Sprint Top 10s": "0"
     },
     "team_summary": {
-      "Grands Prix Entered": "18",
+      "Grands Prix Entered": "20",
       "Team Points": "0",
       "Highest Race Finish": "13 (x1)",
       "Podiums": "0",
