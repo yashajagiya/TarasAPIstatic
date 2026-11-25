@@ -913,7 +913,11 @@
         "trackImage": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmexicocitydetailed.webp",
         "gpName": "Mexico City GP"
       },
-      "winner": null
+      "winner": {
+        "drivernumber": 3,
+        "fullName": "Max Verstappen",
+        "teamWinner": "Red Bull Racing"
+      }
     },
     {
       "raceId": "brazilian_2026",
@@ -957,7 +961,11 @@
         "trackImage": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
         "gpName": "MSC Cruises São Paulo GP"
       },
-      "winner": null
+      "winner": {
+        "drivernumber": 1,
+        "fullName": "Lando Norris",
+        "teamWinner": "McLaren"
+      }
     },
     {
       "raceId": "las_vegas_2026",
@@ -1001,7 +1009,11 @@
         "trackImage": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracklasvegasdetailed.webp",
         "gpName": "Heineken Las Vegas GP"
       },
-      "winner": null
+      "winner": {
+        "drivernumber": 3,
+        "fullName": "Max Verstappen",
+        "teamWinner": "Red Bull Racing"
+      }
     },
     {
       "raceId": "qatar_2026",

@@ -642,13 +642,18 @@ async def scrape_v1_active_sessions_async(client: AntiBanClient, force: bool = F
             continue
 
         target_file = os.path.join(V1_DIR, out_rel)
+        expected_race_name = f"{race_name.upper()} - {label.replace(' ', '_')}"
 
-        # Smart Cache Guard: Skip network if already archived and completed
+        # Smart Cache Guard: Skip network only if already archived for THIS weekend
         if not force and os.path.exists(target_file):
             try:
                 with open(target_file, "r", encoding="utf-8") as f:
                     cached = json.load(f)
-                if cached.get("results") and len(cached.get("results")) >= 10:
+                if (
+                    cached.get("raceName", "").upper() == expected_race_name
+                    and cached.get("results")
+                    and len(cached.get("results")) >= 10
+                ):
                     print(f"  ⚡ [Cache Hit] {label:<18} is fully archived. Skipping scrape.")
                     continue
             except Exception:
@@ -668,14 +673,19 @@ async def scrape_v1_active_sessions_async(client: AntiBanClient, force: bool = F
 
         # Extract date from page if present
         date_str = sched.get(skey, {}).get("date", "2026")
-        caption = soup.find("p", class_=re.compile(r"f1-header-sub", re.I))
-        if caption and "-" in caption.text:
-            date_str = clean_str(caption.text.split("-")[0])
+        h1 = soup.find("h1")
+        header_details = h1.find_all_next("p", limit=2) if h1 else []
+        if header_details and clean_str(header_details[0].text):
+            date_str = clean_str(header_details[0].text)
+        else:
+            caption = soup.find("p", class_=re.compile(r"f1-header-sub", re.I))
+            if caption and "-" in caption.text:
+                date_str = clean_str(caption.text.split("-")[0])
 
         payload = {
             "country": country,
             "session": label,
-            "raceName": f"{race_name.upper()} - {label.replace(' ', '_')}",
+            "raceName": expected_race_name,
             "date": date_str,
             "circuitName": circuit_name,
             "circuitId": circuit_id,

@@ -1,10 +1,13 @@
 {
   "round": 20,
-  "season": 2026,
-  "race_name": "Brazil Grand Prix",
+  "race_name": "Formula 1 MSC Cruises Grande Premio de Sao Paulo 2026",
+  "country": "Brazil",
+  "circuit_id": "interlagos",
   "circuit_name": "Autódromo José Carlos Pace, São Paulo",
+  "date_range": "06 - 08 Nov 2026",
   "status": "completed",
-  "is_sprint": false,
+  "weekend_format": "conventional",
+  "has_sprint": false,
   "completed_sessions": [
     "practice_1",
     "practice_2",
@@ -171,7 +174,7 @@
       {
         "position": 18,
         "driver_number": 51,
-        "driver_name": "Rafael Câmara",
+        "driver_name": "Rafael Camara",
         "driver_code": "CAM",
         "team": "Haas F1 Team",
         "time_or_gap": "+1.979s",
@@ -353,7 +356,7 @@
       {
         "position": 16,
         "driver_number": 51,
-        "driver_name": "Rafael Câmara",
+        "driver_name": "Rafael Camara",
         "driver_code": "CAM",
         "team": "Haas F1 Team",
         "time_or_gap": "+1.798s",
@@ -535,7 +538,7 @@
       {
         "position": 15,
         "driver_number": 51,
-        "driver_name": "Rafael Câmara",
+        "driver_name": "Rafael Camara",
         "driver_code": "CAM",
         "team": "Haas F1 Team",
         "time_or_gap": "+1.359s",
@@ -741,7 +744,7 @@
       {
         "position": 13,
         "driver_number": 51,
-        "driver_name": "Rafael Câmara",
+        "driver_name": "Rafael Camara",
         "driver_code": "CAM",
         "team": "Haas F1 Team",
         "q1": "1:32.809",
@@ -849,6 +852,8 @@
         "laps": 5
       }
     ],
+    "sprint_qualifying": null,
+    "sprint_race": null,
     "race": [
       {
         "position": 1,
@@ -1043,7 +1048,7 @@
       {
         "position": 20,
         "driver_number": 51,
-        "driver_name": "Rafael Câmara",
+        "driver_name": "Rafael Camara",
         "driver_code": "CAM",
         "team": "Haas F1 Team",
         "laps": 69,
@@ -1071,6 +1076,5 @@
         "points": 0.0
       }
     ]
-  },
-  "last_updated": "2026-11-16T09:13:13Z"
+  }
 }

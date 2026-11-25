@@ -325,13 +325,29 @@ def build_v2_api():
 
     unified_teams.sort(key=lambda t: (t["standings"]["rank"] is None, t["standings"]["rank"] or 999))
 
-    # 6. Build CALENDAR Dataset (All 22 rounds with track maps and all session schedules)
+    # 6. Collect Weekend Sessions first so completed round winners enrich calendar & overview
+    events = load_all_known_sessions()
+    weekend = get_latest_weekend_event(events)
+
+    # 7. Build CALENDAR Dataset (All rounds with track maps, session schedules, and reconciled winners)
     races_raw = calendar_master.get("races", [])
     unified_calendar = []
     for r in races_raw:
+        round_num = r.get("round")
         circuit = r.get("circuit", {})
         sched = r.get("schedule", {})
         winner = r.get("winner")
+
+        ev = events.get(f"round_{round_num}")
+        if not winner and ev and ev.get("status") == "completed":
+            ev_race = ev.get("sessions", {}).get("race") or []
+            p1 = next((row for row in ev_race if str(row.get("position")) == "1"), ev_race[0] if ev_race else None)
+            if p1 and p1.get("driver_name"):
+                winner = {
+                    "drivernumber": p1.get("driver_number"),
+                    "fullName": p1.get("driver_name"),
+                    "teamWinner": p1.get("team"),
+                }
 
         has_sprint = bool("sprintQualy" in sched or "sprintRace" in sched or "sprint_qualifying" in sched or "sprint_race" in sched)
 
@@ -346,7 +362,7 @@ def build_v2_api():
             sched_normalized["qualifying"] = sched["qualy"]
 
         race_obj = {
-            "round": r.get("round"),
+            "round": round_num,
             "id": r.get("raceId"),
             "name": r.get("raceName"),
             "has_sprint": has_sprint,
@@ -371,10 +387,6 @@ def build_v2_api():
             "winner": winner
         }
         unified_calendar.append(race_obj)
-
-    # 7. Collect Weekend Sessions
-    events = load_all_known_sessions()
-    weekend = get_latest_weekend_event(events)
 
     # 8. Build OVERVIEW Dataset (Home dashboard in 1 request)
     leader_driver = unified_drivers[0] if unified_drivers else {}
@@ -401,9 +413,20 @@ def build_v2_api():
     calendar_completed = [r for r in unified_calendar if r.get("winner")]
     latest_calendar_completed = calendar_completed[-1] if calendar_completed else None
 
-    # Next race is the first race without a winner or after today
-    upcoming_races = [r for r in unified_calendar if not r.get("winner")]
-    next_race = upcoming_races[0] if upcoming_races else (unified_calendar[-1] if unified_calendar else None)
+    completed_round_nums = {ev.get("round") for ev in events.values() if ev.get("status") == "completed"}
+    upcoming_races = [
+        r for r in unified_calendar
+        if not r.get("winner") and r.get("round") not in completed_round_nums
+    ]
+    future_races = [
+        r for r in upcoming_races
+        if (r.get("schedule", {}).get("race", {}).get("date") or "") >= now_utc
+    ]
+    next_race = (
+        future_races[0]
+        if future_races
+        else (upcoming_races[0] if upcoming_races else (unified_calendar[-1] if unified_calendar else None))
+    )
 
     is_live = weekend.get("status") == "in_progress"
 

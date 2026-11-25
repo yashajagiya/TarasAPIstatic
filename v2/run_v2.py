@@ -299,12 +299,15 @@ async def scrape_round_async(
     ]
     target_cache_file = next((p for p in target_cache_candidates if os.path.exists(p)), target_cache_candidates[0])
 
-    # Anti-Ban Cache Guard: If round is completed and not forced, skip network scraping!
+    # Anti-Ban Cache Guard: If round is completed with canonical schema and not forced, skip network scraping!
     if not force and os.path.exists(target_cache_file):
         try:
             with open(target_cache_file, "r", encoding="utf-8") as f:
                 cached = json.load(f)
-            if cached.get("status") == "completed" and cached.get("sessions", {}).get("race"):
+            has_canonical_fields = all(
+                k in cached for k in ("country", "circuit_id", "date_range", "weekend_format", "has_sprint")
+            )
+            if cached.get("status") == "completed" and cached.get("sessions", {}).get("race") and has_canonical_fields:
                 print(f"  ⚡ [Cache Hit] Round {round_num} ({cached.get('race_name')}) is fully archived. Skipping scrape.")
                 return True
         except Exception:
@@ -318,12 +321,13 @@ async def scrape_round_async(
     race_id, slug = meta["f1_id"], meta["slug"]
     base_url = f"https://www.formula1.com/en/results/2026/races/{race_id}/{slug}"
 
-    # Determine sprint vs conventional weekend
+    # Determine sprint vs conventional weekend and curated metadata from calendar_master.json
     cal_candidates = [
         os.path.join(data_dir, "registries", "calendar_master.json"),
         os.path.join(data_dir, "calendar_master.json"),
     ]
     cal_file = next((p for p in cal_candidates if os.path.exists(p)), cal_candidates[0])
+    cal_race = {}
     is_sprint = False
     if os.path.exists(cal_file):
         try:
@@ -331,12 +335,22 @@ async def scrape_round_async(
                 races = json.load(f).get("races", [])
             for r in races:
                 if r.get("round") == round_num:
+                    cal_race = r
                     sched = r.get("schedule", {})
                     is_sprint = bool("sprintQualy" in sched or "sprintRace" in sched)
                     break
         except Exception:
             pass
 
+    all_session_keys = [
+        "practice_1",
+        "practice_2",
+        "practice_3",
+        "qualifying",
+        "sprint_qualifying",
+        "sprint_race",
+        "race",
+    ]
     session_keys = (
         ["practice_1", "sprint_qualifying", "sprint_race", "qualifying", "race"]
         if is_sprint else
@@ -354,8 +368,9 @@ async def scrape_round_async(
     }
 
     print(f"\n🏎️ [Scraping] Round {round_num} ({slug.title()}) — Format: {'Sprint' if is_sprint else 'Standard'}...")
-    sessions_data = {}
+    sessions_data = {key: None for key in all_session_keys}
     detected_circuit = ""
+    detected_date_range = ""
 
     # Scrape sessions politely with AntiBanClient
     for sk in session_keys:
@@ -363,16 +378,18 @@ async def scrape_round_async(
         if not suffix:
             continue
         session_url = f"{base_url}/{suffix}"
-        rows, title, _, circuit = await scrape_session_table_async(
+        rows, title, date_text, circuit = await scrape_session_table_async(
             client,
             session_url,
             session_name=sk,
             referer=base_url
         )
+        if date_text and not detected_date_range:
+            detected_date_range = date_text
+        if circuit and not detected_circuit:
+            detected_circuit = circuit
         if rows:
             sessions_data[sk] = rows
-            if circuit and not detected_circuit:
-                detected_circuit = circuit
             print(f"  ✓ {sk:<18} ({len(rows):>2} drivers classified)")
         else:
             sessions_data[sk] = None
@@ -381,20 +398,30 @@ async def scrape_round_async(
         print(f"  ⚠️ No classifications found for Round {round_num} (Session not held yet).")
         return False
 
+    circuit_meta = cal_race.get("circuit", {})
+    race_name = cal_race.get("raceName") or f"{slug.replace('-', ' ').title()} Grand Prix"
+    country = circuit_meta.get("country", "")
+    circuit_id = circuit_meta.get("circuitId", slug)
+    circuit_name = detected_circuit or circuit_meta.get("circuitName") or "Official Circuit"
+
     race_results = sessions_data.get("race")
     has_race = bool(race_results and len(race_results) > 0)
+    completed_sessions = [key for key in all_session_keys if sessions_data.get(key)]
+    upcoming_sessions = [] if has_race else [key for key in session_keys if not sessions_data.get(key)]
 
     round_payload = {
         "round": round_num,
-        "season": 2026,
-        "race_name": f"{slug.replace('-', ' ').title()} Grand Prix",
-        "circuit_name": detected_circuit or "Official Circuit",
-        "status": "completed" if has_race else "in_progress",
-        "is_sprint": is_sprint,
-        "completed_sessions": [key for key in session_keys if sessions_data.get(key)],
-        "upcoming_sessions": [key for key in session_keys if not sessions_data.get(key)],
+        "race_name": race_name,
+        "country": country,
+        "circuit_id": circuit_id,
+        "circuit_name": circuit_name,
+        "date_range": detected_date_range,
+        "status": "completed" if has_race else ("in_progress" if completed_sessions else "upcoming"),
+        "weekend_format": "sprint" if is_sprint else "conventional",
+        "has_sprint": is_sprint,
+        "completed_sessions": completed_sessions,
+        "upcoming_sessions": upcoming_sessions,
         "sessions": sessions_data,
-        "last_updated": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     }
 
     os.makedirs(sessions_dir, exist_ok=True)

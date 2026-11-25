@@ -227,6 +227,19 @@ def merge_calendar(
     return result
 
 
+def reconcile_archived_winners(
+    master: Dict[str, Any],
+    archived_winners: Dict[int, Dict[str, Any]],
+) -> Dict[str, Any]:
+    """Backfill winner entries into master calendar from completed round archives."""
+    working_master = copy.deepcopy(master)
+    for race in working_master.get("races", []):
+        round_num = race.get("round")
+        if round_num in archived_winners:
+            race["winner"] = archived_winners[round_num]
+    return working_master
+
+
 def _write_json_atomic(path: str, data: Dict[str, Any]) -> None:
     temp_path = None
     try:
@@ -249,9 +262,14 @@ def update_calendar(
 ) -> bool:
     """Refresh the master registry. Returns whether its contents changed."""
     master = _read_json(master_path)
-    feed = fetch_calendar(session)
     winners = load_archived_winners(rounds_dir)
-    updated = merge_calendar(master, feed, winners)
+    try:
+        feed = fetch_calendar(session)
+        updated = merge_calendar(master, feed, winners)
+    except requests.RequestException as err:
+        print(f"Calendar feed unavailable ({err}); reconciling archived winners only.")
+        updated = reconcile_archived_winners(master, winners)
+
     if updated == master:
         print(f"Calendar unchanged ({len(updated['races'])} rounds).")
         return False

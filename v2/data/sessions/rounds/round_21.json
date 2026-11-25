@@ -1,0 +1,889 @@
+{
+  "round": 21,
+  "race_name": "Formula 1 Heineken Las Vegas Grand Prix 2026",
+  "country": "United States",
+  "circuit_id": "vegas",
+  "circuit_name": "Las Vegas Strip Circuit, Las Vegas",
+  "date_range": "19 - 21 Nov 2026",
+  "status": "completed",
+  "weekend_format": "conventional",
+  "has_sprint": false,
+  "completed_sessions": [
+    "practice_2",
+    "practice_3",
+    "qualifying",
+    "race"
+  ],
+  "upcoming_sessions": [],
+  "sessions": {
+    "practice_1": null,
+    "practice_2": [
+      {
+        "position": 1,
+        "driver_number": 63,
+        "driver_name": "George Russell",
+        "driver_code": "RUS",
+        "team": "Mercedes",
+        "time_or_gap": "1:47.272",
+        "laps": 23
+      },
+      {
+        "position": 2,
+        "driver_number": 10,
+        "driver_name": "Pierre Gasly",
+        "driver_code": "GAS",
+        "team": "Alpine",
+        "time_or_gap": "+0.071s",
+        "laps": 16
+      },
+      {
+        "position": 3,
+        "driver_number": 16,
+        "driver_name": "Charles Leclerc",
+        "driver_code": "LEC",
+        "team": "Ferrari",
+        "time_or_gap": "+0.333s",
+        "laps": 28
+      },
+      {
+        "position": 4,
+        "driver_number": 6,
+        "driver_name": "Isack Hadjar",
+        "driver_code": "HAD",
+        "team": "Red Bull Racing",
+        "time_or_gap": "+1.135s",
+        "laps": 20
+      },
+      {
+        "position": 5,
+        "driver_number": 81,
+        "driver_name": "Oscar Piastri",
+        "driver_code": "PIA",
+        "team": "McLaren",
+        "time_or_gap": "+1.181s",
+        "laps": 24
+      },
+      {
+        "position": 6,
+        "driver_number": 44,
+        "driver_name": "Lewis Hamilton",
+        "driver_code": "HAM",
+        "team": "Ferrari",
+        "time_or_gap": "+1.211s",
+        "laps": 26
+      },
+      {
+        "position": 7,
+        "driver_number": 1,
+        "driver_name": "Lando Norris",
+        "driver_code": "NOR",
+        "team": "McLaren",
+        "time_or_gap": "+1.565s",
+        "laps": 22
+      },
+      {
+        "position": 8,
+        "driver_number": 12,
+        "driver_name": "Kimi Antonelli",
+        "driver_code": "ANT",
+        "team": "Mercedes",
+        "time_or_gap": "+1.771s",
+        "laps": 23
+      },
+      {
+        "position": 9,
+        "driver_number": 43,
+        "driver_name": "Franco Colapinto",
+        "driver_code": "COL",
+        "team": "Alpine",
+        "time_or_gap": "+1.957s",
+        "laps": 15
+      },
+      {
+        "position": 10,
+        "driver_number": 14,
+        "driver_name": "Fernando Alonso",
+        "driver_code": "ALO",
+        "team": "Aston Martin",
+        "time_or_gap": "+1.959s",
+        "laps": 21
+      },
+      {
+        "position": 11,
+        "driver_number": 18,
+        "driver_name": "Lance Stroll",
+        "driver_code": "STR",
+        "team": "Aston Martin",
+        "time_or_gap": "+2.510s",
+        "laps": 23
+      },
+      {
+        "position": 12,
+        "driver_number": 23,
+        "driver_name": "Alexander Albon",
+        "driver_code": "ALB",
+        "team": "Williams",
+        "time_or_gap": "+2.557s",
+        "laps": 23
+      },
+      {
+        "position": 13,
+        "driver_number": 3,
+        "driver_name": "Max Verstappen",
+        "driver_code": "VER",
+        "team": "Red Bull Racing",
+        "time_or_gap": "+2.869s",
+        "laps": 9
+      },
+      {
+        "position": 14,
+        "driver_number": 11,
+        "driver_name": "Sergio Perez",
+        "driver_code": "PER",
+        "team": "Cadillac",
+        "time_or_gap": "+3.159s",
+        "laps": 17
+      },
+      {
+        "position": 15,
+        "driver_number": 87,
+        "driver_name": "Oliver Bearman",
+        "driver_code": "BEA",
+        "team": "Haas F1 Team",
+        "time_or_gap": "+3.427s",
+        "laps": 22
+      },
+      {
+        "position": 16,
+        "driver_number": 30,
+        "driver_name": "Liam Lawson",
+        "driver_code": "LAW",
+        "team": "Racing Bulls",
+        "time_or_gap": "+3.737s",
+        "laps": 12
+      },
+      {
+        "position": 17,
+        "driver_number": 41,
+        "driver_name": "Arvid Lindblad",
+        "driver_code": "LIN",
+        "team": "Racing Bulls",
+        "time_or_gap": "+3.876s",
+        "laps": 13
+      },
+      {
+        "position": 18,
+        "driver_number": 55,
+        "driver_name": "Carlos Sainz",
+        "driver_code": "SAI",
+        "team": "Williams",
+        "time_or_gap": "+4.299s",
+        "laps": 11
+      },
+      {
+        "position": 19,
+        "driver_number": 27,
+        "driver_name": "Nico Hulkenberg",
+        "driver_code": "HUL",
+        "team": "Audi",
+        "time_or_gap": "+4.535s",
+        "laps": 16
+      },
+      {
+        "position": 20,
+        "driver_number": 5,
+        "driver_name": "Gabriel Bortoleto",
+        "driver_code": "BOR",
+        "team": "Audi",
+        "time_or_gap": "+5.053s",
+        "laps": 15
+      },
+      {
+        "position": 21,
+        "driver_number": 77,
+        "driver_name": "Valtteri Bottas",
+        "driver_code": "BOT",
+        "team": "Cadillac",
+        "time_or_gap": "+5.522s",
+        "laps": 14
+      },
+      {
+        "position": 22,
+        "driver_number": 51,
+        "driver_name": "Rafael Camara",
+        "driver_code": "CAM",
+        "team": "Haas F1 Team",
+        "time_or_gap": "+6.317s",
+        "laps": 20
+      }
+    ],
+    "practice_3": [
+      {
+        "position": 1,
+        "driver_number": 63,
+        "driver_name": "George Russell",
+        "driver_code": "RUS",
+        "team": "Mercedes",
+        "time_or_gap": "1:34.041",
+        "laps": 30
+      },
+      {
+        "position": 2,
+        "driver_number": 12,
+        "driver_name": "Kimi Antonelli",
+        "driver_code": "ANT",
+        "team": "Mercedes",
+        "time_or_gap": "+0.911s",
+        "laps": 29
+      },
+      {
+        "position": 3,
+        "driver_number": 1,
+        "driver_name": "Lando Norris",
+        "driver_code": "NOR",
+        "team": "McLaren",
+        "time_or_gap": "+0.974s",
+        "laps": 28
+      },
+      {
+        "position": 4,
+        "driver_number": 16,
+        "driver_name": "Charles Leclerc",
+        "driver_code": "LEC",
+        "team": "Ferrari",
+        "time_or_gap": "+1.150s",
+        "laps": 31
+      },
+      {
+        "position": 5,
+        "driver_number": 43,
+        "driver_name": "Franco Colapinto",
+        "driver_code": "COL",
+        "team": "Alpine",
+        "time_or_gap": "+1.157s",
+        "laps": 29
+      },
+      {
+        "position": 6,
+        "driver_number": 3,
+        "driver_name": "Max Verstappen",
+        "driver_code": "VER",
+        "team": "Red Bull Racing",
+        "time_or_gap": "+1.309s",
+        "laps": 24
+      },
+      {
+        "position": 7,
+        "driver_number": 30,
+        "driver_name": "Liam Lawson",
+        "driver_code": "LAW",
+        "team": "Racing Bulls",
+        "time_or_gap": "+1.361s",
+        "laps": 31
+      },
+      {
+        "position": 8,
+        "driver_number": 44,
+        "driver_name": "Lewis Hamilton",
+        "driver_code": "HAM",
+        "team": "Ferrari",
+        "time_or_gap": "+1.393s",
+        "laps": 30
+      },
+      {
+        "position": 9,
+        "driver_number": 10,
+        "driver_name": "Pierre Gasly",
+        "driver_code": "GAS",
+        "team": "Alpine",
+        "time_or_gap": "+1.402s",
+        "laps": 30
+      },
+      {
+        "position": 10,
+        "driver_number": 41,
+        "driver_name": "Arvid Lindblad",
+        "driver_code": "LIN",
+        "team": "Racing Bulls",
+        "time_or_gap": "+1.409s",
+        "laps": 32
+      },
+      {
+        "position": 11,
+        "driver_number": 6,
+        "driver_name": "Isack Hadjar",
+        "driver_code": "HAD",
+        "team": "Red Bull Racing",
+        "time_or_gap": "+1.452s",
+        "laps": 29
+      },
+      {
+        "position": 12,
+        "driver_number": 81,
+        "driver_name": "Oscar Piastri",
+        "driver_code": "PIA",
+        "team": "McLaren",
+        "time_or_gap": "+1.763s",
+        "laps": 29
+      },
+      {
+        "position": 13,
+        "driver_number": 55,
+        "driver_name": "Carlos Sainz",
+        "driver_code": "SAI",
+        "team": "Williams",
+        "time_or_gap": "+1.945s",
+        "laps": 29
+      },
+      {
+        "position": 14,
+        "driver_number": 27,
+        "driver_name": "Nico Hulkenberg",
+        "driver_code": "HUL",
+        "team": "Audi",
+        "time_or_gap": "+2.350s",
+        "laps": 22
+      },
+      {
+        "position": 15,
+        "driver_number": 23,
+        "driver_name": "Alexander Albon",
+        "driver_code": "ALB",
+        "team": "Williams",
+        "time_or_gap": "+2.405s",
+        "laps": 29
+      },
+      {
+        "position": 16,
+        "driver_number": 5,
+        "driver_name": "Gabriel Bortoleto",
+        "driver_code": "BOR",
+        "team": "Audi",
+        "time_or_gap": "+2.706s",
+        "laps": 29
+      },
+      {
+        "position": 17,
+        "driver_number": 87,
+        "driver_name": "Oliver Bearman",
+        "driver_code": "BEA",
+        "team": "Haas F1 Team",
+        "time_or_gap": "+2.897s",
+        "laps": 30
+      },
+      {
+        "position": 18,
+        "driver_number": 51,
+        "driver_name": "Rafael Camara",
+        "driver_code": "CAM",
+        "team": "Haas F1 Team",
+        "time_or_gap": "+2.971s",
+        "laps": 30
+      },
+      {
+        "position": 19,
+        "driver_number": 11,
+        "driver_name": "Sergio Perez",
+        "driver_code": "PER",
+        "team": "Cadillac",
+        "time_or_gap": "+3.091s",
+        "laps": 28
+      },
+      {
+        "position": 20,
+        "driver_number": 14,
+        "driver_name": "Fernando Alonso",
+        "driver_code": "ALO",
+        "team": "Aston Martin",
+        "time_or_gap": "+3.208s",
+        "laps": 29
+      },
+      {
+        "position": 21,
+        "driver_number": 18,
+        "driver_name": "Lance Stroll",
+        "driver_code": "STR",
+        "team": "Aston Martin",
+        "time_or_gap": "+3.640s",
+        "laps": 28
+      },
+      {
+        "position": 22,
+        "driver_number": 77,
+        "driver_name": "Valtteri Bottas",
+        "driver_code": "BOT",
+        "team": "Cadillac",
+        "time_or_gap": "+3.655s",
+        "laps": 27
+      }
+    ],
+    "qualifying": [
+      {
+        "position": 1,
+        "driver_number": 12,
+        "driver_name": "Kimi Antonelli",
+        "driver_code": "ANT",
+        "team": "Mercedes",
+        "q1": "1:34.684",
+        "q2": "1:35.086",
+        "q3": "1:33.893",
+        "laps": 26
+      },
+      {
+        "position": 2,
+        "driver_number": 3,
+        "driver_name": "Max Verstappen",
+        "driver_code": "VER",
+        "team": "Red Bull Racing",
+        "q1": "1:35.264",
+        "q2": "1:34.394",
+        "q3": "1:34.151",
+        "laps": 21
+      },
+      {
+        "position": 3,
+        "driver_number": 63,
+        "driver_name": "George Russell",
+        "driver_code": "RUS",
+        "team": "Mercedes",
+        "q1": "1:34.664",
+        "q2": "1:34.617",
+        "q3": "1:34.224",
+        "laps": 26
+      },
+      {
+        "position": 4,
+        "driver_number": 1,
+        "driver_name": "Lando Norris",
+        "driver_code": "NOR",
+        "team": "McLaren",
+        "q1": "1:35.109",
+        "q2": "1:34.766",
+        "q3": "1:34.244",
+        "laps": 21
+      },
+      {
+        "position": 5,
+        "driver_number": 6,
+        "driver_name": "Isack Hadjar",
+        "driver_code": "HAD",
+        "team": "Red Bull Racing",
+        "q1": "1:35.413",
+        "q2": "1:35.064",
+        "q3": "1:34.592",
+        "laps": 22
+      },
+      {
+        "position": 6,
+        "driver_number": 41,
+        "driver_name": "Arvid Lindblad",
+        "driver_code": "LIN",
+        "team": "Racing Bulls",
+        "q1": "1:35.456",
+        "q2": "1:34.963",
+        "q3": "1:34.668",
+        "laps": 25
+      },
+      {
+        "position": 7,
+        "driver_number": 81,
+        "driver_name": "Oscar Piastri",
+        "driver_code": "PIA",
+        "team": "McLaren",
+        "q1": "1:35.491",
+        "q2": "1:34.763",
+        "q3": "1:34.899",
+        "laps": 24
+      },
+      {
+        "position": 8,
+        "driver_number": 30,
+        "driver_name": "Liam Lawson",
+        "driver_code": "LAW",
+        "team": "Racing Bulls",
+        "q1": "1:35.489",
+        "q2": "1:35.048",
+        "q3": "1:35.090",
+        "laps": 25
+      },
+      {
+        "position": 9,
+        "driver_number": 10,
+        "driver_name": "Pierre Gasly",
+        "driver_code": "GAS",
+        "team": "Alpine",
+        "q1": "1:35.718",
+        "q2": "1:34.559",
+        "q3": "1:35.105",
+        "laps": 24
+      },
+      {
+        "position": 10,
+        "driver_number": 43,
+        "driver_name": "Franco Colapinto",
+        "driver_code": "COL",
+        "team": "Alpine",
+        "q1": "1:35.930",
+        "q2": "1:34.982",
+        "q3": "1:35.314",
+        "laps": 23
+      },
+      {
+        "position": 11,
+        "driver_number": 16,
+        "driver_name": "Charles Leclerc",
+        "driver_code": "LEC",
+        "team": "Ferrari",
+        "q1": "1:35.040",
+        "q2": "1:35.197",
+        "q3": "",
+        "laps": 17
+      },
+      {
+        "position": 12,
+        "driver_number": 44,
+        "driver_name": "Lewis Hamilton",
+        "driver_code": "HAM",
+        "team": "Ferrari",
+        "q1": "1:35.743",
+        "q2": "1:35.253",
+        "q3": "",
+        "laps": 18
+      },
+      {
+        "position": 13,
+        "driver_number": 27,
+        "driver_name": "Nico Hulkenberg",
+        "driver_code": "HUL",
+        "team": "Audi",
+        "q1": "1:35.710",
+        "q2": "1:35.460",
+        "q3": "",
+        "laps": 16
+      },
+      {
+        "position": 14,
+        "driver_number": 55,
+        "driver_name": "Carlos Sainz",
+        "driver_code": "SAI",
+        "team": "Williams",
+        "q1": "1:35.588",
+        "q2": "1:35.641",
+        "q3": "",
+        "laps": 18
+      },
+      {
+        "position": 15,
+        "driver_number": 5,
+        "driver_name": "Gabriel Bortoleto",
+        "driver_code": "BOR",
+        "team": "Audi",
+        "q1": "1:36.149",
+        "q2": "1:35.993",
+        "q3": "",
+        "laps": 12
+      },
+      {
+        "position": 16,
+        "driver_number": 23,
+        "driver_name": "Alexander Albon",
+        "driver_code": "ALB",
+        "team": "Williams",
+        "q1": "1:35.856",
+        "q2": "1:36.125",
+        "q3": "",
+        "laps": 18
+      },
+      {
+        "position": 17,
+        "driver_number": 51,
+        "driver_name": "Rafael Camara",
+        "driver_code": "CAM",
+        "team": "Haas F1 Team",
+        "q1": "1:36.220",
+        "q2": "",
+        "q3": "",
+        "laps": 9
+      },
+      {
+        "position": 18,
+        "driver_number": 11,
+        "driver_name": "Sergio Perez",
+        "driver_code": "PER",
+        "team": "Cadillac",
+        "q1": "1:37.383",
+        "q2": "",
+        "q3": "",
+        "laps": 11
+      },
+      {
+        "position": 19,
+        "driver_number": 14,
+        "driver_name": "Fernando Alonso",
+        "driver_code": "ALO",
+        "team": "Aston Martin",
+        "q1": "1:37.400",
+        "q2": "",
+        "q3": "",
+        "laps": 10
+      },
+      {
+        "position": 20,
+        "driver_number": 18,
+        "driver_name": "Lance Stroll",
+        "driver_code": "STR",
+        "team": "Aston Martin",
+        "q1": "1:37.550",
+        "q2": "",
+        "q3": "",
+        "laps": 10
+      },
+      {
+        "position": 21,
+        "driver_number": 77,
+        "driver_name": "Valtteri Bottas",
+        "driver_code": "BOT",
+        "team": "Cadillac",
+        "q1": "1:37.601",
+        "q2": "",
+        "q3": "",
+        "laps": 11
+      },
+      {
+        "position": "NC",
+        "driver_number": 87,
+        "driver_name": "Oliver Bearman",
+        "driver_code": "BEA",
+        "team": "Haas F1 Team",
+        "q1": "1:48.005",
+        "q2": "",
+        "q3": "",
+        "laps": 8
+      }
+    ],
+    "sprint_qualifying": null,
+    "sprint_race": null,
+    "race": [
+      {
+        "position": 1,
+        "driver_number": 3,
+        "driver_name": "Max Verstappen",
+        "driver_code": "VER",
+        "team": "Red Bull Racing",
+        "laps": 50,
+        "time_or_retired": "1:27:39.624",
+        "points": 25.0
+      },
+      {
+        "position": 2,
+        "driver_number": 1,
+        "driver_name": "Lando Norris",
+        "driver_code": "NOR",
+        "team": "McLaren",
+        "laps": 50,
+        "time_or_retired": "+0.639s",
+        "points": 18.0
+      },
+      {
+        "position": 3,
+        "driver_number": 81,
+        "driver_name": "Oscar Piastri",
+        "driver_code": "PIA",
+        "team": "McLaren",
+        "laps": 50,
+        "time_or_retired": "+1.529s",
+        "points": 15.0
+      },
+      {
+        "position": 4,
+        "driver_number": 12,
+        "driver_name": "Kimi Antonelli",
+        "driver_code": "ANT",
+        "team": "Mercedes",
+        "laps": 50,
+        "time_or_retired": "+2.574s",
+        "points": 12.0
+      },
+      {
+        "position": 5,
+        "driver_number": 10,
+        "driver_name": "Pierre Gasly",
+        "driver_code": "GAS",
+        "team": "Alpine",
+        "laps": 50,
+        "time_or_retired": "+2.927s",
+        "points": 10.0
+      },
+      {
+        "position": 6,
+        "driver_number": 43,
+        "driver_name": "Franco Colapinto",
+        "driver_code": "COL",
+        "team": "Alpine",
+        "laps": 50,
+        "time_or_retired": "+7.955s",
+        "points": 8.0
+      },
+      {
+        "position": 7,
+        "driver_number": 44,
+        "driver_name": "Lewis Hamilton",
+        "driver_code": "HAM",
+        "team": "Ferrari",
+        "laps": 50,
+        "time_or_retired": "+12.795s",
+        "points": 6.0
+      },
+      {
+        "position": 8,
+        "driver_number": 55,
+        "driver_name": "Carlos Sainz",
+        "driver_code": "SAI",
+        "team": "Williams",
+        "laps": 50,
+        "time_or_retired": "+12.938s",
+        "points": 4.0
+      },
+      {
+        "position": 9,
+        "driver_number": 63,
+        "driver_name": "George Russell",
+        "driver_code": "RUS",
+        "team": "Mercedes",
+        "laps": 50,
+        "time_or_retired": "+13.192s",
+        "points": 2.0
+      },
+      {
+        "position": 10,
+        "driver_number": 16,
+        "driver_name": "Charles Leclerc",
+        "driver_code": "LEC",
+        "team": "Ferrari",
+        "laps": 50,
+        "time_or_retired": "+17.554s",
+        "points": 1.0
+      },
+      {
+        "position": 11,
+        "driver_number": 27,
+        "driver_name": "Nico Hulkenberg",
+        "driver_code": "HUL",
+        "team": "Audi",
+        "laps": 50,
+        "time_or_retired": "+22.720s",
+        "points": 0.0
+      },
+      {
+        "position": 12,
+        "driver_number": 5,
+        "driver_name": "Gabriel Bortoleto",
+        "driver_code": "BOR",
+        "team": "Audi",
+        "laps": 50,
+        "time_or_retired": "+28.602s",
+        "points": 0.0
+      },
+      {
+        "position": 13,
+        "driver_number": 87,
+        "driver_name": "Oliver Bearman",
+        "driver_code": "BEA",
+        "team": "Haas F1 Team",
+        "laps": 50,
+        "time_or_retired": "+28.843s",
+        "points": 0.0
+      },
+      {
+        "position": 14,
+        "driver_number": 30,
+        "driver_name": "Liam Lawson",
+        "driver_code": "LAW",
+        "team": "Racing Bulls",
+        "laps": 50,
+        "time_or_retired": "+36.588s",
+        "points": 0.0
+      },
+      {
+        "position": 15,
+        "driver_number": 6,
+        "driver_name": "Isack Hadjar",
+        "driver_code": "HAD",
+        "team": "Red Bull Racing",
+        "laps": 50,
+        "time_or_retired": "+46.488s",
+        "points": 0.0
+      },
+      {
+        "position": 16,
+        "driver_number": 51,
+        "driver_name": "Rafael Camara",
+        "driver_code": "CAM",
+        "team": "Haas F1 Team",
+        "laps": 50,
+        "time_or_retired": "+47.814s",
+        "points": 0.0
+      },
+      {
+        "position": 17,
+        "driver_number": 18,
+        "driver_name": "Lance Stroll",
+        "driver_code": "STR",
+        "team": "Aston Martin",
+        "laps": 50,
+        "time_or_retired": "+68.353s",
+        "points": 0.0
+      },
+      {
+        "position": 18,
+        "driver_number": 77,
+        "driver_name": "Valtteri Bottas",
+        "driver_code": "BOT",
+        "team": "Cadillac",
+        "laps": 50,
+        "time_or_retired": "+71.673s",
+        "points": 0.0
+      },
+      {
+        "position": 19,
+        "driver_number": 14,
+        "driver_name": "Fernando Alonso",
+        "driver_code": "ALO",
+        "team": "Aston Martin",
+        "laps": 49,
+        "time_or_retired": "DNF",
+        "points": 0.0
+      },
+      {
+        "position": "NC",
+        "driver_number": 41,
+        "driver_name": "Arvid Lindblad",
+        "driver_code": "LIN",
+        "team": "Racing Bulls",
+        "laps": 19,
+        "time_or_retired": "DNF",
+        "points": 0.0
+      },
+      {
+        "position": "NC",
+        "driver_number": 11,
+        "driver_name": "Sergio Perez",
+        "driver_code": "PER",
+        "team": "Cadillac",
+        "laps": 17,
+        "time_or_retired": "DNF",
+        "points": 0.0
+      },
+      {
+        "position": "NC",
+        "driver_number": 23,
+        "driver_name": "Alexander Albon",
+        "driver_code": "ALB",
+        "team": "Williams",
+        "laps": 0,
+        "time_or_retired": "DNS",
+        "points": 0.0
+      }
+    ]
+  }
+}

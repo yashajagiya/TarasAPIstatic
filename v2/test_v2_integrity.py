@@ -96,29 +96,35 @@ def run_integrity_tests():
     latest_results_path = os.path.join(OUTPUT_DIR, "results", "latest.json")
     assert os.path.exists(latest_results_path), "results/latest.json is missing!"
     latest = json.load(open(latest_results_path, encoding="utf-8"))
+    for req_key in ("round", "race_name", "country", "circuit_id", "circuit_name", "date_range", "status", "weekend_format", "has_sprint"):
+        assert req_key in latest, f"results/latest.json missing canonical field '{req_key}'!"
     sessions = latest["sessions"]
-    assert sessions.get("practice_1") and len(sessions["practice_1"]) > 0, "FP1 results empty!"
+    completed_sessions = latest.get("completed_sessions", [])
+    assert completed_sessions and any(sessions.get(k) and len(sessions[k]) > 0 for k in completed_sessions), "No completed session results found!"
     if latest.get("status") == "in_progress":
-        assert "practice_1" in latest.get("completed_sessions", []), "practice_1 should be in completed_sessions!"
-        print(f"  [PASS] 6. results/latest.json integrity verified (Round {latest.get('round')} {latest.get('race_name')} in-progress, FP1 intact)")
+        for k in completed_sessions:
+            assert sessions.get(k) and len(sessions[k]) > 0, f"{k} is marked completed but empty!"
+        print(f"  [PASS] 6. results/latest.json integrity verified (Round {latest.get('round')} {latest.get('race_name')} in-progress, {len(completed_sessions)} session(s) intact)")
     else:
         assert len(sessions["qualifying"]) > 0, "Qualifying results empty!"
         assert len(sessions["race"]) > 0, "Race results empty!"
-        print("  [PASS] 6. results/latest.json integrity verified (FP1, FP2, FP3, Qualy, Sprint, Race all intact)")
+        print("  [PASS] 6. results/latest.json integrity verified (Weekend sessions intact)")
 
-    # 7. Test Concluded Rounds (Round 1 to Round 16)
-    for r_num in range(1, 17):
+    # 7. Test Concluded Rounds (Round 1 to Round 20)
+    for r_num in range(1, 21):
         r_path = os.path.join(OUTPUT_DIR, "results", f"round_{r_num}.json")
         assert os.path.exists(r_path), f"results/round_{r_num}.json is missing!"
         r_data = json.load(open(r_path, encoding="utf-8"))
         assert r_data["round"] == r_num, f"Round number mismatch in {r_path}!"
         assert r_data["status"] == "completed", f"Status in {r_path} not completed!"
+        for req_key in ("country", "circuit_id", "date_range", "weekend_format", "has_sprint"):
+            assert req_key in r_data, f"{r_path} missing canonical field '{req_key}'!"
         assert len(r_data["sessions"]["race"]) > 0, f"Race results empty in {r_path}!"
         assert len(r_data["sessions"]["practice_1"]) > 0, f"FP1 results empty in {r_path}!"
         assert len(r_data["sessions"]["qualifying"]) > 0, f"Qualifying results empty in {r_path}!"
         if r_data.get("has_sprint"):
             assert len(r_data["sessions"]["sprint_race"]) > 0, f"Sprint race empty in sprint weekend {r_path}!"
-    print("  [PASS] 7. All historical rounds 1 to 16 verified (FP1, Qualy, Sprint, Race all intact)")
+    print("  [PASS] 7. All historical rounds 1 to 20 verified (FP1, Qualy, Sprint, Race & canonical schema intact)")
 
     # 8. Test Round 17 (Singapore Sprint Weekend)
     r17_results_path = os.path.join(OUTPUT_DIR, "results", "round_17.json")

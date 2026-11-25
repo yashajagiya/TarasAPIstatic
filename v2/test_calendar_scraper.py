@@ -209,6 +209,55 @@ class CalendarScraperTests(unittest.TestCase):
             {"date": "2026-04-02", "time": "13:00:00Z"},
         )
 
+    def test_update_calendar_reconciles_winners_when_feed_fails(self):
+        import json
+        import os
+        import tempfile
+        import requests
+
+        class FailingSession:
+            def get(self, url, timeout):
+                raise requests.HTTPError("402 Payment Required")
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            master_path = os.path.join(temp_dir, "calendar_master.json")
+            rounds_dir = os.path.join(temp_dir, "rounds")
+            os.makedirs(rounds_dir)
+            with open(master_path, "w", encoding="utf-8") as file:
+                json.dump(self.master, file)
+            with open(os.path.join(rounds_dir, "round_1.json"), "w", encoding="utf-8") as file:
+                json.dump(
+                    {
+                        "round": 1,
+                        "status": "completed",
+                        "sessions": {
+                            "race": [
+                                {
+                                    "position": 1,
+                                    "driver_number": 1,
+                                    "driver_name": "Lando Norris",
+                                    "team": "McLaren",
+                                }
+                            ]
+                        },
+                    },
+                    file,
+                )
+
+            changed = update_calendar(
+                master_path=master_path,
+                rounds_dir=rounds_dir,
+                session=FailingSession(),
+            )
+            with open(master_path, "r", encoding="utf-8") as file:
+                persisted = json.load(file)
+
+        self.assertTrue(changed)
+        self.assertEqual(
+            persisted["races"][0]["winner"],
+            {"drivernumber": 1, "fullName": "Lando Norris", "teamWinner": "McLaren"},
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

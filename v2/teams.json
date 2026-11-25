@@ -25,7 +25,7 @@
     ],
     "standings": {
       "rank": 1,
-      "points": 652,
+      "points": 666,
       "races": [
         {
           "round": 1,
@@ -207,9 +207,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 14,
+          "display_value": "14"
         },
         {
           "round": 24,
@@ -285,7 +285,7 @@
     ],
     "standings": {
       "rank": 2,
-      "points": 510,
+      "points": 517,
       "races": [
         {
           "round": 1,
@@ -467,9 +467,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 7,
+          "display_value": "7"
         },
         {
           "round": 24,
@@ -545,7 +545,7 @@
     ],
     "standings": {
       "rank": 3,
-      "points": 415,
+      "points": 440,
       "races": [
         {
           "round": 1,
@@ -727,9 +727,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 25,
+          "display_value": "25"
         },
         {
           "round": 24,
@@ -805,7 +805,7 @@
     ],
     "standings": {
       "rank": 4,
-      "points": 398,
+      "points": 431,
       "races": [
         {
           "round": 1,
@@ -987,9 +987,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 33,
+          "display_value": "33"
         },
         {
           "round": 24,
@@ -1248,9 +1248,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 24,
@@ -1326,7 +1326,7 @@
     ],
     "standings": {
       "rank": 6,
-      "points": 69,
+      "points": 87,
       "races": [
         {
           "round": 1,
@@ -1508,9 +1508,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 18,
+          "display_value": "18"
         },
         {
           "round": 24,
@@ -1768,9 +1768,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 24,
@@ -2028,9 +2028,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 24,
@@ -2106,7 +2106,7 @@
     ],
     "standings": {
       "rank": 9,
-      "points": 12,
+      "points": 16,
       "races": [
         {
           "round": 1,
@@ -2288,9 +2288,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
-          "points": 0,
-          "display_value": ""
+          "played": true,
+          "points": 4,
+          "display_value": "4"
         },
         {
           "round": 24,
@@ -2548,9 +2548,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 24,
@@ -2808,9 +2808,9 @@
           "round": 23,
           "race_code": "LAS",
           "race_name": "Heineken Las Vegas Grand Prix",
-          "played": false,
+          "played": true,
           "points": 0,
-          "display_value": ""
+          "display_value": "-"
         },
         {
           "round": 24,

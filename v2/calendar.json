@@ -1091,7 +1091,11 @@
         "time": "21:00:00Z"
       }
     },
-    "winner": null
+    "winner": {
+      "drivernumber": 3,
+      "fullName": "Max Verstappen",
+      "teamWinner": "Red Bull Racing"
+    }
   },
   {
     "round": 20,
@@ -1141,7 +1145,11 @@
         "time": "18:00:00Z"
       }
     },
-    "winner": null
+    "winner": {
+      "drivernumber": 1,
+      "fullName": "Lando Norris",
+      "teamWinner": "McLaren"
+    }
   },
   {
     "round": 21,
@@ -1191,7 +1199,11 @@
         "time": "04:00:00Z"
       }
     },
-    "winner": null
+    "winner": {
+      "drivernumber": 3,
+      "fullName": "Max Verstappen",
+      "teamWinner": "Red Bull Racing"
+    }
   },
   {
     "round": 22,
