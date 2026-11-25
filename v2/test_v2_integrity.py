@@ -110,8 +110,8 @@ def run_integrity_tests():
         assert len(sessions["race"]) > 0, "Race results empty!"
         print("  [PASS] 6. results/latest.json integrity verified (Weekend sessions intact)")
 
-    # 7. Test Concluded Rounds (Round 1 to Round 20)
-    for r_num in range(1, 21):
+    # 7. Test Concluded Rounds (Round 1 to Round 21)
+    for r_num in range(1, 22):
         r_path = os.path.join(OUTPUT_DIR, "results", f"round_{r_num}.json")
         assert os.path.exists(r_path), f"results/round_{r_num}.json is missing!"
         r_data = json.load(open(r_path, encoding="utf-8"))
@@ -120,11 +120,15 @@ def run_integrity_tests():
         for req_key in ("country", "circuit_id", "date_range", "weekend_format", "has_sprint"):
             assert req_key in r_data, f"{r_path} missing canonical field '{req_key}'!"
         assert len(r_data["sessions"]["race"]) > 0, f"Race results empty in {r_path}!"
-        assert len(r_data["sessions"]["practice_1"]) > 0, f"FP1 results empty in {r_path}!"
+        for row in r_data["sessions"]["race"]:
+            pts = row.get("points")
+            assert not (isinstance(pts, float) and pts.is_integer()), f"Whole-number float points {pts} in {r_path}!"
+        if r_num != 21:  # Las Vegas FP1 had no official results table
+            assert len(r_data["sessions"]["practice_1"]) > 0, f"FP1 results empty in {r_path}!"
         assert len(r_data["sessions"]["qualifying"]) > 0, f"Qualifying results empty in {r_path}!"
         if r_data.get("has_sprint"):
             assert len(r_data["sessions"]["sprint_race"]) > 0, f"Sprint race empty in sprint weekend {r_path}!"
-    print("  [PASS] 7. All historical rounds 1 to 20 verified (FP1, Qualy, Sprint, Race & canonical schema intact)")
+    print("  [PASS] 7. All historical rounds 1 to 21 verified (Qualy, Sprint, Race, integer points & canonical schema intact)")
 
     # 8. Test Round 17 (Singapore Sprint Weekend)
     r17_results_path = os.path.join(OUTPUT_DIR, "results", "round_17.json")

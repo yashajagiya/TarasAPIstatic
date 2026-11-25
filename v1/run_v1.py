@@ -588,7 +588,12 @@ def parse_v1_session_rows(soup: BeautifulSoup, session_name: str) -> List[dict]:
         else:  # race or sprint race
             entry["laps"] = int(clean_str(tds[4].text)) if len(tds) > 4 and clean_str(tds[4].text).isdigit() else 0
             entry["time_or_retired"] = clean_str(tds[5].text) if len(tds) > 5 else ""
-            entry["points"] = float(clean_str(tds[6].text)) if len(tds) > 6 and clean_str(tds[6].text).replace(".", "").isdigit() else 0
+            pts_raw = clean_str(tds[6].text) if len(tds) > 6 else ""
+            try:
+                pts_num = float(pts_raw) if pts_raw else 0
+                entry["points"] = int(pts_num) if float(pts_num).is_integer() else pts_num
+            except ValueError:
+                entry["points"] = 0
 
         parsed.append(entry)
 

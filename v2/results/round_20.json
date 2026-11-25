@@ -613,7 +613,6 @@
         "position": 1,
         "driver_number": 1,
         "driver_name": "Lando Norris",
-        "driver_code": "NOR",
         "team": "McLaren",
         "q1": "1:30.939",
         "q2": "1:29.207",
@@ -624,7 +623,6 @@
         "position": 2,
         "driver_number": 63,
         "driver_name": "George Russell",
-        "driver_code": "RUS",
         "team": "Mercedes",
         "q1": "1:31.206",
         "q2": "1:26.745",
@@ -635,7 +633,6 @@
         "position": 3,
         "driver_number": 12,
         "driver_name": "Kimi Antonelli",
-        "driver_code": "ANT",
         "team": "Mercedes",
         "q1": "1:32.229",
         "q2": "1:29.302",
@@ -646,7 +643,6 @@
         "position": 4,
         "driver_number": 16,
         "driver_name": "Charles Leclerc",
-        "driver_code": "LEC",
         "team": "Ferrari",
         "q1": "1:32.121",
         "q2": "1:28.082",
@@ -657,7 +653,6 @@
         "position": 5,
         "driver_number": 30,
         "driver_name": "Liam Lawson",
-        "driver_code": "LAW",
         "team": "Racing Bulls",
         "q1": "1:32.085",
         "q2": "1:27.049",
@@ -668,7 +663,6 @@
         "position": 6,
         "driver_number": 27,
         "driver_name": "Nico Hulkenberg",
-        "driver_code": "HUL",
         "team": "Audi",
         "q1": "1:31.693",
         "q2": "1:28.361",
@@ -679,7 +673,6 @@
         "position": 7,
         "driver_number": 6,
         "driver_name": "Isack Hadjar",
-        "driver_code": "HAD",
         "team": "Red Bull Racing",
         "q1": "1:32.059",
         "q2": "1:27.218",
@@ -690,7 +683,6 @@
         "position": 8,
         "driver_number": 87,
         "driver_name": "Oliver Bearman",
-        "driver_code": "BEA",
         "team": "Haas F1 Team",
         "q1": "1:33.030",
         "q2": "1:29.130",
@@ -701,7 +693,6 @@
         "position": 9,
         "driver_number": 14,
         "driver_name": "Fernando Alonso",
-        "driver_code": "ALO",
         "team": "Aston Martin",
         "q1": "1:32.092",
         "q2": "1:29.072",
@@ -712,7 +703,6 @@
         "position": 10,
         "driver_number": 23,
         "driver_name": "Alexander Albon",
-        "driver_code": "ALB",
         "team": "Williams",
         "q1": "1:33.150",
         "q2": "1:28.918",
@@ -723,7 +713,6 @@
         "position": 11,
         "driver_number": 44,
         "driver_name": "Lewis Hamilton",
-        "driver_code": "HAM",
         "team": "Ferrari",
         "q1": "1:31.666",
         "q2": "1:30.001",
@@ -734,7 +723,6 @@
         "position": 12,
         "driver_number": 81,
         "driver_name": "Oscar Piastri",
-        "driver_code": "PIA",
         "team": "McLaren",
         "q1": "1:32.251",
         "q2": "1:30.369",
@@ -745,7 +733,6 @@
         "position": 13,
         "driver_number": 51,
         "driver_name": "Rafael Camara",
-        "driver_code": "CAM",
         "team": "Haas F1 Team",
         "q1": "1:32.809",
         "q2": "1:31.515",
@@ -756,7 +743,6 @@
         "position": 14,
         "driver_number": 41,
         "driver_name": "Arvid Lindblad",
-        "driver_code": "LIN",
         "team": "Racing Bulls",
         "q1": "1:32.306",
         "q2": "1:31.687",
@@ -767,7 +753,6 @@
         "position": 15,
         "driver_number": 55,
         "driver_name": "Carlos Sainz",
-        "driver_code": "SAI",
         "team": "Williams",
         "q1": "1:32.959",
         "q2": "1:31.785",
@@ -778,7 +763,6 @@
         "position": 16,
         "driver_number": 3,
         "driver_name": "Max Verstappen",
-        "driver_code": "VER",
         "team": "Red Bull Racing",
         "q1": "1:31.238",
         "q2": "",
@@ -789,7 +773,6 @@
         "position": 17,
         "driver_number": 43,
         "driver_name": "Franco Colapinto",
-        "driver_code": "COL",
         "team": "Alpine",
         "q1": "1:33.327",
         "q2": "",
@@ -800,7 +783,6 @@
         "position": 18,
         "driver_number": 10,
         "driver_name": "Pierre Gasly",
-        "driver_code": "GAS",
         "team": "Alpine",
         "q1": "1:33.449",
         "q2": "",
@@ -811,7 +793,6 @@
         "position": 19,
         "driver_number": 18,
         "driver_name": "Lance Stroll",
-        "driver_code": "STR",
         "team": "Aston Martin",
         "q1": "1:33.653",
         "q2": "",
@@ -822,7 +803,6 @@
         "position": 20,
         "driver_number": 77,
         "driver_name": "Valtteri Bottas",
-        "driver_code": "BOT",
         "team": "Cadillac",
         "q1": "1:33.774",
         "q2": "",
@@ -833,7 +813,6 @@
         "position": 21,
         "driver_number": 11,
         "driver_name": "Sergio Perez",
-        "driver_code": "PER",
         "team": "Cadillac",
         "q1": "1:34.509",
         "q2": "",
@@ -844,7 +823,6 @@
         "position": 22,
         "driver_number": 5,
         "driver_name": "Gabriel Bortoleto",
-        "driver_code": "BOR",
         "team": "Audi",
         "q1": "1:41.564",
         "q2": "",
@@ -859,221 +837,199 @@
         "position": 1,
         "driver_number": 1,
         "driver_name": "Lando Norris",
-        "driver_code": "NOR",
         "team": "McLaren",
         "laps": 71,
         "time_or_retired": "1:35:23.504",
-        "points": 25.0
+        "points": 25
       },
       {
         "position": 2,
         "driver_number": 3,
         "driver_name": "Max Verstappen",
-        "driver_code": "VER",
         "team": "Red Bull Racing",
         "laps": 71,
         "time_or_retired": "+14.602s",
-        "points": 18.0
+        "points": 18
       },
       {
         "position": 3,
         "driver_number": 6,
         "driver_name": "Isack Hadjar",
-        "driver_code": "HAD",
         "team": "Red Bull Racing",
         "laps": 71,
         "time_or_retired": "+24.485s",
-        "points": 15.0
+        "points": 15
       },
       {
         "position": 4,
         "driver_number": 63,
         "driver_name": "George Russell",
-        "driver_code": "RUS",
         "team": "Mercedes",
         "laps": 71,
         "time_or_retired": "+33.991s",
-        "points": 12.0
+        "points": 12
       },
       {
         "position": 5,
         "driver_number": 12,
         "driver_name": "Kimi Antonelli",
-        "driver_code": "ANT",
         "team": "Mercedes",
         "laps": 71,
         "time_or_retired": "+41.017s",
-        "points": 10.0
+        "points": 10
       },
       {
         "position": 6,
         "driver_number": 81,
         "driver_name": "Oscar Piastri",
-        "driver_code": "PIA",
         "team": "McLaren",
         "laps": 71,
         "time_or_retired": "+56.475s",
-        "points": 8.0
+        "points": 8
       },
       {
         "position": 7,
         "driver_number": 30,
         "driver_name": "Liam Lawson",
-        "driver_code": "LAW",
         "team": "Racing Bulls",
         "laps": 71,
         "time_or_retired": "+75.402s",
-        "points": 6.0
+        "points": 6
       },
       {
         "position": 8,
         "driver_number": 16,
         "driver_name": "Charles Leclerc",
-        "driver_code": "LEC",
         "team": "Ferrari",
         "laps": 71,
         "time_or_retired": "+78.586s",
-        "points": 4.0
+        "points": 4
       },
       {
         "position": 9,
         "driver_number": 44,
         "driver_name": "Lewis Hamilton",
-        "driver_code": "HAM",
         "team": "Ferrari",
         "laps": 70,
         "time_or_retired": "+1 lap",
-        "points": 2.0
+        "points": 2
       },
       {
         "position": 10,
         "driver_number": 27,
         "driver_name": "Nico Hulkenberg",
-        "driver_code": "HUL",
         "team": "Audi",
         "laps": 70,
         "time_or_retired": "+1 lap",
-        "points": 1.0
+        "points": 1
       },
       {
         "position": 11,
         "driver_number": 41,
         "driver_name": "Arvid Lindblad",
-        "driver_code": "LIN",
         "team": "Racing Bulls",
         "laps": 70,
         "time_or_retired": "+1 lap",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": 12,
         "driver_number": 14,
         "driver_name": "Fernando Alonso",
-        "driver_code": "ALO",
         "team": "Aston Martin",
         "laps": 70,
         "time_or_retired": "+1 lap",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": 13,
         "driver_number": 43,
         "driver_name": "Franco Colapinto",
-        "driver_code": "COL",
         "team": "Alpine",
         "laps": 70,
         "time_or_retired": "+1 lap",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": 14,
         "driver_number": 10,
         "driver_name": "Pierre Gasly",
-        "driver_code": "GAS",
         "team": "Alpine",
         "laps": 70,
         "time_or_retired": "+1 lap",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": 15,
         "driver_number": 23,
         "driver_name": "Alexander Albon",
-        "driver_code": "ALB",
         "team": "Williams",
         "laps": 70,
         "time_or_retired": "+1 lap",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": 16,
         "driver_number": 5,
         "driver_name": "Gabriel Bortoleto",
-        "driver_code": "BOR",
         "team": "Audi",
         "laps": 70,
         "time_or_retired": "+1 lap",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": 17,
         "driver_number": 87,
         "driver_name": "Oliver Bearman",
-        "driver_code": "BEA",
         "team": "Haas F1 Team",
         "laps": 70,
         "time_or_retired": "+1 lap",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": 18,
         "driver_number": 11,
         "driver_name": "Sergio Perez",
-        "driver_code": "PER",
         "team": "Cadillac",
         "laps": 69,
         "time_or_retired": "+2 laps",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": 19,
         "driver_number": 55,
         "driver_name": "Carlos Sainz",
-        "driver_code": "SAI",
         "team": "Williams",
         "laps": 69,
         "time_or_retired": "+2 laps",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": 20,
         "driver_number": 51,
         "driver_name": "Rafael Camara",
-        "driver_code": "CAM",
         "team": "Haas F1 Team",
         "laps": 69,
         "time_or_retired": "+2 laps",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": "NC",
         "driver_number": 18,
         "driver_name": "Lance Stroll",
-        "driver_code": "STR",
         "team": "Aston Martin",
         "laps": 30,
         "time_or_retired": "DNF",
-        "points": 0.0
+        "points": 0
       },
       {
         "position": "NC",
         "driver_number": 77,
         "driver_name": "Valtteri Bottas",
-        "driver_code": "BOT",
         "team": "Cadillac",
         "laps": 0,
         "time_or_retired": "DNS",
-        "points": 0.0
+        "points": 0
       }
     ]
   }

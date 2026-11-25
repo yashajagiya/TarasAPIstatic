@@ -13,7 +13,7 @@
             "team": "Red Bull Racing",
             "laps": 50,
             "time_or_retired": "1:27:39.624",
-            "points": 25.0
+            "points": 25
         },
         {
             "position": 2,
@@ -22,7 +22,7 @@
             "team": "McLaren",
             "laps": 50,
             "time_or_retired": "+0.639s",
-            "points": 18.0
+            "points": 18
         },
         {
             "position": 3,
@@ -31,7 +31,7 @@
             "team": "McLaren",
             "laps": 50,
             "time_or_retired": "+1.529s",
-            "points": 15.0
+            "points": 15
         },
         {
             "position": 4,
@@ -40,7 +40,7 @@
             "team": "Mercedes",
             "laps": 50,
             "time_or_retired": "+2.574s",
-            "points": 12.0
+            "points": 12
         },
         {
             "position": 5,
@@ -49,7 +49,7 @@
             "team": "Alpine",
             "laps": 50,
             "time_or_retired": "+2.927s",
-            "points": 10.0
+            "points": 10
         },
         {
             "position": 6,
@@ -58,7 +58,7 @@
             "team": "Alpine",
             "laps": 50,
             "time_or_retired": "+7.955s",
-            "points": 8.0
+            "points": 8
         },
         {
             "position": 7,
@@ -67,7 +67,7 @@
             "team": "Ferrari",
             "laps": 50,
             "time_or_retired": "+12.795s",
-            "points": 6.0
+            "points": 6
         },
         {
             "position": 8,
@@ -76,7 +76,7 @@
             "team": "Williams",
             "laps": 50,
             "time_or_retired": "+12.938s",
-            "points": 4.0
+            "points": 4
         },
         {
             "position": 9,
@@ -85,7 +85,7 @@
             "team": "Mercedes",
             "laps": 50,
             "time_or_retired": "+13.192s",
-            "points": 2.0
+            "points": 2
         },
         {
             "position": 10,
@@ -94,7 +94,7 @@
             "team": "Ferrari",
             "laps": 50,
             "time_or_retired": "+17.554s",
-            "points": 1.0
+            "points": 1
         },
         {
             "position": 11,
@@ -103,7 +103,7 @@
             "team": "Audi",
             "laps": 50,
             "time_or_retired": "+22.720s",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": 12,
@@ -112,7 +112,7 @@
             "team": "Audi",
             "laps": 50,
             "time_or_retired": "+28.602s",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": 13,
@@ -121,7 +121,7 @@
             "team": "Haas F1 Team",
             "laps": 50,
             "time_or_retired": "+28.843s",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": 14,
@@ -130,7 +130,7 @@
             "team": "Racing Bulls",
             "laps": 50,
             "time_or_retired": "+36.588s",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": 15,
@@ -139,7 +139,7 @@
             "team": "Red Bull Racing",
             "laps": 50,
             "time_or_retired": "+46.488s",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": 16,
@@ -148,7 +148,7 @@
             "team": "Haas F1 Team",
             "laps": 50,
             "time_or_retired": "+47.814s",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": 17,
@@ -157,7 +157,7 @@
             "team": "Aston Martin",
             "laps": 50,
             "time_or_retired": "+68.353s",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": 18,
@@ -166,7 +166,7 @@
             "team": "Cadillac",
             "laps": 50,
             "time_or_retired": "+71.673s",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": 19,
@@ -175,7 +175,7 @@
             "team": "Aston Martin",
             "laps": 49,
             "time_or_retired": "DNF",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": "NC",
@@ -184,7 +184,7 @@
             "team": "Racing Bulls",
             "laps": 19,
             "time_or_retired": "DNF",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": "NC",
@@ -193,7 +193,7 @@
             "team": "Cadillac",
             "laps": 17,
             "time_or_retired": "DNF",
-            "points": 0.0
+            "points": 0
         },
         {
             "position": "NC",
@@ -202,7 +202,7 @@
             "team": "Williams",
             "laps": 0,
             "time_or_retired": "DNS",
-            "points": 0.0
+            "points": 0
         }
     ]
 }

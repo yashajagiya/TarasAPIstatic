@@ -255,7 +255,6 @@ async def scrape_session_table_async(
             "position": int(pos_str) if pos_str.isdigit() else pos_str,
             "driver_number": int(num_str) if num_str.isdigit() else num_str,
             "driver_name": name,
-            "driver_code": code,
             "team": team,
         }
 
@@ -264,17 +263,29 @@ async def scrape_session_table_async(
         if "practice" in s_lower:
             time_gap = clean_str(tds[4].text) if len(tds) > 4 else ""
             laps = clean_str(tds[6].text) if len(tds) > 6 else (clean_str(tds[5].text) if len(tds) > 5 else "")
-            entry["time_or_gap"] = time_gap
-            entry["laps"] = int(laps) if laps.isdigit() else laps
+            entry = {
+                "position": entry["position"],
+                "driver_number": entry["driver_number"],
+                "driver_name": entry["driver_name"],
+                "driver_code": code,
+                "team": entry["team"],
+                "time_or_gap": time_gap,
+                "laps": int(laps) if laps.isdigit() else laps,
+            }
         elif "qualifying" in s_lower or "sprint_qualifying" in s_lower:
             entry["q1"] = clean_str(tds[4].text) if len(tds) > 4 else ""
             entry["q2"] = clean_str(tds[5].text) if len(tds) > 5 else ""
             entry["q3"] = clean_str(tds[6].text) if len(tds) > 6 else ""
             entry["laps"] = int(clean_str(tds[7].text)) if len(tds) > 7 and clean_str(tds[7].text).isdigit() else 0
-        else: # race or sprint race
+        else:  # race or sprint race
             entry["laps"] = int(clean_str(tds[4].text)) if len(tds) > 4 and clean_str(tds[4].text).isdigit() else 0
             entry["time_or_retired"] = clean_str(tds[5].text) if len(tds) > 5 else ""
-            entry["points"] = float(clean_str(tds[6].text)) if len(tds) > 6 and clean_str(tds[6].text).replace(".", "").isdigit() else 0
+            pts_raw = clean_str(tds[6].text) if len(tds) > 6 else ""
+            try:
+                pts_num = float(pts_raw) if pts_raw else 0
+                entry["points"] = int(pts_num) if float(pts_num).is_integer() else pts_num
+            except ValueError:
+                entry["points"] = 0
 
         parsed_rows.append(entry)
 

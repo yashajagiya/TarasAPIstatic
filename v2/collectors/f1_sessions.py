@@ -98,6 +98,16 @@ def clean_sprint_qualifying(results):
     return rows
 
 
+def _parse_points(pts):
+    if pts is None or pts == "":
+        return 0
+    try:
+        num = float(str(pts).strip())
+        return int(num) if num.is_integer() else num
+    except ValueError:
+        return pts
+
+
 def clean_race(results):
     if not results:
         return []
@@ -118,7 +128,7 @@ def clean_race(results):
             "team": team,
             "laps": int(laps) if str(laps).isdigit() else laps,
             "time_or_retired": time_ret,
-            "points": int(pts) if str(pts).isdigit() else (float(pts) if str(pts).replace(".", "").isdigit() else pts)
+            "points": _parse_points(pts),
         })
     return rows
 
@@ -279,6 +289,10 @@ def load_all_known_sessions(repo_dir=None):
                     r_num_loaded = r_payload["round"]
                     sessions = r_payload.get("sessions", {})
                     if isinstance(sessions, dict):
+                        if isinstance(sessions.get("race"), list):
+                            sessions["race"] = clean_race(sessions["race"])
+                        if isinstance(sessions.get("sprint_race"), list):
+                            sessions["sprint_race"] = clean_race(sessions["sprint_race"])
                         session_keys = list(sessions)
                         r_payload.setdefault(
                             "completed_sessions",
