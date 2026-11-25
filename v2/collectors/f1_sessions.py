@@ -343,7 +343,7 @@ def load_all_known_sessions(repo_dir=None):
             status = "upcoming"
 
         completed = [k for k, v in sessions_dict.items() if v is not None and len(v) > 0]
-        upcoming = [k for k in expected_sessions if sessions_dict.get(k) is None]
+        upcoming = [] if has_race else [k for k in expected_sessions if sessions_dict.get(k) is None]
 
         event_obj = {
             "round": r_num,
